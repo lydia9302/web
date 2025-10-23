@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./output.css" rel="stylesheet" />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="src/fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="src/fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="src/fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="src/fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="src/fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="src/fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="src/fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="src/fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="src/fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="src/fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="src/fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="src/fav/favicon-16x16.png">
+    <link rel="manifest" href="src/fav/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="src/fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="font-display bg-white text-gray-950">
+    <!-- Custom Cursor -->
+    <div
+      class="cursor-follower"
+      style="
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        background-color: var(--color-key);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        transition: transform 0.1s ease-out;
+      "
+    ></div>
+    <div
+      class="cursor-main"
+      style="
+        position: fixed;
+        width: 30px;
+        height: 30px;
+        border: 1px solid var(--color-key);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99998;
+        transition:
+          transform 0.2s ease-out,
+          width 0.3s ease-out,
+          height 0.3s ease-out,
+          background-color 0.3s ease-out,
+          border-width 0.3s ease-out;
+      "
+    ></div>
+
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between px-5 md:px-10 h-11 bg-white sticky top-0 z-50">
+      <a href="index.html" class="flex items-center gap-2 h-11 border-b-2 border-transparent box-border">
+        <div class="w-2.5 h-2.5 bg-key"></div>
+        <div class="text-sm font-medium text-gray-950">BORIM KIM</div>
+      </a>
+      <div class="flex items-center gap-4">
+        <!-- Pro Work -->
+        <a href="index.html" class="flex items-center h-11 cursor-pointer hover:text-key transition-color border-b-2 border-transparent box-border">
+          <div class="text-sm uppercase font-medium rolling-text">
+            <span>P</span><span>r</span><span>o</span><span> </span><span>W</span><span>o</span><span>r</span><span>k</span>
+          </div>
+        </a>
+        <!-- Play Lab -->
+        <a href="play.html" class="flex items-center h-11 cursor-pointer hover:text-key transition-color border-b-2 border-transparent box-border">
+          <div class="text-sm uppercase font-medium rolling-text">
+            <span>P</span><span>l</span><span>a</span><span>y</span><span> </span><span>L</span><span>a</span><span>b</span>
+          </div>
+        </a>
+        <!-- About -->
+        <a href="about.html" class="flex items-center h-11 cursor-pointer text-key border-b-2 border-key box-border">
+          <div class="text-sm uppercase font-bold rolling-text">
+            <span>A</span><span>b</span><span>o</span><span>u</span><span>t</span>
+          </div>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section class="flex flex-col md:flex-row gap-10 items-center justify-center px-5 md:px-10 py-10 w-full animate-fade-in">
+        <div class="flex-1 w-full">
+            <div class="aspect-square w-full bg-gray-200 overflow-hidden">
+                <!-- profile image -->
+                <img src="src/images/ProfileImg.png" alt="Borim Kim" class="w-full h-full object-cover">
+            </div>
+        </div>
+        <div class="flex-1 w-full flex flex-col gap-12">
+            <div class="text-3xl leading-normal text-gray-950">
+                <p class="mb-0">
+                    <span class="font-normal">Hello, I'm </span>
+                    <span class="font-semibold">Borim Kim</span>
+                    <span class="font-normal">.</span>
+                </p>
+                <p class="mb-0">
+                    <span class="font-normal">A </span>
+                    <span class="text-key font-normal">UX/UI & Product Designer </span>
+                    <span class="font-normal">crafting refined simplicity for complex data through intellectual empathy.</span>
+                </p>
+            </div>
+            <div class="flex flex-col gap-6 items-start w-full">
+                <p class="text-xl font-normal italic text-gray-400 leading-normal">
+                    These are the core skills and areas I'm passionate about:
+                </p>
+                <div class="border-l-4 border-key pl-5 py-0">
+                    <p class="text-xl font-normal leading-relaxed text-gray-950 mb-0">
+                        Product Design<br>
+                        UX/UI Design<br>
+                        Design Systems & Library<br>
+                        Data Visualization<br>
+                        Interaction Design<br>
+                        Project Leading
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="w-full h-px bg-gray-300"></div>
+
+    <!-- Work Experience Section -->
+    <section class="flex flex-col md:flex-row gap-10 items-start justify-center px-5 md:px-10 py-10 w-full">
+        <div class="flex-1 w-full">
+            <h2 class="text-4xl font-bold text-gray-950 leading-normal">Work Experience</h2>
+        </div>
+        <div class="flex-1 w-full flex flex-col">
+            <!-- Experience Item 1 -->
+            <div class="flex flex-col gap-3 py-3 border-b border-gray-300">
+                <div class="flex gap-3 items-start w-full">
+                    <div class="w-11 h-11 flex-shrink-0 overflow-hidden">
+                        <img src="src/images/companylogo/communify_small.png" alt="Communify" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-1 flex flex-col md:flex-row gap-2 justify-between md:items-center">
+                        <div class="flex flex-col gap-2">
+                            <div class="flex gap-1 flex-wrap">
+                              <p class="text-lg/5 font-semibold text-gray-950 mb-0">Product Designer</p>
+                              <p class="text-lg/5 text-gray-950 mb-0">@Communify</p>
+                            </div>
+                            <p class="text-xs/4 font-normal text-gray-400 mb-0">Toronto, ON Canada | Denver, CO US</p>
+                        </div>
+                        <p class="text-sm font-normal text-gray-600 whitespace-nowrap tracking-wide">Dec 2024 - Present</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience Item 2 -->
+            <div class="flex flex-col gap-3 py-3 border-b border-gray-300">
+                <div class="flex gap-3 items-start w-full">
+                    <div class="w-11 h-11 flex-shrink-0 overflow-hidden">
+                        <img src="src/images/companylogo/snp_small.png" alt="Communify" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-1 flex flex-col md:flex-row gap-2 justify-between md:items-center">
+                        <div class="flex flex-col gap-2">
+                            <div class="flex gap-1 flex-wrap">
+                              <p class="text-lg/5 font-semibold text-gray-950 mb-0">UX/UI Designer</p>
+                              <p class="text-lg/5 text-gray-950 mb-0">@S&P Global</p>
+                            </div>
+                            <p class="text-xs/4 font-normal text-gray-400 mb-0">Toronto, ON Canada</p>
+                        </div>
+                        <p class="text-sm font-normal text-gray-600 whitespace-nowrap tracking-wide">Apr 2021 - Nov 2024</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience Item 3 -->
+            <div class="flex flex-col gap-3 py-3 border-b border-gray-300">
+                <div class="flex gap-3 items-start w-full">
+                    <div class="w-11 h-11 flex-shrink-0 overflow-hidden">
+                        <img src="src/images/companylogo/d2_small.png" alt="Communify" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-1 flex flex-col md:flex-row gap-2 justify-between md:items-center">
+                        <div class="flex flex-col gap-2">
+                            <div class="flex gap-1 flex-wrap">
+                              <p class="text-lg/5 font-semibold text-gray-950 mb-0">UX Designer</p>
+                              <p class="text-lg/5 text-gray-950 mb-0">@Digital Digm</p>
+                            </div>
+                            <p class="text-xs/4 font-normal text-gray-400 mb-0">Seoul, South Korea</p>
+                        </div>
+                        <p class="text-sm font-normal text-gray-600 whitespace-nowrap tracking-wide">Dec 2014 - Jan 2018</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience Item 4 -->
+            <div class="flex flex-col gap-3 py-3 ">
+                <div class="flex gap-3 items-start w-full">
+                    <div class="w-11 h-11 flex-shrink-0 overflow-hidden">
+                        <img src="src/images/companylogo/horong_small.png" alt="Communify" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-1 flex flex-col md:flex-row gap-2 justify-between md:items-center">
+                        <div class="flex flex-col gap-2">
+                            <div class="flex gap-1 flex-wrap">
+                              <p class="text-lg/5 font-semibold text-gray-950 mb-0">Co-Founder | Designer</p>
+                              <p class="text-lg/5 text-gray-950 mb-0">@Horong</p>
+                            </div>
+                            <p class="text-xs/4 font-normal text-gray-400 mb-0">Seoul, South Korea</p>
+                        </div>
+                        <p class="text-sm font-normal text-gray-600 whitespace-nowrap tracking-wide">Aug 2014 - Jul 2017</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="w-full h-px bg-gray-300"></div>
+
+    <!-- Education Section -->
+    <section class="flex flex-col md:flex-row gap-10 items-start justify-center px-5 md:px-10 py-10 w-full">
+        <div class="flex-1 w-full">
+            <h2 class="text-4xl font-bold text-gray-950 leading-normal">Education</h2>
+        </div>
+        <div class="flex-1 w-full flex flex-col">
+            <!-- Education Item 1 -->
+            <div class="flex flex-col gap-3 py-3 border-b border-gray-300">
+                <div class="flex gap-3 items-start w-full">
+                    
+                    <div class="flex-1 flex flex-col md:flex-row gap-2 justify-between md:items-center">
+                        <div class="flex flex-col gap-1">
+                          <p class="text-lg font-semibold text-gray-950 mb-0">BA, Industrial Design & BA, Convergence Design</p>
+                          <p class="text-gray-600 mb-0">Sungshin Women’s University</p>
+                          <p class="text-xs font-normal text-gray-400 mb-0">Seoul, South Korea</p>
+                        </div>
+                        <p class="text-sm font-normal text-gray-600 whitespace-nowrap tracking-wide">Mar 2011 - Feb 2015</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Item 2 -->
+            <div class="flex flex-col gap-3 py-3 0">
+                <div class="flex gap-3 items-start w-full">
+                    
+                    <div class="flex-1 flex flex-col md:flex-row gap-2 justify-between md:items-center">
+                        <div class="flex flex-col gap-1">
+                          <p class="text-lg font-semibold text-gray-950 mb-0">Dip, Interactive Media Design</p>
+                          <p class="text-gray-600 mb-0">Seneca College</p>
+                          <p class="text-xs font-normal text-gray-400 mb-0">Toronto, ON Canada</p>
+                        </div>
+                        <p class="text-sm font-normal text-gray-600 whitespace-nowrap tracking-wide">May 2019 - Aug 2020</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="w-full h-px bg-gray-300"></div>
+
+    <!-- Company Logo Section -->
+    <section class="flex flex-col md:flex-row gap-10 items-start justify-center px-5 md:px-10 py-10 w-full">
+        <div class="flex-1 w-full">
+            <h2 class="text-4xl font-bold text-gray-950 leading-normal">Selected Clients & Collaborations</h2>
+        </div>
+        <div class="flex-1 w-full flex flex-col">
+            <img src="src/images/companylogo/group_grayscale.png" alt="Communify" class="w-full h-full object-cover">
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="w-full h-px bg-gray-300"></div>
+
+    <!-- Awards Section -->
+    <section class="flex flex-col md:flex-row gap-10 items-start justify-center px-5 md:px-10 py-10 w-full">
+      <div class="flex-1 w-full">
+        <h2 class="text-4xl font-bold text-gray-950 leading-normal">Awards</h2>
+      </div>
+      <div class="flex-1 w-full flex flex-col">
+        <!-- Award 1 -->
+        <div class="flex flex-col gap-3 py-3 border-b border-gray-300">
+          <div class="flex gap-3 items-start w-full">
+            <div class="flex flex-col gap-1">
+              <p class="text-lg font-semibold text-gray-950 mb-0">2017 Mobile Awards Korea – Grand Prize, Pizza Franchise Category</p>
+              <p class="text-gray-600 mb-0">Hosted by the Ministry of Science, ICT and Future Planning and the Korea Creative Content Agency (KOCCA)</p>
+            </div>
+          </div>
+        </div>
+        <!-- Award 2 -->
+        <!-- <div class="flex flex-col gap-3 py-3 border-b border-gray-300">
+          <div class="flex gap-3 items-start w-full">
+            <div class="flex flex-col gap-1">
+              <p class="text-lg font-semibold text-gray-950 mb-0">2014 Shortlist, Korea Institute of Start-up & Entrepreneurship Development</p>
+              <p class="text-gray-600 mb-0">Recognized for innovative project concept and execution</p>
+            </div>
+          </div>
+        </div> -->
+       <!-- Award 3 -->
+        <div class="flex flex-col gap-3 py-3 border-b border-gray-300">
+          <div class="flex gap-3 items-start w-full">
+            <div class="flex flex-col gap-1">
+              <p class="text-lg font-semibold text-gray-950 mb-0">2014 Selection for Smart Creative Project (Smart Startup Program)</p>
+              <p class="text-gray-600 mb-0">Hosted by the Korea Institute of Startup & Entrepreneurship Development</p>
+            </div>
+          </div>
+        </div>
+        <!-- Award 4 -->
+        <div class="flex flex-col gap-3 py-3 border-b border-gray-300">
+          <div class="flex gap-3 items-start w-full">
+            <div class="flex flex-col gap-1">
+              <p class="text-lg font-semibold text-gray-950 mb-0">2013 Best Research Award, Convergent Consortium in Sungshin Women’s University</p>
+              <p class="text-gray-600 mb-0">Awarded for outstanding research and creative integration across disciplines</p>
+            </div>
+          </div>
+        </div>
+        <!-- Award 5 -->
+        <div class="flex flex-col gap-3 py-3 border-b border-gray-300">
+          <div class="flex gap-3 items-start w-full">
+            <div class="flex flex-col gap-1">
+              <p class="text-lg font-semibold text-gray-950 mb-0">2013 Special Award for Idea, Global Game Development Contest</p>
+              <p class="text-gray-600 mb-0">Hosted by the Korea Creative Content Agency (KOCCA)</p>
+            </div>
+          </div>
+        </div>
+        <!-- Award 6 -->
+        <div class="flex flex-col gap-3 py-3 border-gray-300">
+          <div class="flex gap-3 items-start w-full">
+            <div class="flex flex-col gap-1">
+              <p class="text-lg font-semibold text-gray-950 mb-0">2013 Excellence in Research Award, PiQuest Design Competition</p>
+              <p class="text-gray-600 mb-0">Hosted by the Korea Institute of Design Promotion (KIDP) under the Ministry of Knowledge Economy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="bg-gray-950 flex flex-col gap-8 items-center justify-start py-10 px-5 md:px-10 w-full">
+      <div class="text-3xl font-semibold text-white">Thanks for stopping by.</div>
+      <div class="flex gap-5 items-center justify-center">
+        <!-- Secondary btn -->
+        <a
+          href="index.html"
+          class="secondary flex items-center gap-1 px-4 py-2 border border-white text-white hover:border-key-lighter hover:text-key-lighter transition-colors"
+        >
+          <span>Explore Pro Work</span>
+          <svg
+            class="w-6 h-6"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7 17L17 7M17 7H7M17 7V17"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+        <div class="text-sm font-normal text-gray-400">or</div>
+        <!-- Tertiary btn -->
+        <a
+          href="about.html"
+          class="tertiary flex items-center gap-1 py-2 text-white hover:text-key-lighter transition-colors"
+        >
+          <span>Download Resume</span>
+          <svg 
+            class="w-6 h-6" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg">
+            <path 
+            d="M12 3V16M12 16L7 11M12 16L17 11M3 21H21" 
+            stroke="currentColor" 
+            stroke-width="1" 
+            stroke-linecap="round" 
+            stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gray-950 flex flex-col md:flex-row md:items-center justify-between py-10 px-5 md:px-10 w-full gap-4 md:gap-0">
+      <div class="flex flex-col gap-1 items-start justify-center">
+        <div class="text-sm text-gray-400">Reach me</div>
+        <div class="flex gap-2 items-center justify-center">
+          <a
+            href="mailto:borim@borim.kim"
+            class="text-sm font-bold text-white cursor-pointer hover:text-key-lighter transition-colors">
+            borim@borim.kim
+          </a>
+          <div class="text-sm text-gray-400">or</div>
+          <a
+            href="https://www.linkedin.com/in/borimkim9302/"
+            class="text-sm font-bold text-white cursor-pointer hover:text-key-lighter transition-colors"
+            target="_blank"
+            rel="noopener noreferrer">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="text-sm text-gray-400">Designed & developed by © Borim Kim.</div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>

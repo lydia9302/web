@@ -1,0 +1,1278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Market Research UX/UI</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./output.css" rel="stylesheet" />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="src/fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="src/fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="src/fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="src/fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="src/fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="src/fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="src/fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="src/fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="src/fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="src/fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="src/fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="src/fav/favicon-16x16.png">
+    <link rel="manifest" href="src/fav/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="src/fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="font-display bg-white text-gray-950">
+    <!-- Custom Cursor -->
+    <div
+      class="cursor-follower"
+      style="
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        background-color: var(--color-key);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        transition: transform 0.1s ease-out;
+      "
+    ></div>
+    <div
+      class="cursor-main"
+      style="
+        position: fixed;
+        width: 30px;
+        height: 30px;
+        border: 1px solid var(--color-key);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99998;
+        transition:
+          transform 0.2s ease-out,
+          width 0.3s ease-out,
+          height 0.3s ease-out,
+          background-color 0.3s ease-out,
+          border-width 0.3s ease-out;
+      "
+    ></div>
+
+    <!-- Side Navigation -->
+    <div
+      id="side-nav"
+      class="hidden lg:flex"
+      style="
+        position: fixed;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 50;
+        flex-direction: column;
+        gap: 0px;
+        opacity: 0;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      "
+    >
+      <div
+        class="nav-item"
+        style="
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          cursor: pointer;
+          padding: 2px 8px;
+          min-height: 16px;
+          transition: all 0.3s ease-out;
+        "
+        data-section="hero"
+      >
+        <div
+          class="nav-line"
+          style="
+            width: 24px;
+            height: 1px;
+            background-color: #4b5563;
+            transition: all 0.3s ease-out;
+          "
+        ></div>
+        <span
+          class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase"
+          >Intro</span
+        >
+      </div>
+      <div
+        class="nav-item"
+        style="
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          cursor: pointer;
+          padding: 2px 8px;
+          min-height: 16px;
+          transition: all 0.3s ease-out;
+        "
+        data-section="goal"
+      >
+        <div
+          class="nav-line"
+          style="
+            width: 24px;
+            height: 1px;
+            background-color: #4b5563;
+            transition: all 0.3s ease-out;
+          "
+        ></div>
+        <span
+          class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase"
+          >Goal</span
+        >
+      </div>
+      
+      <div
+        class="nav-item"
+        style="
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          cursor: pointer;
+          padding: 2px 8px;
+          min-height: 16px;
+          transition: all 0.3s ease-out;
+        "
+        data-section="features"
+      >
+        <div
+          class="nav-line"
+          style="
+            width: 24px;
+            height: 1px;
+            background-color: #4b5563;
+            transition: all 0.3s ease-out;
+          "
+        ></div>
+        <span
+          class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase"
+          >Key Features</span
+        >
+      </div>
+      <div
+        class="nav-item"
+        style="
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          cursor: pointer;
+          padding: 2px 8px;
+          min-height: 16px;
+          transition: all 0.3s ease-out;
+        "
+        data-section="process"
+      >
+        <div
+          class="nav-line"
+          style="
+            width: 24px;
+            height: 1px;
+            background-color: #4b5563;
+            transition: all 0.3s ease-out;
+          "
+        ></div>
+        <span
+          class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase"
+          >Design Process</span
+        >
+      </div>
+      <div
+        class="nav-item"
+        style="
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          cursor: pointer;
+          padding: 2px 8px;
+          min-height: 16px;
+          transition: all 0.3s ease-out;
+        "
+        data-section="challenges"
+      >
+        <div
+          class="nav-line"
+          style="
+            width: 24px;
+            height: 1px;
+            background-color: #4b5563;
+            transition: all 0.3s ease-out;
+          "
+        ></div>
+        <span
+          class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase"
+          >Challenges</span
+        >
+      </div>
+      <div
+        class="nav-item"
+        style="
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          cursor: pointer;
+          padding: 2px 8px;
+          min-height: 16px;
+          transition: all 0.3s ease-out;
+        "
+        data-section="outcomes2"
+      >
+        <div
+          class="nav-line"
+          style="
+            width: 24px;
+            height: 1px;
+            background-color: #4b5563;
+            transition: all 0.3s ease-out;
+          "
+        ></div>
+        <span
+          class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase"
+          >Project Outcomes</span
+        >
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between px-5 md:px-10 h-11 bg-white sticky top-0 z-50">
+      <a href="index.html" class="flex items-center gap-2 h-11 border-b-2 border-transparent box-border">
+        <div class="w-2.5 h-2.5 bg-key"></div>
+        <div class="text-sm font-medium text-gray-950">BORIM KIM</div>
+      </a>
+      <div class="flex items-center gap-4">
+        <!-- Pro Work -->
+        <a href="index.html" class="flex items-center h-11 cursor-pointer hover:text-key transition-color border-b-2 border-transparent box-border">
+          <div class="text-sm uppercase font-medium rolling-text">
+            <span>P</span><span>r</span><span>o</span><span> </span><span>W</span><span>o</span><span>r</span><span>k</span>
+          </div>
+        </a>
+        <!-- Play Lab -->
+        <a href="play.html" class="flex items-center h-11 cursor-pointer hover:text-key transition-color border-b-2 border-transparent box-border">
+          <div class="text-sm uppercase font-medium rolling-text">
+            <span>P</span><span>l</span><span>a</span><span>y</span><span> </span><span>L</span><span>a</span><span>b</span>
+          </div>
+        </a>
+        <!-- About -->
+        <a href="about.html" class="flex items-center h-11 cursor-pointer hover:text-key transition-color border-b-2 border-transparent box-border">
+          <div class="text-sm uppercase font-medium rolling-text">
+            <span>A</span><span>b</span><span>o</span><span>u</span><span>t</span>
+          </div>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="hero"
+      class="flex flex-col items-center justify-center h-[500px] w-full animate-fade-in px-5 md:px-10 relative"
+      style="
+        --bg-image: url('src/images/banner/pf-3.png');
+        background-image: var(--bg-image);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #000000;
+      "
+    >
+      <div
+        class="flex flex-col gap-9 items-start justify-start max-w-6xl w-full mx-auto relative z-10"
+      >
+        <div
+          class="text-5xl font-bold leading-normal text-white w-full text-left"
+        >
+          <h1 class="mb-0">Market Research</h1>
+          <h1 class="">UX/UI</h1>
+        </div>
+        <div class="flex flex-col gap-4 items-start justify-start w-full">
+          <div
+            class="flex font-normal gap-3 items-center justify-start text-sm"
+          >
+            <div class="text-gray-400 w-10">Client</div>
+            <div class="text-white flex gap-1">
+              <div class="w-5 h-5">
+                <img
+                  src="src/images/companylogo/commsec_small.png"
+                  alt="CommSec"
+                  class="w-full h-full"
+                />
+              </div>
+              <span>CommSec</span>
+            </div>
+          </div>
+          <div
+            class="flex font-normal gap-3 items-center justify-start text-sm"
+          >
+            <div class="text-gray-400 w-10">Role</div>
+            <div class="text-white flex gap-2">
+              <span>Project Lead</span> <span>|</span>
+              <span>UX/UI Design</span>
+            </div>
+          </div>
+          <div
+            class="flex font-normal gap-3 items-center justify-start text-sm"
+          >
+            <div class="text-gray-400 w-10">Year</div>
+            <div class="text-white">2024 Sep - Dec</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider w-full"></div>
+
+    <!-- Goal Section -->
+    <section
+      id="goal"
+      class="flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10"
+    >
+      <div
+        class="flex flex-col gap-4 items-start justify-start max-w-6xl w-full mx-auto"
+      >
+        <div
+          class="bg-gray-200 flex gap-1 items-center justify-center pl-2 pr-3 py-1"
+        >
+          <div class="w-4 h-4">
+            <img src="src/icons/goal.svg" alt="Goal" class="w-full h-full" />
+          </div>
+          <div class="text-sm uppercase">Goal</div>
+        </div>
+        <div class="text-lg font-normal leading-normal text-gray-950">
+          <p class="mb-1">
+            The CommSec Explore & Research project aims to identify best
+            practices for redesigning the market research experience based on
+            the existing design. The goal is to create a coherent,
+            user-friendly, and responsive market research experience for CommSec
+            retail investors, while developing flexible modules that can be
+            integrated across various CommSec channels and platforms. </br> As part of
+            this process, the existing designs will be analyzed and modified,
+            using relevant data, to ensure they are ready for development.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider w-full"></div>
+
+    <!-- Key Features Section -->
+    <section
+      id="features"
+      class="bg-gray-950 flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10 overflow-hidden"
+    >
+      <div
+        class="flex flex-col gap-12 items-start justify-start max-w-6xl w-full mx-auto">
+        <div class="flex flex-col gap-4 items-start justify-start w-full">
+          <div
+            class="bg-gray-200 flex gap-1 items-center justify-center pl-2 pr-3 py-1"
+          >
+            <div class="w-4 h-4">
+              <img
+                src="src/icons/feature.svg"
+                alt="Key Features"
+                class="w-full h-full"
+              />
+            </div>
+            <div class="text-sm font-normal text-gray-950 uppercase">
+              Key Features
+            </div>
+          </div>
+          <div class="text-lg font-normal text-white">
+            <p>
+              From global indices to Australia-specific insights, each feature was designed to visualize, compare, and connect market data, bridging global trends with local perspectives through a unified research experience.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 1: -->
+        <div
+          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-left feature-section-mobile md:flex-row flex-col overflow-hidden"
+        >
+          <!-- Desktop Layout: Image first, then content -->
+          <div
+            id="feature1-image"
+            class="aspect-square flex-1 hidden md:flex items-center justify-center feature-image overflow-hidden"
+          >
+            <img
+              src="src/images/features/pf-3_1-1.gif"
+              alt="World indices"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full"
+          >
+            <div class="flex flex-col gap-3 items-start justify-start w-full">
+              <div class="text-sm text-key-lighter uppercase">
+                WORLD INDICES
+              </div>
+              <div class="text-4xl font-bold text-white capitalize">
+                Track Global Markets at a Glance
+              </div>
+            </div>
+            <div
+              class="text-lg font-normal text-gray-300 w-full feature-description"
+            >
+              <p>Visualizing the performance of major global markets, enabling users to compare trends and assess economic conditions across regions, while serving as a gateway to deeper index insights.</p>
+            </div>
+
+            <!-- Mobile Layout: Image after content for Feature 5 -->
+            <div
+              id="feature1-image-mobile"
+              class="aspect-square w-full flex items-center justify-center feature-image overflow-hidden md:hidden"
+            >
+              <img
+                src="src/images/features/pf-3_1-1.gif"
+                alt="World Indices"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 2: -->
+        <div
+          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-right feature-section-mobile md:flex-row flex-col"
+        >
+          <!-- Desktop Layout: Content first, then image -->
+          <div
+            class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full"
+          >
+            <div class="flex flex-col gap-3 items-start justify-start w-full">
+              <div class="text-sm text-key-lighter uppercase">
+                SECTOR PERFORMANCE
+              </div>
+              <div class="text-4xl font-bold text-white capitalize">
+                Find the Leaders Behind Every Sector
+              </div>
+            </div>
+            <div
+              class="text-lg font-normal text-gray-300 w-full feature-description"
+            >
+              <p>
+                A dynamic heatmap and top-movers view highlight sector performance, helping users identify emerging trends and investment opportunities without being overwhelmed by data.
+              </p>
+            </div>
+
+            <!-- Mobile Layout: Image after content for Feature 4 -->
+            <div
+              id="feature2-image-mobile"
+              class="aspect-square w-full flex items-center justify-center feature-image overflow-hidden md:hidden"
+            >
+              <img
+                src="src/images/features/pf-3_2-1.png"
+                alt="Sector Performance"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div
+            id="feature2-image"
+            class="aspect-square flex-1 hidden md:flex items-center justify-center feature-image overflow-hidden"
+          >
+            <img
+              src="src/images/features/pf-3_2-1.png"
+              alt="Sector Performance"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Feature 3: -->
+        <div
+          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-left feature-section-mobile md:flex-row flex-col overflow-hidden"
+        >
+          <!-- Desktop Layout: Image first, then content -->
+          <div
+            id="feature3-image"
+            class="aspect-square flex-1 hidden md:flex items-center justify-center feature-image overflow-hidden"
+          >
+            <img
+              src="src/images/features/pf-3_3-1.gif"
+              alt="Market Event Calendar"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full"
+          >
+            <div class="flex flex-col gap-3 items-start justify-start w-full">
+              <div class="text-sm text-key-lighter uppercase">
+                MARKET EVENT CALENDAR
+              </div>
+              <div class="text-4xl font-bold text-white capitalize">
+                Stay Ahead of Every Market Moment
+              </div>
+            </div>
+            <div
+              class="text-lg font-normal text-gray-300 w-full feature-description"
+            >
+              <p>A unified calendar that surfaces key events — from earnings and IPOs to macro data — enabling users to scan, filter, and plan around what’s moving the market today and ahead.</p>
+            </div>
+
+            <!-- Mobile Layout: Image after content for Feature 5 -->
+            <div
+              id="feature3-image-mobile"
+              class="aspect-square w-full flex items-center justify-center feature-image overflow-hidden md:hidden"
+            >
+              <img
+                src="src/images/features/pf-3_3-1.gif"
+                alt="Market Event Calendar"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 4: -->
+        <div
+          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-right feature-section-mobile md:flex-row flex-col"
+        >
+          <!-- Desktop Layout: Content first, then image -->
+          <div
+            class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full"
+          >
+            <div class="flex flex-col gap-3 items-start justify-start w-full">
+              <div class="text-sm text-key-lighter uppercase">
+                CURRENCIES & COMMODITIES & BONDS
+              </div>
+              <div class="text-4xl font-bold text-white capitalize">
+                Read the Global Pulse in One Glance
+              </div>
+            </div>
+            <div
+              class="text-lg font-normal text-gray-300 w-full feature-description"
+            >
+              <p>
+                Real-time currency, commodity, and bond insights compare Australian and global markets, helping users interpret economic signals and spot shifts across regions.
+              </p>
+            </div>
+
+            <!-- Mobile Layout: Image after content for Feature 4 -->
+            <div
+              id="feature4-image-mobile"
+              class="aspect-square w-full flex items-center justify-center feature-image overflow-hidden md:hidden"
+            >
+              <img
+                src="src/images/features/pf-3_4-1.png"
+                alt="Currencies & Commodities & Bond"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div
+            id="feature4-image"
+            class="aspect-square flex-1 hidden md:flex items-center justify-center feature-image overflow-hidden"
+          >
+            <img
+              src="src/images/features/pf-3_4-1.png"
+              alt="Currencies & Commodities & Bond"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Feature 5: -->
+        <div
+          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-left feature-section-mobile md:flex-row flex-col overflow-hidden"
+        >
+          <!-- Desktop Layout: Image first, then content -->
+          <div
+            id="feature5-image"
+            class="aspect-square flex-1 hidden md:flex items-center justify-center feature-image overflow-hidden"
+          >
+            <img
+              src="src/images/features/pf-3_5-1.gif"
+              alt="Market Event Calendar"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full"
+          >
+            <div class="flex flex-col gap-3 items-start justify-start w-full">
+              <!-- <div class="text-sm text-key-lighter uppercase">
+                MARKET EVENT CALENDAR
+              </div> -->
+              <div class="text-4xl font-bold text-white capitalize">
+                Designed to Adapt, Built to Perform
+              </div>
+            </div>
+            <div
+              class="text-lg font-normal text-gray-300 w-full feature-description"
+            >
+              <p>
+                Optimized across devices, breakpoints, and color themes, the UI was designed in alignment with MUI’s component system, ensuring consistency and performance wherever users access financial data.
+              </p>
+            </div>
+
+            <!-- Mobile Layout: Image after content for Feature 5 -->
+            <div
+              id="feature5-image-mobile"
+              class="aspect-square w-full flex items-center justify-center feature-image overflow-hidden md:hidden"
+            >
+              <img
+                src="src/images/features/pf-3_5-1.gif"
+                alt="Market Event Calendar"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider w-full"></div>
+
+    <!-- Design Process Section -->
+    <section
+      id="process"
+      class="bg-gray-50 flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10"
+    >
+      <div
+        class="flex flex-col gap-12 items-start justify-start max-w-6xl w-full mx-auto"
+      >
+        <div class="flex flex-col gap-4 items-start justify-start w-full">
+          <div
+            class="bg-gray-200 flex gap-1 items-center justify-center pl-2 pr-3 py-1"
+          >
+            <div class="w-4 h-4">
+              <img
+                src="src/icons/process.svg"
+                alt="Design Process"
+                class="w-full h-full"
+              />
+            </div>
+            <div class="text-sm font-normal text-gray-950 uppercase">
+              Design Process
+            </div>
+          </div>
+          <div class="text-lg">
+            <p>
+              A structured, iterative design process from research and definition to exploration and delivery, transforming insights into clear, actionable solutions.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col gap-10 items-start justify-start w-full process-step"
+        >
+          <!-- Process Step 1 -->
+          <div
+            class="flex flex-col gap-5 items-start justify-center w-full process-step"
+          >
+            <div class="flex gap-3 items-start justify-start w-full">
+              <div class="text-4xl font-normal text-gray-950 w-12">01</div>
+              <div
+                class="flex-1 flex flex-col font-normal items-start justify-start gap-1"
+              >
+                <div
+                  class="flex flex-col justify-center text-lg text-gray-950 w-full"
+                >
+                  <p>Discover</p>
+                </div>
+                <div class="text-sm text-gray-500 w-full">
+                  <p>
+                    Analyzed the existing platform and built proof-of-concept designs, while researching competitor experiences to uncover opportunities for improvement.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="aspect-video w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                src="src/images/process/pf-3_01.png"
+                alt="Discover"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <!-- Process Step 2 -->
+          <div
+            class="flex flex-col gap-5 items-start justify-center w-full process-step"
+          >
+            <div class="flex gap-3 items-start justify-start w-full">
+              <div class="text-4xl font-normal text-gray-950 w-12">02</div>
+              <div
+                class="flex-1 flex flex-col font-normal items-start justify-start gap-1"
+              >
+                <div
+                  class="flex flex-col justify-center text-lg text-gray-950 w-full"
+                >
+                  <p>Define</p>
+                </div>
+                <div class="text-sm text-gray-500 w-full">
+                  <p>
+                    Collaborated closely with the client through a creative brief exercise to define project goals, challenges, dependencies, and scope with clarity and alignment.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="aspect-video w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                src="src/images/process/pf-3_02.png"
+                alt="Define"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <!-- Process Step 3 -->
+          <div
+            class="flex flex-col gap-5 items-start justify-center w-full process-step"
+          >
+            <div class="flex gap-3 items-start justify-start w-full">
+              <div class="text-4xl font-normal text-gray-950 w-12">03</div>
+              <div
+                class="flex-1 flex flex-col font-normal items-start justify-start gap-1"
+              >
+                <div
+                  class="flex flex-col justify-center text-lg text-gray-950 w-full"
+                >
+                  <p>Explore</p>
+                </div>
+                <div class="text-sm text-gray-500 w-full">
+                  <p>
+                    Developed wireframes and multiple UI directions aligned with defined goals, refining the concept through data-driven iterations and progressive detailing.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="aspect-video w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                src="src/images/process/pf-3_03.png"
+                alt="Explore"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <!-- Process Step 4 -->
+          <div
+            class="flex flex-col gap-5 items-start justify-center w-full process-step"
+          >
+            <div class="flex gap-3 items-start justify-start w-full">
+              <div class="text-4xl font-normal text-gray-950 w-12">04</div>
+              <div
+                class="flex-1 flex flex-col font-normal items-start justify-start gap-1"
+              >
+                <div
+                  class="flex flex-col justify-center text-lg text-gray-950 w-full"
+                >
+                  <p>Deliver</p>
+                </div>
+                <div class="text-sm text-gray-500 w-full">
+                  <p>
+                    Executed full design exploration and interactive prototypes, delivering final layouts, documentation, and implementation-ready assets for handoff.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="aspect-video w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                src="src/images/process/pf-3_04.png"
+                alt="Deliver"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider w-full"></div>
+
+    <!-- Challenges Section -->
+    <section
+      id="challenges"
+      class="flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10"
+    >
+      <div
+        class="flex flex-col gap-12 items-start justify-start max-w-6xl w-full mx-auto"
+      >
+        <div class="flex flex-col gap-4 items-start justify-start w-full">
+          <div
+            class="bg-gray-200 flex gap-1 items-center justify-center pl-2 pr-3 py-1"
+          >
+            <div class="w-4 h-4">
+              <img
+                src="src/icons/challenges.svg"
+                alt="Challenges"
+                class="w-full h-full"
+              />
+            </div>
+            <div class="text-sm font-normal text-gray-950 uppercase">
+              Challenges
+            </div>
+          </div>
+          <div class="text-lg font-normal text-gray-950">
+            <p>
+              Every challenge was an opportunity to scale — here's how I
+              approached it.
+            </p>
+          </div>
+        </div>
+
+        <!-- Desktop Layout -->
+        <div
+          class="hidden md:flex flex-col gap-8 items-start justify-start w-full"
+        >
+          <!-- Challenges Row -->
+          <div class="flex gap-6 items-start justify-start w-full">
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-base font-semibold text-key-darker capitalize">
+                Unclear Scope & Platform Direction
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  The CommSec and CBA ecosystem included multiple websites and native apps, but the project scope was undefined. The goal was to design flexible modules that could live across all platforms seamlessly.
+                </p>
+              </div>
+            </div>
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-base font-semibold text-key-darker capitalize">
+                No Established UI System
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  CommSec’s new UI system was still under development, with no clear visual or structural standards to follow at the start of the project.
+                </p>
+              </div>
+            </div>
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-base font-semibold text-key-darker capitalize">
+                First Time Leading End-to-End
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  This was my first time leading a full project — managing structure, planning, and delivery independently from start to finish.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Solutions Row -->
+          <div class="flex gap-6 items-start justify-start w-full">
+            <div class="flex-1 challenge-solution">
+              <div class="solution-container">
+                <div class="solution-dots"></div>
+                <div class="solution-text">Solved via</div>
+              </div>
+            </div>
+            <div class="flex-1 challenge-solution">
+              <div class="solution-container">
+                <div class="solution-dots"></div>
+                <div class="solution-text">Solved via</div>
+              </div>
+            </div>
+            <div class="flex-1 challenge-solution">
+              <div class="solution-container">
+                <div class="solution-dots"></div>
+                <div class="solution-text">Solved via</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Solutions Content Row -->
+          <div class="flex gap-6 items-start justify-start w-full">
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-base font-semibold text-gray-950 capitalize">
+                Defined Through a Creative Brief
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  Created a detailed creative brief to clarify project goals and structure, enabling the design of adaptable, modular components that fit any platform context.
+                </p>
+              </div>
+            </div>
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-base font-semibold text-gray-950 capitalize">
+                Aligned Through MUI Collaboration
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  Collaborated closely with CommSec’s design team, studied their MUI-based foundation, and customized our system for full alignment with their upcoming UI design standards.
+                </p>
+              </div>
+            </div>
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-base font-semibold text-gray-950 capitalize">
+                Goal Setting & Measurable Growth
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  Set clear, specific goals for each team member and established regular feedback loops, ensuring both project success and personal development could be tracked and supported.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Carousel -->
+        <div class="md:hidden w-full relative">
+          <!-- Left Arrow -->
+          <button
+            id="carousel-prev"
+            class="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 backdrop-blur-sm p-2 border border-gray-300 hover:bg-white hover:border-gray-950 transition-all duration-200"
+          >
+            <svg
+              class="w-6 h-6 text-gray-950"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              ></path>
+            </svg>
+          </button>
+
+          <!-- Right Arrow -->
+          <button
+            id="carousel-next"
+            class="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 backdrop-blur-sm p-2 border border-gray-300 hover:bg-white hover:border-gray-950 transition-all duration-200"
+          >
+            <svg
+              class="w-6 h-6 text-gray-950"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+          </button>
+
+          <div id="challenges-carousel" class="overflow-hidden w-full">
+            <div
+              class="flex transition-transform duration-300 ease-out challenges-carousel-track"
+            >
+              <!-- Slide 1 -->
+              <div class="min-w-full flex flex-col gap-8">
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div
+                    class="text-base font-semibold text-key-darker capitalize"
+                  >
+                    Unclear Scope & Platform Direction
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      The CommSec and CBA ecosystem included multiple websites and native apps, but the project scope was undefined. The goal was to design flexible modules that could live across all platforms seamlessly.
+                    </p>
+                  </div>
+                </div>
+                <div class="challenge-solution">
+                  <div class="solution-container">
+                    <div class="solution-dots"></div>
+                    <div class="solution-text">Solved via</div>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div class="text-base font-semibold text-gray-950 capitalize">
+                    Defined Through a Creative Brief
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      Created a detailed creative brief to clarify project goals and structure, enabling the design of adaptable, modular components that fit any platform context.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="min-w-full flex flex-col gap-8">
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div
+                    class="text-base font-semibold text-key-darker capitalize"
+                  >
+                    No Established UI System
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      CommSec’s new UI system was still under development, with no clear visual or structural standards to follow at the start of the project.
+                    </p>
+                  </div>
+                </div>
+                <div class="challenge-solution">
+                  <div class="solution-container">
+                    <div class="solution-dots"></div>
+                    <div class="solution-text">Solved via</div>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div class="text-base font-semibold text-gray-950 capitalize">
+                    Aligned Through MUI Collaboration
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      Collaborated closely with CommSec’s design team, studied their MUI-based foundation, and customized our system for full alignment with their upcoming UI design standards.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="min-w-full flex flex-col gap-8">
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div
+                    class="text-base font-semibold text-key-darker capitalize"
+                  >
+                    First Time Leading End-to-End
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      This was my first time leading a full project — managing structure, planning, and delivery independently from start to finish.
+                    </p>
+                  </div>
+                </div>
+                <div class="challenge-solution">
+                  <div class="solution-container">
+                    <div class="solution-dots"></div>
+                    <div class="solution-text">Solved via</div>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div class="text-base font-semibold text-gray-950 capitalize">
+                    Goal Setting & Measurable Growth
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      Set clear, specific goals for each team member and established regular feedback loops, ensuring both project success and personal development could be tracked and supported.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Dots -->
+          <div class="flex justify-center gap-2 mt-8">
+            <button
+              class="carousel-dot w-2 h-2 rounded-full bg-key transition-all duration-300"
+              data-slide="0"
+            ></button>
+            <button
+              class="carousel-dot w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"
+              data-slide="1"
+            ></button>
+            <button
+              class="carousel-dot w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"
+              data-slide="2"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider w-full"></div>
+
+    <!-- Project Outcomes Section -->
+    <section
+      id="outcomes2"
+      class="outcome-section flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10"
+    >
+      <div
+        class="flex flex-col gap-20 items-start justify-start max-w-6xl w-full mx-auto"
+      >
+        <div class="flex flex-col gap-6 items-start justify-start w-full">
+          <div class="flex flex-col gap-4 items-start justify-start w-full">
+            <div
+              class="bg-gray-200 flex gap-1 items-center justify-center pl-2 pr-3 py-1"
+            >
+              <div class="w-4 h-4">
+                <img
+                  src="src/icons/achievement.svg"
+                  alt="Project Outcomes"
+                  class="w-full h-full"
+                />
+              </div>
+              <div class="text-sm uppercase">Project Outcomes</div>
+            </div>
+            <div class="text-lg">
+              <p>
+                This project reinforced our partnership with CBA–CommSec, Australia’s largest online broking organization and a leader in the country’s financial industry. Working directly with their product and design teams, we helped CommSec expand beyond the Australian market, enabling accurate, real-time delivery of global market data across securities, commodities, and foreign exchange.
+              </p>
+            </div>
+          </div>
+          <!-- <div
+            class="flex md:gap-6 gap-4 items-start justify-start w-full flex-wrap">
+            <div
+              class="flex-1 flex flex-col gap-2 items-start justify-start min-w-0"
+            >
+              <div class="flex flex-col gap-2 items-start justify-start w-full">
+                <div class="flex items-end">
+                  <div
+                    class="outcome-number text-4xl font-bold"
+                    data-target="78"
+                  >
+                    0
+                  </div>
+                  <div class="text-2xl font-bold">%</div>
+                </div>
+                <div class>of all options page views</div>
+              </div>
+              <div class="text-xs text-gray-500">148.8K views in Q1, 2024</div>
+            </div>
+            <div
+              class="flex-1 flex flex-col gap-2 items-start justify-start min-w-0"
+            >
+              <div class="flex flex-col gap-2 items-start justify-start w-full">
+                <div class="flex items-end">
+                  <div
+                    class="outcome-number text-4xl font-bold"
+                    data-target="21"
+                  >
+                    0
+                  </div>
+                  <div class="text-2xl font-bold">%</div>
+                </div>
+                <div>increase in MLO trade completes</div>
+              </div>
+              <div class="text-xs text-gray-500">
+                Post-rollout of new multi-leg option features
+              </div>
+            </div>
+            <div
+              class="flex-1 flex flex-col gap-2 items-start justify-start min-w-0"
+            >
+              <div class="flex flex-col gap-2 items-start justify-start w-full">
+                <div class="flex items-end">
+                  <div class="text-4xl font-bold">All-Time High</div>
+                </div>
+                <div>in Jan 2024 engagement</div>
+              </div>
+              <div class="text-xs text-gray-500">Highest since Oct 2022</div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section
+      class="bg-gray-950 flex flex-col gap-8 items-center justify-start py-10 px-5 md:px-10 w-full"
+    >
+      <div class="text-3xl font-semibold text-white">Ready for more?</div>
+      <div class="flex flex-col gap-3 items-center">
+        <div class="flex gap-5 items-center justify-center">
+          <!-- Secondary btn -->
+          <a
+            href="pf-2.html"
+            class="secondary flex items-center gap-1 px-4 py-2 border border-white text-white hover:border-key-lighter hover:text-key-lighter transition-colors"
+          >
+            <svg
+              class="w-6 h-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M19 12H5M5 12L12 19M5 12L12 5"
+                stroke="currentColor"
+                stroke-width="1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span>Prev Project</span>
+          </a>
+          <!-- Secondary btn -->
+          <a
+            href="pf-4.html"
+            class="secondary flex items-center gap-1 px-4 py-2 border border-white text-white hover:border-key-lighter hover:text-key-lighter transition-colors"
+          >
+            <span>Next Project</span>
+            <svg
+              class="w-6 h-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 12H19M19 12L12 5M19 12L12 19"
+                stroke="currentColor"
+                stroke-width="1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+        <div class="text-sm font-normal text-gray-400">or</div>
+        <!-- Tertiary btn -->
+        <a
+          href="about.html"
+          class="tertiary flex items-center gap-1  text-white hover:text-key-lighter transition-colors">
+          <span>Learn about Me</span>
+          <svg
+            class="w-6 h-6"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M7 17L17 7M17 7H7M17 7V17"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gray-950 flex flex-col md:flex-row md:items-center justify-between py-10 px-5 md:px-10 w-full gap-4 md:gap-0">
+      <div class="flex flex-col gap-1 items-start justify-center">
+        <div class="text-sm text-gray-400">Reach me</div>
+        <div class="flex gap-2 items-center justify-center">
+          <a
+            href="mailto:borim@borim.kim"
+            class="text-sm font-bold text-white cursor-pointer hover:text-key-lighter transition-colors">
+            borim@borim.kim
+          </a>
+          <div class="text-sm text-gray-400">or</div>
+          <a
+            href="https://www.linkedin.com/in/borimkim9302/"
+            class="text-sm font-bold text-white cursor-pointer hover:text-key-lighter transition-colors"
+            target="_blank"
+            rel="noopener noreferrer">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="text-sm text-gray-400">Designed & developed by © Borim Kim.</div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>

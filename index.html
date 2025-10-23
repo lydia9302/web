@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Borim Kim</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./output.css" rel="stylesheet" />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="src/fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="src/fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="src/fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="src/fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="src/fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="src/fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="src/fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="src/fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="src/fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="src/fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="src/fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="src/fav/favicon-16x16.png">
+    <link rel="manifest" href="src/fav/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="src/fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="font-display bg-white text-gray-950">
+    <!-- Custom Cursor -->
+    <div
+      class="cursor-follower"
+      style="
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        background-color: var(--color-key);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        transition: transform 0.1s ease-out;
+      "
+    ></div>
+    <div
+      class="cursor-main"
+      style="
+        position: fixed;
+        width: 30px;
+        height: 30px;
+        border: 1px solid var(--color-key);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99998;
+        transition: transform 0.2s ease-out, width 0.3s ease-out,
+          height 0.3s ease-out, background-color 0.3s ease-out,
+          border-width 0.3s ease-out;
+      "
+    ></div>
+
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between px-5 md:px-10 h-11 bg-white sticky top-0 z-50">
+      <a href="index.html" class="flex items-center gap-2 h-11 border-b-2 border-transparent box-border">
+        <div class="w-2.5 h-2.5 bg-key"></div>
+        <div class="text-sm font-medium text-gray-950">BORIM KIM</div>
+      </a>
+      <div class="flex items-center gap-4">
+        <!-- Pro Work -->
+        <a href="index.html" class="flex items-center h-11 cursor-pointer text-key border-b-2 border-key box-border">
+          <div class="text-sm uppercase font-bold rolling-text">
+            <span>P</span><span>r</span><span>o</span><span> </span><span>W</span><span>o</span><span>r</span><span>k</span>
+          </div>
+        </a>
+        <!-- Play Lab -->
+        <a href="play.html" class="flex items-center h-11 cursor-pointer hover:text-key transition-color border-b-2 border-transparent box-border">
+          <div class="text-sm uppercase font-medium rolling-text">
+            <span>P</span><span>l</span><span>a</span><span>y</span><span> </span><span>L</span><span>a</span><span>b</span>
+          </div>
+        </a>
+        <!-- About -->
+        <a href="about.html" class="flex items-center h-11 cursor-pointer hover:text-key transition-color border-b-2 border-transparent box-border">
+          <div class="text-sm uppercase font-medium rolling-text">
+            <span>A</span><span>b</span><span>o</span><span>u</span><span>t</span>
+          </div>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="px-5 md:px-10 flex flex-col gap-10 py-10 w-full border-b border-commonborder"
+    >
+      <h1 class="text-5xl leading-15">
+        <span>Product & UX/UI Designer.</span><br />
+        <span class="font-bold">Refined simplicity</span>
+        <span> for complex data.</span>
+      </h1>
+      <div class="flex items-center justify-between w-full">
+        <div class="w-12 h-12 flex items-center justify-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="48"
+            height="48"
+            viewBox="0 0 48 48"
+            fill="none"
+            class="w-12 h-12"
+          >
+            <path
+              d="M39 27L24 42M24 42L9 27M24 42V6"
+              stroke="#030712"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div class="text-right">
+          <p class="text-sm font-light text-gray-400">
+            Refined simplicity meets intellectual empathy<br />
+            — that's how I design.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="w-full">
+      <!-- Project 1: Financial Data Component Library -->
+      <a
+        href="pf-1.html"
+        class="block border-b border-commonborder transition-all duration-300 ease-in-out"
+      >
+        <div
+          class="flex flex-col gap-6 items-center justify-center p-5 md:p-10 w-full"
+        >
+          <div
+            class="appbanner-container md:aspect-[1200/560] aspect-square w-full flex items-center justify-center overflow-hidden"
+          >
+            <!-- Approlling banner, replace this to img like other proj. Also remove appbanner-container when duplicate this -->
+            <div class="appbanner">
+              <div class="slider" style="--quantity: 10">
+                <div class="item" style="--position: 1">
+                  <img src="src/images/mapps/1.png" alt="" />
+                </div>
+                <div class="item" style="--position: 2">
+                  <img src="src/images/mapps/2.png" alt="" />
+                </div>
+                <div class="item" style="--position: 3">
+                  <img src="src/images/mapps/3.png" alt="" />
+                </div>
+                <div class="item" style="--position: 4">
+                  <img src="src/images/mapps/4.png" alt="" />
+                </div>
+                <div class="item" style="--position: 5">
+                  <img src="src/images/mapps/5.png" alt="" />
+                </div>
+                <div class="item" style="--position: 6">
+                  <img src="src/images/mapps/6.png" alt="" />
+                </div>
+                <div class="item" style="--position: 7">
+                  <img src="src/images/mapps/7.png" alt="" />
+                </div>
+                <div class="item" style="--position: 8">
+                  <img src="src/images/mapps/8.png" alt="" />
+                </div>
+                <div class="item" style="--position: 9">
+                  <img src="src/images/mapps/9.png" alt="" />
+                </div>
+                <div class="item" style="--position: 10">
+                  <img src="src/images/mapps/10.png" alt="" />
+                </div>
+              </div>
+
+              <!-- slider2 -->
+              <div class="slider2" style="--quantity: 10">
+                <div class="item" style="--position: 1">
+                  <img src="src/images/mapps/11.png" alt="" />
+                </div>
+                <div class="item" style="--position: 2">
+                  <img src="src/images/mapps/12.png" alt="" />
+                </div>
+                <div class="item" style="--position: 3">
+                  <img src="src/images/mapps/13.png" alt="" />
+                </div>
+                <div class="item" style="--position: 4">
+                  <img src="src/images/mapps/14.png" alt="" />
+                </div>
+                <div class="item" style="--position: 5">
+                  <img src="src/images/mapps/15.png" alt="" />
+                </div>
+                <div class="item" style="--position: 6">
+                  <img src="src/images/mapps/16.png" alt="" />
+                </div>
+                <div class="item" style="--position: 7">
+                  <img src="src/images/mapps/17.png" alt="" />
+                </div>
+                <div class="item" style="--position: 8">
+                  <img src="src/images/mapps/18.png" alt="" />
+                </div>
+                <div class="item" style="--position: 9">
+                  <img src="src/images/mapps/19.png" alt="" />
+                </div>
+                <div class="item" style="--position: 10">
+                  <img src="src/images/mapps/20.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="flex gap-2.5 items-start justify-start w-full">
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="flex flex-col gap-1 items-start justify-start w-full">
+                <h3 class="text-lg">Financial Data Component Library</h3>
+                <p class="flex text-sm text-text-label gap-2 flex-wrap">
+                  <span>Fintech</span> <span>|</span> <span> Product Design</span> <span>|</span>
+                  <span>Design Library</span>
+                </p>
+              </div>
+              <div class="flex gap-2 items-center justify-start">
+                <img
+                  src="src/images/companylogo/communify_small.png"
+                  alt="Communify"
+                  class="w-4 h-4 object-cover"
+                />
+                <span class="text-sm">Communify</span>
+              </div>
+            </div>
+            <div class="text-5xl text-right w-16">01</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Projects 2 & 3: Side by side -->
+      <div class="flex flex-col md:flex-row border-b border-gray-300">
+        <!-- Project 2: Options Market Research -->
+        <a
+          href="pf-2.html"
+          class="flex-1 border-r-0 md:border-r border-b md:border-b-0 border-commonborder transition-all duration-300 ease-in-out block"
+        >
+          <div
+            class="flex flex-col gap-6 items-center justify-center p-5 md:p-10 w-full"
+          >
+            <div
+              class="aspect-square w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                src="src/images/thumb/bmo-options.png"
+                alt="Options Market Research"
+                class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
+              />
+            </div>
+            <div class="flex gap-2.5 items-start justify-start w-full">
+              <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+                <div
+                  class="flex flex-col gap-1 items-start justify-start w-full"
+                >
+                  <h3 class="text-lg">Options Research Experience</h3>
+                  <p class="flex text-sm text-text-label gap-2 flex-wrap">
+                     <span>Fintech</span> <span>|</span> <span> UX/UI Design</span> <span>|</span>
+                    <span>User Test</span>
+                  </p>
+                </div>
+                <div class="flex gap-2 items-center justify-start">
+                  <img
+                    src="src/images/companylogo/bmo_small.png"
+                    alt="Bank of Montreal"
+                    class="w-4 h-4 object-cover"
+                  />
+                  <span class="text-sm">Bank of Montreal</span>
+                </div>
+              </div>
+              <div class="text-5xl text-right w-16">02</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 3: Market Research UX/UI -->
+        <a
+          href="pf-3.html"
+          class="flex-1 border-b-0 md:border-b-0 transition-all duration-300 ease-in-out block"
+        >
+          <div
+            class="flex flex-col gap-6 items-center justify-center p-5 md:p-10 w-full"
+          >
+            <div
+              class="aspect-square w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                src="src/images/thumb/commsec-market.png"
+                alt="Commsec Market Research"
+                class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
+              />
+            </div>
+            <div class="flex gap-2.5 items-start justify-start w-full">
+              <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+                <div
+                  class="flex flex-col gap-1 items-start justify-start w-full"
+                >
+                  <h3 class="text-lg">Market Research UX/UI</h3>
+                  <p class="flex text-sm text-text-label gap-2 flex-wrap">
+                    <span>Fintech</span> <span>|</span
+                    ><span>Project Lead</span> <span>|</span>
+                    <span>UX/UI Design</span>
+                  </p>
+                </div>
+                <div class="flex gap-2 items-center justify-start">
+                  <img
+                    src="src/images/companylogo/commsec_small.png"
+                    alt="Commsec"
+                    class="w-4 h-4 object-cover"
+                  />
+                  <span class="text-sm">Commsec</span>
+                </div>
+              </div>
+              <div class="text-5xl text-right w-16">03</div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Projects 4 & 5: Side by side -->
+      <div class="flex flex-col md:flex-row border-b border-gray-300">
+        <!-- Project 4: HKEX -->
+        <a
+          href="pf-4.html"
+          class="flex-1 border-r-0 md:border-r border-b md:border-b-0 border-commonborder transition-all duration-300 ease-in-out block"
+        >
+          <div
+            class="flex flex-col gap-6 items-center justify-center p-5 md:p-10 w-full"
+          >
+            <div
+              class="aspect-square w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                src="src/images/thumb/hkex.png"
+                alt="Investor Relations Portal"
+                class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
+              />
+            </div>
+            <div class="flex gap-2.5 items-start justify-start w-full">
+              <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+                <div
+                  class="flex flex-col gap-1 items-start justify-start w-full"
+                >
+                  <h3 class="text-lg">Investor Relations Portal</h3>
+                  <p class="flex text-sm text-text-label gap-2 flex-wrap">
+                     <span>Fintech</span> <span>|</span> <span> UX/UI Design</span>
+                  </p>
+                </div>
+                <div class="flex gap-2 items-center justify-start">
+                  <img
+                    src="src/images/companylogo/hkex_small.png"
+                    alt="HKEX"
+                    class="w-4 h-4 object-cover"
+                  />
+                  <span class="text-sm">Hong Kong Exchanges</span>
+                </div>
+              </div>
+              <div class="text-5xl text-right w-16">04</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 5: TIAA -->
+        <a
+          href="pf-5.html"
+          class="flex-1 border-b-0 md:border-b-0 transition-all duration-300 ease-in-out block"
+        >
+          <div
+            class="flex flex-col gap-6 items-center justify-center p-5 md:p-10 w-full"
+          >
+            <div
+              class="aspect-square w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                src="src/images/thumb/tiaa.png"
+                alt="Fund Screener"
+                class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
+              />
+            </div>
+            <div class="flex gap-2.5 items-start justify-start w-full">
+              <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+                <div
+                  class="flex flex-col gap-1 items-start justify-start w-full"
+                >
+                  <h3 class="text-lg">Fund Screener</h3>
+                  <p class="flex text-sm text-text-label gap-2 flex-wrap">
+                    <span>Fintech</span> <span>|</span>
+                    <span>UX/UI Design</span>
+                  </p>
+                </div>
+                <div class="flex gap-2 items-center justify-start">
+                  <img
+                    src="src/images/companylogo/tiaa_small.png"
+                    alt="TIAA"
+                    class="w-4 h-4 object-cover"
+                  />
+                  <span class="text-sm">TIAA</span>
+                </div>
+              </div>
+              <div class="text-5xl text-right w-16">05</div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Projects 6 & 7: Side by side -->
+      <div class="flex flex-col md:flex-row border-b border-gray-300">
+        <!-- Project 6: Dominos -->
+        <a
+          href="pf-6.html"
+          class="flex-1 border-r-0 md:border-r border-b md:border-b-0 border-commonborder transition-all duration-300 ease-in-out block"
+        >
+          <div
+            class="flex flex-col gap-6 items-center justify-center p-5 md:p-10 w-full"
+          >
+            <div
+              class="aspect-square w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                src="src/images/thumb/donimos.png"
+                alt="Online Order System"
+                class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
+              />
+            </div>
+            <div class="flex gap-2.5 items-start justify-start w-full">
+              <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+                <div
+                  class="flex flex-col gap-1 items-start justify-start w-full"
+                >
+                  <h3 class="text-lg">Online Order System</h3>
+                  <p class="flex text-sm text-text-label gap-2 flex-wrap">
+                     <span>Foodtech</span> <span>|</span> <span>Project Management</span> <span>|</span> <span>UX Design</span>
+                  </p>
+                </div>
+                <div class="flex gap-2 items-center justify-start">
+                  <img
+                    src="src/images/companylogo/domino_small.png"
+                    alt="Dominos"
+                    class="w-4 h-4 object-cover"
+                  />
+                  <span class="text-sm">Domino's Korea</span>
+                </div>
+              </div>
+              <div class="text-5xl text-right w-16">06</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 7: Audi -->
+        <a
+          href="pf-7.html"
+          class="flex-1 border-b-0 md:border-b-0 transition-all duration-300 ease-in-out block"
+        >
+          <div
+            class="flex flex-col gap-6 items-center justify-center p-5 md:p-10 w-full"
+          >
+            <div
+              class="aspect-square w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                src="src/images/thumb/audi.png"
+                alt="Mobile CRM"
+                class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
+              />
+            </div>
+            <div class="flex gap-2.5 items-start justify-start w-full">
+              <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+                <div
+                  class="flex flex-col gap-1 items-start justify-start w-full"
+                >
+                  <h3 class="text-lg">Mobile CRM App</h3>
+                  <p class="flex text-sm text-text-label gap-2 flex-wrap">
+                    <span>Automotive</span> <span>|</span
+                    ><span>Project Leading</span> <span>|</span>
+                    <span>UX Design</span>
+                  </p>
+                </div>
+                <div class="flex gap-2 items-center justify-start">
+                  <img
+                    src="src/images/companylogo/audi_small.png"
+                    alt="Dominos"
+                    class="w-4 h-4 object-cover"
+                  />
+                  <span class="text-sm">Audi Korea</span>
+                </div>
+              </div>
+              <div class="text-5xl text-right w-16">07</div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gray-950 flex flex-col md:flex-row md:items-center justify-between py-10 px-5 md:px-10 w-full gap-4 md:gap-0">
+      <div class="flex flex-col gap-1 items-start justify-center">
+        <div class="text-sm text-gray-400">Reach me</div>
+        <div class="flex gap-2 items-center justify-center">
+          <a
+            href="mailto:borim@borim.kim"
+            class="text-sm font-bold text-white cursor-pointer hover:text-key-lighter transition-colors">
+            borim@borim.kim
+          </a>
+          <div class="text-sm text-gray-400">or</div>
+          <a
+            href="https://www.linkedin.com/in/borimkim9302/"
+            class="text-sm font-bold text-white cursor-pointer hover:text-key-lighter transition-colors"
+            target="_blank"
+            rel="noopener noreferrer">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="text-sm text-gray-400">Designed & developed by © Borim Kim.</div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>

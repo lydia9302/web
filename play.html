@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Play Lab</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./output.css" rel="stylesheet" />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="src/fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="src/fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="src/fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="src/fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="src/fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="src/fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="src/fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="src/fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="src/fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="src/fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="src/fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="src/fav/favicon-16x16.png">
+    <link rel="manifest" href="src/fav/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="src/fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="font-display bg-white text-gray-950">
+    <!-- Custom Cursor -->
+    <div
+      class="cursor-follower"
+      style="
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        background-color: var(--color-key);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        transition: transform 0.1s ease-out;
+      "
+    ></div>
+    <div
+      class="cursor-main"
+      style="
+        position: fixed;
+        width: 30px;
+        height: 30px;
+        border: 1px solid var(--color-key);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99998;
+        transition: transform 0.2s ease-out, width 0.3s ease-out,
+          height 0.3s ease-out, background-color 0.3s ease-out,
+          border-width 0.3s ease-out;
+      "
+    ></div>
+
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between px-5 md:px-10 h-11 bg-white sticky top-0 z-50">
+      <a href="index.html" class="flex items-center gap-2 h-11 border-b-2 border-transparent box-border">
+        <div class="w-2.5 h-2.5 bg-key"></div>
+        <div class="text-sm font-medium text-gray-950">BORIM KIM</div>
+      </a>
+      <div class="flex items-center gap-4">
+        <!-- Pro Work -->
+        <a href="index.html" class="flex items-center h-11 cursor-pointer hover:text-key transition-color border-b-2 border-transparent box-border">
+          <div class="text-sm uppercase font-medium rolling-text">
+            <span>P</span><span>r</span><span>o</span><span> </span><span>W</span><span>o</span><span>r</span><span>k</span>
+          </div>
+        </a>
+        <!-- Play Lab -->
+        <a href="play.html" class="flex items-center h-11 cursor-pointer text-key border-b-2 border-key box-border">
+          <div class="text-sm uppercase font-bold rolling-text">
+            <span>P</span><span>l</span><span>a</span><span>y</span><span> </span><span>L</span><span>a</span><span>b</span>
+          </div>
+        </a>
+        <!-- About -->
+        <a href="about.html" class="flex items-center h-11 cursor-pointer hover:text-key transition-color border-b-2 border-transparent box-border">
+          <div class="text-sm uppercase font-medium rolling-text">
+            <span>A</span><span>b</span><span>o</span><span>u</span><span>t</span>
+          </div>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="px-5 md:px-10 flex flex-col gap-10 py-10 w-full border-b border-commonborder"
+    >
+      <h1 class="text-5xl leading-15">
+        <span class="font-bold">An open lab of design</span><br />
+        <span>Raw ideas, playful experiments, and work-in-progress—</span><br />
+        <span>beyond the brief.</span>
+      </h1>
+      <div class="flex items-center justify-between w-full">
+        <div class="w-12 h-12 flex items-center justify-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="48"
+            height="48"
+            viewBox="0 0 48 48"
+            fill="none"
+            class="w-12 h-12"
+          >
+            <path
+              d="M39 27L24 42M24 42L9 27M24 42V6"
+              stroke="#030712"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div class="text-right">
+          <p class="text-sm font-light text-gray-400">
+            Refined simplicity meets intellectual empathy<br />
+            — that's how I design.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Grid Section -->
+    <section class="w-full">
+        <!-- Grid Container: 3 columns -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-x divide-gray-300 divide-y">
+            <!-- Row 1 -->
+            <!-- Card 1 -->
+            <a href="pl-1.html" class="group p-10 hover:bg-gray-50 transition-all duration-300 cursor-pointer">
+              <div class="flex flex-col gap-6 w-full">
+                  <div class="aspect-square w-full bg-gray-200 overflow-hidden">
+                      <img src="src/images/thumb/pl-1.png" alt="Project Feltron" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                  </div>
+                  <div class="flex flex-col gap-1 items-start justify-start w-full">
+                    <h3 class="text-lg">Project Feltron</h3>
+                    <p class="flex text-sm text-gray-400 gap-2 flex-wrap">
+                      <span>Fintech</span> <span>|</span>
+                      <span>Experiment</span>
+                    </p>
+                  </div>
+              </div>
+            </a>
+
+            <!-- Card 2-->
+            <a href="pl-2.html" class="group p-10 hover:bg-gray-50 transition-all duration-300 cursor-pointer">
+              <div class="flex flex-col gap-6 w-full">
+                  <div class="aspect-square w-full bg-gray-200 overflow-hidden">
+                      <img src="src/images/thumb/pl-2.gif" alt="Vroom" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                  </div>
+                  <div class="flex flex-col gap-1 items-start justify-start w-full">
+                    <h3 class="text-lg">Vroom Vroom, Bubble Bubble</h3>
+                    <p class="flex text-sm text-gray-400 gap-2 flex-wrap">
+                      <span>Fintech</span> <span>|</span>
+                      <span>Experiment</span>
+                    </p>
+                  </div>
+              </div>
+            </a>
+
+            <!-- Card 3-->
+            <a href="pl-3.html" class="group p-10 hover:bg-gray-50 transition-all duration-300 cursor-pointer">
+              <div class="flex flex-col gap-6 w-full">
+                  <div class="aspect-square w-full bg-gray-200 overflow-hidden">
+                      <img src="src/images/thumb/pl-3.png" alt="Interactive Investment Explorer" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                  </div>
+                  <div class="flex flex-col gap-1 items-start justify-start w-full">
+                    <h3 class="text-lg">Interactive Investment Explorer</h3>
+                    <p class="flex text-sm text-gray-400 gap-2 flex-wrap">
+                      <span>Fintech</span> <span>|</span>
+                      <span>Experiment</span>
+                    </p>
+                  </div>
+              </div>
+            </a>
+
+            <!-- Row 2 -->
+            <!-- Card 4 -->
+            <a href="pl-4.html" class="group p-10 hover:bg-gray-50 transition-all duration-300 cursor-pointer">
+              <div class="flex flex-col gap-6 w-full">
+                  <div class="aspect-square w-full bg-gray-200 overflow-hidden">
+                      <img src="src/images/thumb/pl-4.png" alt="SAI" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                  </div>
+                  <div class="flex flex-col gap-1 items-start justify-start w-full">
+                    <h3 class="text-lg">SA:I</h3>
+                    <p class="flex text-sm text-gray-400 gap-2 flex-wrap">
+                      <span>Game</span> <span>|</span>
+                      <span>Business</span>
+                    </p>
+                  </div>
+              </div>
+            </a>
+
+            <!-- Card 5-->
+            <a href="pl-5.html" class="group p-10 hover:bg-gray-50 transition-all duration-300 cursor-pointer">
+              <div class="flex flex-col gap-6 w-full">
+                  <div class="aspect-square w-full bg-gray-200 overflow-hidden">
+                      <img src="src/images/thumb/pl-5.png" alt="Presto Runners" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                  </div>
+                  <div class="flex flex-col gap-1 items-start justify-start w-full">
+                    <h3 class="text-lg">Presto Runners</h3>
+                    <p class="flex text-sm text-gray-400 gap-2 flex-wrap">
+                      <span>Game</span>
+                    </p>
+                  </div>
+              </div>
+            </a>
+
+            <!-- Card 6-->
+            <a href="pl-6.html" class="group p-10 hover:bg-gray-50 transition-all duration-300 cursor-pointer">
+              <div class="flex flex-col gap-6 w-full">
+                  <div class="aspect-square w-full bg-gray-200 overflow-hidden">
+                      <img src="src/images/thumb/pl-6.gif" alt="Boost-E" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                  </div>
+                  <div class="flex flex-col gap-1 items-start justify-start w-full">
+                    <h3 class="text-lg">Boost-E</h3>
+                    <p class="flex text-sm text-gray-400 gap-2 flex-wrap">
+                      <span>Motion</span> <span>|</span>
+                      <span>BI</span>
+                    </p>
+                  </div>
+              </div>
+            </a>
+
+            <!-- Row 3 -->
+            <!-- Card 7-->
+            <a href="pl-7.html" class="group p-10 hover:bg-gray-50 transition-all duration-300 cursor-pointer">
+              <div class="flex flex-col gap-6 w-full">
+                  <div class="aspect-square w-full bg-gray-200 overflow-hidden">
+                      <img src="src/images/thumb/pl-7.gif" alt="Friends" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                  </div>
+                  <div class="flex flex-col gap-1 items-start justify-start w-full">
+                    <h3 class="text-lg">Friends</h3>
+                    <p class="flex text-sm text-gray-400 gap-2 flex-wrap">
+                      <span>Motion</span>
+                    </p>
+                  </div>
+              </div>
+            </a>
+
+            <!-- Card 8-->
+            <a href="pl-8.html" class="group p-10 hover:bg-gray-50 transition-all duration-300 cursor-pointer">
+              <div class="flex flex-col gap-6 w-full">
+                  <div class="aspect-square w-full bg-gray-200 overflow-hidden">
+                      <img src="src/images/thumb/pl-8.gif" alt="Once Again" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                  </div>
+                  <div class="flex flex-col gap-1 items-start justify-start w-full">
+                    <h3 class="text-lg">Once Again</h3>
+                    <p class="flex text-sm text-gray-400 gap-2 flex-wrap">
+                      <span>Motion</span>
+                    </p>
+                  </div>
+              </div>
+            </a>
+
+            <!-- Card 9-->
+            <a href="pl-9.html" class="group p-10 hover:bg-gray-50 transition-all duration-300 cursor-pointer">
+              <div class="flex flex-col gap-6 w-full">
+                  <div class="aspect-square w-full bg-gray-200 overflow-hidden">
+                      <img src="src/images/thumb/pl-9.png" alt="Untitled" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                  </div>
+                  <div class="flex flex-col gap-1 items-start justify-start w-full">
+                    <h3 class="text-lg">Untitled</h3>
+                    <p class="flex text-sm text-gray-400 gap-2 flex-wrap">
+                      <span>Motion</span>
+                    </p>
+                  </div>
+              </div>
+            </a>
+
+            <!-- Row 4 -->
+            <!-- Card 10-->
+            <a href="pl-10.html" class="group p-10 hover:bg-gray-50 transition-all duration-300 cursor-pointer">
+              <div class="flex flex-col gap-6 w-full">
+                  <div class="aspect-square w-full bg-gray-200 overflow-hidden">
+                      <img src="src/images/thumb/pl-10.png" alt="Gone with the Wind" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                  </div>
+                  <div class="flex flex-col gap-1 items-start justify-start w-full">
+                    <h3 class="text-lg">Gone with the Wind</h3>
+                    <p class="flex text-sm text-gray-400 gap-2 flex-wrap">
+                      <span>Graphic</span>
+                    </p>
+                  </div>
+              </div>
+            </a>
+
+            <!-- Card 11-->
+            <a href="pl-11.html" class="group p-10 hover:bg-gray-50 transition-all duration-300 cursor-pointer">
+              <div class="flex flex-col gap-6 w-full">
+                  <div class="aspect-square w-full bg-gray-200 overflow-hidden">
+                      <img src="src/images/thumb/pl-11.png" alt="Big Breakfast" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                  </div>
+                  <div class="flex flex-col gap-1 items-start justify-start w-full">
+                    <h3 class="text-lg">Big Breakfast</h3>
+                    <p class="flex text-sm text-gray-400 gap-2 flex-wrap">
+                      <span>Graphic</span>
+                    </p>
+                  </div>
+              </div>
+            </a>
+
+            <!-- Card 12-->
+            <a href="pl-12.html" class="group p-10 hover:bg-gray-50 transition-all duration-300 cursor-pointer">
+              <div class="flex flex-col gap-6 w-full">
+                  <div class="aspect-square w-full bg-gray-200 overflow-hidden">
+                      <img src="src/images/thumb/pl-12.png" alt="Hardware" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                  </div>
+                  <div class="flex flex-col gap-1 items-start justify-start w-full">
+                    <h3 class="text-lg">Hardware</h3>
+                    <p class="flex text-sm text-gray-400 gap-2 flex-wrap">
+                      <span>Graphic</span>
+                    </p>
+                  </div>
+              </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section
+      class="bg-gray-950 flex flex-col gap-8 items-center justify-start py-10 px-5 md:px-10 w-full"
+    >
+      <div class="text-3xl font-semibold text-white">Ready for more?</div>
+      <div class="flex gap-5 items-center justify-center">
+        <!-- Secondary btn -->
+        <a
+          href="index.html"
+          class="secondary flex items-center gap-1 px-4 py-2 border border-white text-white hover:border-key-lighter hover:text-key-lighter transition-colors"
+        >
+          <span>Explore Pro Work</span>
+          <svg
+            class="w-6 h-6"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7 17L17 7M17 7H7M17 7V17"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+        <div class="text-sm font-normal text-gray-400">or</div>
+        <!-- Tertiary btn -->
+            <a href="about.html" class="tertiary flex items-center gap-1 py-2 text-white hover:text-key-lighter transition-colors">
+              <span>Learn about Me</span>
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gray-950 flex flex-col md:flex-row md:items-center justify-between py-10 px-5 md:px-10 w-full gap-4 md:gap-0">
+      <div class="flex flex-col gap-1 items-start justify-center">
+        <div class="text-sm text-gray-400">Reach me</div>
+        <div class="flex gap-2 items-center justify-center">
+          <a
+            href="mailto:borim@borim.kim"
+            class="text-sm font-bold text-white cursor-pointer hover:text-key-lighter transition-colors">
+            borim@borim.kim
+          </a>
+          <div class="text-sm text-gray-400">or</div>
+          <a
+            href="https://www.linkedin.com/in/borimkim9302/"
+            class="text-sm font-bold text-white cursor-pointer hover:text-key-lighter transition-colors"
+            target="_blank"
+            rel="noopener noreferrer">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="text-sm text-gray-400">Designed & developed by © Borim Kim.</div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>

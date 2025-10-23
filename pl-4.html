@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Financial Data Component Library</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./output.css" rel="stylesheet" />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="src/fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="src/fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="src/fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="src/fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="src/fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="src/fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="src/fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="src/fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="src/fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="src/fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="src/fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="src/fav/favicon-16x16.png">
+    <link rel="manifest" href="src/fav/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="src/fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="font-display bg-white text-gray-950">
+    <!-- Custom Cursor -->
+    <div
+      class="cursor-follower"
+      style="
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        background-color: var(--color-key);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        transition: transform 0.1s ease-out;
+      "
+    ></div>
+    <div
+      class="cursor-main"
+      style="
+        position: fixed;
+        width: 30px;
+        height: 30px;
+        border: 1px solid var(--color-key);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99998;
+        transition: transform 0.2s ease-out, width 0.3s ease-out,
+          height 0.3s ease-out, background-color 0.3s ease-out,
+          border-width 0.3s ease-out;
+      "
+    ></div>
+
+    <!-- Side Navigation -->
+    <div id="side-nav" class="hidden lg:flex" style="position: fixed; left: 16px; top: 50%; transform: translateY(-50%); z-index: 50; flex-direction: column; gap: 0px; opacity: 0; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
+        <div class="nav-item" style="display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 2px 8px; min-height: 16px; transition: all 0.3s ease-out;" data-section="intro">
+            <div class="nav-line" style="width: 24px; height: 1px; background-color: #4B5563; transition: all 0.3s ease-out;"></div>
+            <span class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase">Intro</span>
+        </div>
+        <div class="nav-item" style="display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 2px 8px; min-height: 16px; transition: all 0.3s ease-out;" data-section="goal">
+            <div class="nav-line" style="width: 24px; height: 1px; background-color: #4B5563; transition: all 0.3s ease-out;"></div>
+            <span class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase">Scenario</span>
+        </div>
+        <div class="nav-item" style="display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 2px 8px; min-height: 16px; transition: all 0.3s ease-out;" data-section="outcomes">
+            <div class="nav-line" style="width: 24px; height: 1px; background-color: #4B5563; transition: all 0.3s ease-out;"></div>
+            <span class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase">Levels</span>
+        </div>
+        <div class="nav-item" style="display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 2px 8px; min-height: 16px; transition: all 0.3s ease-out;" data-section="features">
+            <div class="nav-line" style="width: 24px; height: 1px; background-color: #4B5563; transition: all 0.3s ease-out;"></div>
+            <span class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase">Ending</span>
+        </div>
+        <div class="nav-item" style="display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 2px 8px; min-height: 16px; transition: all 0.3s ease-out;" data-section="process">
+            <div class="nav-line" style="width: 24px; height: 1px; background-color: #4B5563; transition: all 0.3s ease-out;"></div>
+            <span class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase">Hidden Story</span>
+        </div>
+        <div class="nav-item" style="display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 2px 8px; min-height: 16px; transition: all 0.3s ease-out;" data-section="challenges">
+            <div class="nav-line" style="width: 24px; height: 1px; background-color: #4B5563; transition: all 0.3s ease-out;"></div>
+            <span class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase">Awards</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between px-5 md:px-10 h-11 bg-white sticky top-0 z-50">
+      <a href="index.html" class="flex items-center gap-2 h-11 border-b-2 border-transparent box-border">
+        <div class="w-2.5 h-2.5 bg-key"></div>
+        <div class="text-sm font-medium text-gray-950">BORIM KIM</div>
+      </a>
+      <div class="flex items-center gap-4">
+        <!-- Pro Work -->
+        <a href="index.html" class="flex items-center h-11 cursor-pointer hover:text-key transition-color border-b-2 border-transparent box-border">
+          <div class="text-sm uppercase font-medium rolling-text">
+            <span>P</span><span>r</span><span>o</span><span> </span><span>W</span><span>o</span><span>r</span><span>k</span>
+          </div>
+        </a>
+        <!-- Play Lab -->
+        <a href="play.html" class="flex items-center h-11 cursor-pointer hover:text-key transition-color border-b-2 border-transparent box-border">
+          <div class="text-sm uppercase font-medium rolling-text">
+            <span>P</span><span>l</span><span>a</span><span>y</span><span> </span><span>L</span><span>a</span><span>b</span>
+          </div>
+        </a>
+        <!-- About -->
+        <a href="about.html" class="flex items-center h-11 cursor-pointer hover:text-key transition-color border-b-2 border-transparent box-border">
+          <div class="text-sm uppercase font-medium rolling-text">
+            <span>A</span><span>b</span><span>o</span><span>u</span><span>t</span>
+          </div>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="flex flex-col items-center justify-center w-full animate-fade-in relative">
+      <div class="w-full flex items-center justify-center overflow-hidden">
+        <img
+          src="src/images/banner/pl-4.png"
+          alt="Final Design for Release"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section id="intro" class="flex flex-col justify-center items-center w-full py-20 bg-gray-950 px-5 md:px-10 gap-20">
+      <div class="flex flex-col max-w-6xl w-full gap-12">
+        <div class="flex flex-col gap-4 text-center">
+            <h1 class="text-4xl text-white font-bold">What does death mean to you?</h1>
+            <p class="text-gray-400 text-base">
+              In the world of SA:I, death is not something to be defeated.</br>
+              It is a journey to be understood, embraced, and finally accepted.
+            </p>
+        </div>
+        <!-- Video -->
+        <div class="flex flex-col md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-left">
+          <div class="relative w-full" style="padding-bottom: 56.25%;">
+            <iframe 
+              class="absolute top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/BPlgInaP1no" 
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider-darker bg-gray-950 w-full"></div>
+
+    <!-- About(Intro2) Section -->
+    <section class="flex flex-col justify-center items-center w-full py-20 bg-gray-950 px-5 md:px-10 gap-20">
+      <div class="flex flex-col max-w-6xl w-full gap-12">
+        <div class="flex flex-col gap-4 text-center">
+            <h1 class="text-4xl text-white font-bold">About SA:I</h1>
+            <p class="text-gray-400 text-base">
+              SA:I is a mobile platformer game featuring multiple endings based on the player’s choices.</br>
+              Players solve puzzles by moving map pieces and interacting with various objects and creatures.</br>
+              Every map and object carries a symbolic meaning connected to the story.</br>
+              The more players uncover the hidden meanings behind these symbols, the closer they come to discovering the true ending.
+            </p>
+        </div>
+        <!-- Img -->
+        <div class="w-full flex items-center justify-center overflow-hidden">
+          <img
+            src="src/images/idea/pl-4_1.png"
+            alt="Final Design for Release"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider-darker bg-gray-950 w-full"></div>
+
+    <!-- Scenario -->
+    <section id="goal" class="bg-gray-950 flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10 overflow-hidden">
+      <div class="flex flex-col gap-12 max-w-6xl w-full mx-auto">
+        <div class="flex flex-col gap-4">
+            <h1 class="text-4xl text-white font-bold text-center">Game Scenario</h1>
+        </div>
+
+        <!-- Story 1 -->
+        <div class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-left feature-section-mobile md:flex-row flex-col overflow-hidden">
+          <div class="flex flex-1 items-center justify-center feature-image overflow-hidden">
+            <img
+              src="src/images/idea/pl-4-st_1.png"
+              alt="Story"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full">
+            <div class="flex flex-col text-base font-normal text-gray-400 w-full feature-description gap-3">
+              <p>
+                A grim reaper went to collect a soul, just like any other day. But when he absorbed the soul of a young girl, something felt wrong.
+              </p>
+              <p>
+                He tried to shake the thought away. After all, today was supposed to be just another day, no different from the countless ones before.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story 2 -->
+        <div class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-left feature-section-mobile md:flex-row flex-col overflow-hidden">
+          <div class="flex flex-1 items-center justify-center feature-image overflow-hidden">
+            <img
+              src="src/images/idea/pl-4-st_2.png"
+              alt="Story"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full">
+            <div class="flex flex-col text-base font-normal text-gray-400 w-full feature-description gap-3">
+              <p>
+                The next morning, as he arrived to guide an elderly soul, he finally realized it. Yesterday was not ordinary after all.
+              </p>
+              <p>
+                Perhaps he should have thought more about that feeling.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story 3 -->
+        <div class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-left feature-section-mobile md:flex-row flex-col overflow-hidden">
+          <div class="flex flex-1 items-center justify-center feature-image overflow-hidden">
+            <img
+              src="src/images/idea/pl-4-st_3.png"
+              alt="Story"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full">
+            <div class="flex flex-col text-base font-normal text-gray-400 w-full feature-description gap-3">
+              <p>
+                In the blink of an eye, he was pulled into complete darkness. When he awoke, he found himself in a silent land where light no longer existed.
+              </p>
+              <p>
+                He had no idea where he was. But as he lit the first stone lantern, a small part of the darkness lifted.
+              </p>
+              <p>
+                He decided to light every lantern he could find, believing they might reveal the truth of this strange world.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story 4 -->
+        <div class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-left feature-section-mobile md:flex-row flex-col overflow-hidden">
+          <div class="flex flex-1 items-center justify-center feature-image overflow-hidden">
+            <img
+              src="src/images/idea/pl-4-st_4.png"
+              alt="Story"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full">
+            <div class="flex flex-col text-base font-normal text-gray-400 w-full feature-description gap-3">
+              <p>
+                It was a peculiar place. Mysterious, yet bound by hidden rules. With every puzzle he solved, new paths unfolded before him.
+              </p>
+              <p>
+                Once, he had been the guide, leading lost souls to their rest. But now, it felt as though he was the one being guided.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story 5 -->
+        <div class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-left feature-section-mobile md:flex-row flex-col overflow-hidden">
+          <div class="flex flex-1 items-center justify-center feature-image overflow-hidden">
+            <img
+              src="src/images/idea/pl-4-st_5.png"
+              alt="Story"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full">
+            <div class="flex flex-col text-base font-normal text-gray-400 w-full feature-description gap-3">
+              <p>
+                Just as he began to grow accustomed to the rhythm of this place, he encountered something, an overwhelming darkness staring quietly back at him.
+              </p>
+              <p>
+                It felt unfamiliar, and yet… strangely familiar.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story 6 -->
+        <div class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-left feature-section-mobile md:flex-row flex-col overflow-hidden">
+          <div class="flex flex-1 items-center justify-center feature-image overflow-hidden">
+            <img
+              src="src/images/idea/pl-4-st_6.png"
+              alt="Story"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full">
+            <div class="flex flex-col text-base font-normal text-gray-400 w-full feature-description gap-3">
+              <p>
+                As he stepped closer, a sudden vision flooded his mind. A fleeting memory, but not his own.
+              </p>
+              <p>
+                Whose memory was it? And what was this place?
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story 7 -->
+        <div class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-left feature-section-mobile md:flex-row flex-col overflow-hidden">
+          <div class="flex flex-1 items-center justify-center feature-image overflow-hidden">
+            <img
+              src="src/images/idea/pl-4-st_7.png"
+              alt="Story"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full">
+            <div class="flex flex-col text-base font-normal text-gray-400 w-full feature-description gap-3">
+              <p>
+                The questions multiplied, but he no longer hesitated.
+              </p>
+              <p>
+                He decided to keep moving forward, one lantern at a time.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Levels -->
+    <section id="outcomes" class="bg-gray-50 flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10" >
+      <div class="flex flex-col gap-12 items-start justify-start max-w-6xl w-full mx-auto" >
+        <div class="flex flex-col gap-4">
+            <h1 class="text-4xl text-gray-950 font-bold">Levels of the Game</h1>
+            <p class="text-gray-950 text-base">
+              SA:I consists of five stages, each representing a different phase of grief. </br>
+              The creatures, environments, and map designs within each stage symbolize the emotional journey of the deceased as they confront death.
+            </p>
+            <p class="text-gray-400 text-sm">
+              Inspired by Elisabeth Kübler-Ross’s model of grief (1926–2004), the game reflects the five stages people experience when facing loss: Denial, Anger, Bargaining, Depression, and Acceptance.
+            </p>
+            <!-- Img -->
+            <div class="w-full flex items-center justify-center overflow-hidden">
+              <img
+                src="src/images/idea/pl-4-lv_0.png"
+                alt="Final Design for Release"
+                class="w-full h-full object-cover"
+              />
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-10 items-start justify-start w-full process-step">
+
+         <!-- Lv 1 -->
+          <div class="flex flex-col gap-5 items-start justify-center w-full process-step" >
+            <div class="flex gap-3 items-start justify-start w-full">
+              <div class="text-4xl font-normal text-gray-950 w-12">01</div>
+              <div class="flex-1 flex flex-col font-normal items-start justify-start gap-1">
+                <div class="flex flex-col justify-center text-lg text-gray-950 w-full">
+                  <p>Denial</p>
+                </div>
+                <div class="text-sm text-gray-500 w-full">
+                  <p>
+                    This is the first stage of grief. </br>
+                    In denial, individuals struggle to accept what has happened.</br>
+                    They cling to memories, thoughts, or illusions that feel safer than reality, holding on to what they can no longer reach.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full flex items-center justify-center overflow-hidden" >
+              <img
+                src="src/images/idea/pl-4-lv_1.png"
+                alt="Level"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <!-- Lv 2 -->
+          <div class="flex flex-col gap-5 items-start justify-center w-full process-step" >
+            <div class="flex gap-3 items-start justify-start w-full">
+              <div class="text-4xl font-normal text-gray-950 w-12">02</div>
+              <div class="flex-1 flex flex-col font-normal items-start justify-start gap-1">
+                <div class="flex flex-col justify-center text-lg text-gray-950 w-full">
+                  <p>Anger</p>
+                </div>
+                <div class="text-sm text-gray-500 w-full">
+                  <p>
+                    As denial fades, frustration takes its place. </br>
+                    In this stage, emotions erupt into anger toward fate, others, or even themselves. </br>
+                    Questions arise: “Why me?” “Why this?” The world feels unfair, and every shadow seems to fight back.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full flex items-center justify-center overflow-hidden" >
+              <img
+                src="src/images/idea/pl-4-lv_2.png"
+                alt="Level"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <!-- Lv 3 -->
+          <div class="flex flex-col gap-5 items-start justify-center w-full process-step" >
+            <div class="flex gap-3 items-start justify-start w-full">
+              <div class="text-4xl font-normal text-gray-950 w-12">03</div>
+              <div class="flex-1 flex flex-col font-normal items-start justify-start gap-1">
+                <div class="flex flex-col justify-center text-lg text-gray-950 w-full">
+                  <p>Bargaining</p>
+                </div>
+                <div class="text-sm text-gray-500 w-full">
+                  <p>
+                    In bargaining, one searches for meaning or a way to change the inevitable.</br>
+                    They plead with fate, offering deals or promises in hopes of reversing what has been lost, an act of desperate hope for one more moment, one more chance.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full flex items-center justify-center overflow-hidden" >
+              <img
+                src="src/images/idea/pl-4-lv_3.png"
+                alt="Level"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <!-- Lv 4 -->
+          <div class="flex flex-col gap-5 items-start justify-center w-full process-step" >
+            <div class="flex gap-3 items-start justify-start w-full">
+              <div class="text-4xl font-normal text-gray-950 w-12">04</div>
+              <div class="flex-1 flex flex-col font-normal items-start justify-start gap-1">
+                <div class="flex flex-col justify-center text-lg text-gray-950 w-full">
+                  <p>Depression</p>
+                </div>
+                <div class="text-sm text-gray-500 w-full">
+                  <p>
+                    Here, the world grows quiet. </br>
+                    Sadness and reflection take hold, and the weight of loss finally settles in. </br>
+                    This stage is marked by stillness, time spent facing what cannot be changed, and finding the strength to simply feel.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full flex items-center justify-center overflow-hidden" >
+              <img
+                src="src/images/idea/pl-4-lv_4.png"
+                alt="Level"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <!-- Lv 5 -->
+          <div class="flex flex-col gap-5 items-start justify-center w-full process-step" >
+            <div class="flex gap-3 items-start justify-start w-full">
+              <div class="text-4xl font-normal text-gray-950 w-12">05</div>
+              <div class="flex-1 flex flex-col font-normal items-start justify-start gap-1">
+                <div class="flex flex-col justify-center text-lg text-gray-950 w-full">
+                  <p>Acceptance</p>
+                </div>
+                <div class="text-sm text-gray-500 w-full">
+                  <p>
+                    In the final stage, the person begins to make peace with what has happened.</br>
+                    It is not forgetting, but understanding. The light returns, not to erase the past, but to balance it.</br>
+                    From grief comes clarity, and with it, the courage to move forward.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full flex items-center justify-center overflow-hidden" >
+              <img
+                src="src/images/idea/pl-4-lv_5.png"
+                alt="Level"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Ending -->
+    <section id="features" class="bg-gray-950 flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10" >
+      <div class="flex flex-col gap-12 max-w-6xl w-full mx-auto" >
+        <div class="flex flex-col gap-4 text-center">
+            <h1 class="text-4xl text-white font-bold">Game Ending</h1>
+            <p class="text-gray-400 text-base">
+              The ending changes based on how the player chooses to play.</br>
+              You may open the path and escape, or dive deeper into the hidden secrets of the world.</br>
+              Every choice matters, and each decision shapes a different ending.
+            </p>
+        </div>
+
+        <div class="flex flex-col gap-10 items-start justify-start w-full process-step">
+
+          <!-- Ed A -->
+          <div class="flex flex-col gap-5 items-start justify-center w-full process-step" >
+            <div class="flex gap-3 items-start justify-start w-full">
+              <div class="text-4xl font-normal text-white w-12">A.</div>
+              <div class="flex-1 flex flex-col font-normal items-start justify-start gap-1">
+                <div class="flex flex-col justify-center text-lg text-white w-full">
+                  <p>The Grim Reaper walked toward the light, but darkness followed behind.</p>
+                </div>
+                <div class="text-sm text-gray-500 w-full">
+                  <p>
+                    The reaper found the way forward but failed to uncover the truth hidden in the shadows.</br>
+                    What was this place, and why did it exist? Without finding the answers, he stepped into the light, leaving the darkness unresolved behind him.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full flex items-center justify-center overflow-hidden" >
+              <img
+                src="src/images/idea/pl-4-ed_1.png"
+                alt="Level"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <!-- Ed B -->
+          <div class="flex flex-col gap-5 items-start justify-center w-full process-step" >
+            <div class="flex gap-3 items-start justify-start w-full">
+              <div class="text-4xl font-normal text-white w-12">B.</div>
+              <div class="flex-1 flex flex-col font-normal items-start justify-start gap-1">
+                <div class="flex flex-col justify-center text-lg text-white w-full">
+                  <p>Guided the souls of the girl and himself toward the light.</p>
+                </div>
+                <div class="text-sm text-gray-500 w-full">
+                  <p>
+                    The reaper discovered the lanterns and guided the souls through the silent land.</br>
+                    Yet even after the path was lit, sorrow lingered. The light revealed the way, but could not heal the grief that bound them.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full flex items-center justify-center overflow-hidden" >
+              <img
+                src="src/images/idea/pl-4-ed_2.png"
+                alt="Level"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <!-- Ed C -->
+          <div class="flex flex-col gap-5 items-start justify-center w-full process-step" >
+            <div class="flex gap-3 items-start justify-start w-full">
+              <div class="text-4xl font-normal text-white w-12">C.</div>
+              <div class="flex-1 flex flex-col font-normal items-start justify-start gap-1">
+                <div class="flex flex-col justify-center text-lg text-white w-full">
+                  <p>Grief, revenge, and unchanging reality. At last, the reaper understood it all.</p>
+                </div>
+                <div class="text-sm text-gray-500 w-full">
+                  <p>
+                    The reaper finally grasped the truth behind the girl’s heart and the meaning of the darkness.</br>
+                    Accepting both death and memory, they walked together toward the light, finding peace at the end of their long journey.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full flex items-center justify-center overflow-hidden" >
+              <img
+                src="src/images/idea/pl-4-ed_3.png"
+                alt="Level"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider-darker bg-gray-950 w-full"></div>
+
+    <!-- Hidden Story -->
+    <section id="process" class="bg-gray-950 flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10" >
+      <div class="flex flex-col gap-12 max-w-6xl w-full mx-auto" >
+        <div class="flex flex-col gap-4 text-center">
+            <h1 class="text-4xl text-white font-bold">The Girl’s Hidden Story</h1>
+            <p class="text-gray-400 text-base">
+              She was once a servant’s daughter in a grand house that never felt like home.</br>
+              But with her loving mother, she still knew happiness.
+            </p>
+            <p class="text-gray-400 text-base">
+              One night, tragedy came quietly.</br>
+              The cruel master sold her to a brothel, and her mother, broken by grief, took her own life.</br>
+              By the time the girl found her again, it was already too late.
+            </p>
+            <p class="text-gray-400 text-base">
+              While fleeing from the master’s violence, she too met her end.</br>
+              Her soul wandered, trapped between memory and sorrow, unable to rest.</br>
+              Until one day, a Grim Reaper appeared.</br>
+              And together, they began their journey toward the light.
+            </p>
+        </div>
+        <div class="w-full flex items-center justify-center overflow-hidden" >
+          <img
+            src="src/images/idea/pl-4-hidden_1.png"
+            alt="Level"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards -->
+    <section id="challenges" class="outcome-section  flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10">
+      <div class="flex flex-col gap-20 items-start justify-start max-w-6xl w-full mx-auto">
+        <div class="flex flex-col gap-10 w-full">
+          <div class="flex flex-col gap-4 text-center">
+            <h1 class="text-4xl text-gray-950 font-bold">Awards</h1>
+          </div>
+          <div class="flex flex-col md:gap-6 gap-4 text-center w-full flex-wrap">
+            <div class="flex flex-col gap-1">
+              <p class="text-lg font-semibold text-gray-950 mb-0">2014 Selection for Smart Creative Project (Smart Startup Program)</p>
+              <p class="text-sm text-gray-600 mb-0">Hosted by the Korea Institute of Startup & Entrepreneurship Development</p>
+            </div>
+            <div class="flex flex-col gap-1">
+              <p class="text-lg font-semibold text-gray-950 mb-0">2013 Best Research Award, Convergent Consortium in Sungshin Women’s University</p>
+              <p class="text-sm text-gray-600 mb-0">Awarded for outstanding research and creative integration across disciplines</p>
+            </div>
+            <div class="flex flex-col gap-1">
+              <p class="text-lg font-semibold text-gray-950 mb-0">2013 Special Award for Idea, Global Game Development Contest</p>
+              <p class="text-sm text-gray-600 mb-0">Hosted by the Korea Creative Content Agency (KOCCA)</p>
+            </div>
+            <div class="flex flex-col gap-1">
+              <p class="text-lg font-semibold text-gray-950 mb-0">2013 Excellence in Research Award, PiQuest Design Competition</p>
+              <p class="text-sm text-gray-600 mb-0">Hosted by the Korea Institute of Design Promotion (KIDP) under the Ministry of Knowledge Economy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section
+      class="bg-gray-950 flex flex-col gap-8 items-center justify-start py-10 px-5 md:px-10 w-full"
+    >
+      <div class="text-3xl font-semibold text-white">Ready for more?</div>
+      <div class="flex flex-col gap-3 items-center">
+        <div class="flex gap-5 items-center justify-center">
+          <!-- Secondary btn -->
+          <a
+            href="pl-3.html"
+            class="secondary flex items-center gap-1 px-4 py-2 border border-white text-white hover:border-key-lighter hover:text-key-lighter transition-colors"
+          >
+            <svg
+              class="w-6 h-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M19 12H5M5 12L12 19M5 12L12 5"
+                stroke="currentColor"
+                stroke-width="1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span>Prev Experiment</span>
+          </a>
+          <!-- Secondary btn -->
+          <a
+            href="pl-5.html"
+            class="secondary flex items-center gap-1 px-4 py-2 border border-white text-white hover:border-key-lighter hover:text-key-lighter transition-colors"
+          >
+            <span>Next Experiment</span>
+            <svg
+              class="w-6 h-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 12H19M19 12L12 5M19 12L12 19"
+                stroke="currentColor"
+                stroke-width="1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+        <div class="text-sm font-normal text-gray-400">or</div>
+        <!-- Tertiary btn -->
+        <a
+          href="about.html"
+          class="tertiary flex items-center gap-1  text-white hover:text-key-lighter transition-colors">
+          <span>Learn about Me</span>
+          <svg
+            class="w-6 h-6"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M7 17L17 7M17 7H7M17 7V17"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gray-950 flex flex-col md:flex-row md:items-center justify-between py-10 px-5 md:px-10 w-full gap-4 md:gap-0">
+      <div class="flex flex-col gap-1 items-start justify-center">
+        <div class="text-sm text-gray-400">Reach me</div>
+        <div class="flex gap-2 items-center justify-center">
+          <a
+            href="mailto:borim@borim.kim"
+            class="text-sm font-bold text-white cursor-pointer hover:text-key-lighter transition-colors">
+            borim@borim.kim
+          </a>
+          <div class="text-sm text-gray-400">or</div>
+          <a
+            href="https://www.linkedin.com/in/borimkim9302/"
+            class="text-sm font-bold text-white cursor-pointer hover:text-key-lighter transition-colors"
+            target="_blank"
+            rel="noopener noreferrer">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="text-sm text-gray-400">Designed & developed by © Borim Kim.</div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,980 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Order System</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./output.css" rel="stylesheet" />
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="src/fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="src/fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="src/fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="src/fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="src/fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="src/fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="src/fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="src/fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="src/fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="src/fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="src/fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="src/fav/favicon-16x16.png">
+    <link rel="manifest" href="src/fav/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="src/fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="font-display bg-white text-gray-950">
+    <!-- Custom Cursor -->
+    <div
+      class="cursor-follower"
+      style="
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        background-color: var(--color-key);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        transition: transform 0.1s ease-out;
+      "
+    ></div>
+    <div
+      class="cursor-main"
+      style="
+        position: fixed;
+        width: 30px;
+        height: 30px;
+        border: 1px solid var(--color-key);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99998;
+        transition:
+          transform 0.2s ease-out,
+          width 0.3s ease-out,
+          height 0.3s ease-out,
+          background-color 0.3s ease-out,
+          border-width 0.3s ease-out;
+      "
+    ></div>
+
+    <!-- Side Navigation -->
+    <div
+      id="side-nav"
+      class="hidden lg:flex"
+      style="
+        position: fixed;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 50;
+        flex-direction: column;
+        gap: 0px;
+        opacity: 0;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      ">
+      <div
+        class="nav-item"
+        style="
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          cursor: pointer;
+          padding: 2px 8px;
+          min-height: 16px;
+          transition: all 0.3s ease-out;
+        "
+        data-section="hero"
+      >
+        <div
+          class="nav-line"
+          style="
+            width: 24px;
+            height: 1px;
+            background-color: #4b5563;
+            transition: all 0.3s ease-out;
+          "
+        ></div>
+        <span
+          class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase"
+          >Intro</span
+        >
+      </div>
+      <div
+        class="nav-item"
+        style="
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          cursor: pointer;
+          padding: 2px 8px;
+          min-height: 16px;
+          transition: all 0.3s ease-out;
+        "
+        data-section="goal"
+      >
+        <div
+          class="nav-line"
+          style="
+            width: 24px;
+            height: 1px;
+            background-color: #4b5563;
+            transition: all 0.3s ease-out;
+          "
+        ></div>
+        <span
+          class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase"
+          >Goal</span
+        >
+      </div>
+      
+      <div
+        class="nav-item"
+        style="
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          cursor: pointer;
+          padding: 2px 8px;
+          min-height: 16px;
+          transition: all 0.3s ease-out;
+        "
+        data-section="features"
+      >
+        <div
+          class="nav-line"
+          style="
+            width: 24px;
+            height: 1px;
+            background-color: #4b5563;
+            transition: all 0.3s ease-out;
+          "
+        ></div>
+        <span
+          class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase"
+          >Key Features</span
+        >
+      </div>
+      <div
+        class="nav-item"
+        style="
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          cursor: pointer;
+          padding: 2px 8px;
+          min-height: 16px;
+          transition: all 0.3s ease-out;
+        "
+        data-section="process"
+      >
+        <div
+          class="nav-line"
+          style="
+            width: 24px;
+            height: 1px;
+            background-color: #4b5563;
+            transition: all 0.3s ease-out;
+          "
+        ></div>
+        <span
+          class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase"
+          >Design Process</span
+        >
+      </div>
+      
+      <div
+        class="nav-item"
+        style="
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          cursor: pointer;
+          padding: 2px 8px;
+          min-height: 16px;
+          transition: all 0.3s ease-out;
+        "
+        data-section="outcomes2"
+      >
+        <div
+          class="nav-line"
+          style="
+            width: 24px;
+            height: 1px;
+            background-color: #4b5563;
+            transition: all 0.3s ease-out;
+          "
+        ></div>
+        <span
+          class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase"
+          >Project Outcomes</span
+        >
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between px-5 md:px-10 h-11 bg-white sticky top-0 z-50">
+      <a href="index.html" class="flex items-center gap-2 h-11 border-b-2 border-transparent box-border">
+        <div class="w-2.5 h-2.5 bg-key"></div>
+        <div class="text-sm font-medium text-gray-950">BORIM KIM</div>
+      </a>
+      <div class="flex items-center gap-4">
+        <!-- Pro Work -->
+        <a href="index.html" class="flex items-center h-11 cursor-pointer hover:text-key transition-color border-b-2 border-transparent box-border">
+          <div class="text-sm uppercase font-medium rolling-text">
+            <span>P</span><span>r</span><span>o</span><span> </span><span>W</span><span>o</span><span>r</span><span>k</span>
+          </div>
+        </a>
+        <!-- Play Lab -->
+        <a href="play.html" class="flex items-center h-11 cursor-pointer hover:text-key transition-color border-b-2 border-transparent box-border">
+          <div class="text-sm uppercase font-medium rolling-text">
+            <span>P</span><span>l</span><span>a</span><span>y</span><span> </span><span>L</span><span>a</span><span>b</span>
+          </div>
+        </a>
+        <!-- About -->
+        <a href="about.html" class="flex items-center h-11 cursor-pointer hover:text-key transition-color border-b-2 border-transparent box-border">
+          <div class="text-sm uppercase font-medium rolling-text">
+            <span>A</span><span>b</span><span>o</span><span>u</span><span>t</span>
+          </div>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="hero"
+      class="flex flex-col items-center justify-center h-[500px] w-full animate-fade-in px-5 md:px-10 relative"
+      style="
+        --bg-image: url('src/images/banner/pf-6.gif');
+        background-image: var(--bg-image);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #436289;
+      "
+    >
+      <div
+        class="flex flex-col gap-9 items-start justify-start max-w-6xl w-full mx-auto relative z-10"
+      >
+        <div
+          class="text-5xl font-bold leading-normal text-white w-full text-left"
+        >
+          <h1 class="mb-0">Online Order System</h1>
+          <!-- <h1 class="">UX/UI</h1> -->
+        </div>
+        <div class="flex flex-col gap-4 items-start justify-start w-full">
+          <div
+            class="flex font-normal gap-3 items-center justify-start text-sm"
+          >
+            <div class="text-gray-400 w-10">Client</div>
+            <div class="text-white flex gap-1">
+              <div class="w-5 h-5">
+                <img
+                  src="src/images/companylogo/domino_small.png"
+                  alt="Dominos"
+                  class="w-full h-full"
+                />
+              </div>
+              <span>Domino's Korea</span>
+            </div>
+          </div>
+          <div
+            class="flex font-normal gap-3 items-center justify-start text-sm"
+          >
+            <div class="text-gray-400 w-10">Role</div>
+            <div class="text-white flex gap-2">
+              <span>Project Management</span> <span>|</span>
+              <span>UX/UI Design</span>
+            </div>
+          </div>
+          <div
+            class="flex font-normal gap-3 items-center justify-start text-sm"
+          >
+            <div class="text-gray-400 w-10">Year</div>
+            <div class="text-white">2016 - 2017</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider w-full"></div>
+
+    <!-- Goal Section -->
+    <section
+      id="goal"
+      class="flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10"
+    >
+      <div
+        class="flex flex-col gap-4 items-start justify-start max-w-6xl w-full mx-auto"
+      >
+        <div
+          class="bg-gray-200 flex gap-1 items-center justify-center pl-2 pr-3 py-1"
+        >
+          <div class="w-4 h-4">
+            <img src="src/icons/goal.svg" alt="Goal" class="w-full h-full" />
+          </div>
+          <div class="text-sm uppercase">Goal</div>
+        </div>
+        <div class="text-lg font-normal leading-normal text-gray-950">
+          <p class="mb-1">
+            Rebuild Domino’s Pizza Korea’s online delivery channel to make ordering easier, faster, and more intuitive.</br>
+            The renewal aimed not only to enhance the customer experience through a simplified order flow, but also to modernize the internal management system for greater operational efficiency.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Section Divider -->
+    <div class="section-divider w-full"></div>
+
+    <!-- Key Features Section -->
+    <section
+      id="features"
+      class="bg-gray-950 flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10 overflow-hidden"
+    >
+      <div
+        class="flex flex-col gap-12 items-start justify-start max-w-6xl w-full mx-auto">
+        <div class="flex flex-col gap-4 items-start justify-start w-full">
+          <div
+            class="bg-gray-200 flex gap-1 items-center justify-center pl-2 pr-3 py-1"
+          >
+            <div class="w-4 h-4">
+              <img
+                src="src/icons/feature.svg"
+                alt="Key Features"
+                class="w-full h-full"
+              />
+            </div>
+            <div class="text-sm font-normal text-gray-950 uppercase">
+              Key Features
+            </div>
+          </div>
+          <div class="text-lg font-normal text-white">
+            <p>
+              Reimagining the online ordering experience to be faster, smarter, and more seamless for every pizza lover.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 1: -->
+        <div
+          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-left feature-section-mobile md:flex-row flex-col overflow-hidden"
+        >
+          <!-- Desktop Layout: Image first, then content -->
+          <div
+            id="feature1-image"
+            class="aspect-square flex-1 hidden md:flex items-center justify-center feature-image overflow-hidden"
+          >
+            <img
+              src="src/images/features/pf-6_1-1.png"
+              alt="Order"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full"
+          >
+            <div class="flex flex-col gap-3 items-start justify-start w-full">
+              <!-- <div class="text-sm text-key-lighter uppercase">
+                WORLD INDICES
+              </div> -->
+              <div class="text-4xl font-bold text-white capitalize">
+                Simplified order process
+              </div>
+            </div>
+            <div
+              class="text-lg font-normal text-gray-300 w-full feature-description"
+            >
+              <p>The renewed ordering flow is designed to be intuitive and efficient, reducing unnecessary steps so customers can order with greater ease, speed, and confidence.</p>
+            </div>
+
+            <!-- Mobile Layout: Image after content for Feature 5 -->
+            <div
+              id="feature1-image-mobile"
+              class="aspect-square w-full flex items-center justify-center feature-image overflow-hidden md:hidden"
+            >
+              <img
+                src="src/images/features/pf-6_1-1.png"
+                alt="Order"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 2: -->
+        <div
+          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-right feature-section-mobile md:flex-row flex-col"
+        >
+          <!-- Desktop Layout: Content first, then image -->
+          <div
+            class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full"
+          >
+            <div class="flex flex-col gap-3 items-start justify-start w-full">
+              <div class="text-sm text-key-lighter uppercase">
+                MY KITCHEN
+              </div>
+              <div class="text-4xl font-bold text-white capitalize">
+                Customize your own pizza
+              </div>
+            </div>
+            <div
+              class="text-lg font-normal text-gray-300 w-full feature-description"
+            >
+              <p>
+                Customers can now create and personalize their pizzas directly on the main ordering platform, enjoying a smoother and richer experience with enhanced customization features.
+              </p>
+            </div>
+
+            <!-- Mobile Layout: Image after content for Feature 4 -->
+            <div
+              id="feature2-image-mobile"
+              class="aspect-square w-full flex items-center justify-center feature-image overflow-hidden md:hidden"
+            >
+              <img
+                src="src/images/features/pf-6_2-1.png"
+                alt="My Kitchen"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div
+            id="feature2-image"
+            class="aspect-square flex-1 hidden md:flex items-center justify-center feature-image overflow-hidden"
+          >
+            <img
+              src="src/images/features/pf-6_2-1.png"
+              alt="My Kitchen"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Feature 3: -->
+        <div
+          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-left feature-section-mobile md:flex-row flex-col overflow-hidden"
+        >
+          <!-- Desktop Layout: Image first, then content -->
+          <div
+            id="feature3-image"
+            class="aspect-square flex-1 hidden md:flex items-center justify-center feature-image overflow-hidden"
+          >
+            <img
+              src="src/images/features/pf-6_3-1.png"
+              alt="Quick Order"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full"
+          >
+            <div class="flex flex-col gap-3 items-start justify-start w-full">
+              <div class="text-sm text-key-lighter uppercase">
+                QUICK ORDER
+              </div>
+              <div class="text-4xl font-bold text-white capitalize">
+                Faster than fast, Quick Order
+              </div>
+            </div>
+            <div
+              class="text-lg font-normal text-gray-300 w-full feature-description"
+            >
+              <p>
+                For loyal fans who always know what they want, Quick Order allows them to reorder instantly by saving their favorites, skipping extra steps for maximum convenience.
+              </p>
+            </div>
+
+            <!-- Mobile Layout: Image after content for Feature 5 -->
+            <div
+              id="feature3-image-mobile"
+              class="aspect-square w-full flex items-center justify-center feature-image overflow-hidden md:hidden"
+            >
+              <img
+                src="src/images/features/pf-6_3-1.png"
+                alt="Quick Order"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 4: -->
+        <div
+          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-right feature-section-mobile md:flex-row flex-col"
+        >
+          <!-- Desktop Layout: Content first, then image -->
+          <div
+            class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full"
+          >
+            <div class="flex flex-col gap-3 items-start justify-start w-full">
+              <!-- <div class="text-sm text-key-lighter uppercase">
+                CURRENCIES & COMMODITIES & BONDS
+              </div> -->
+              <div class="text-4xl font-bold text-white capitalize">
+                Even back-office is a big deal
+              </div>
+            </div>
+            <div
+              class="text-lg font-normal text-gray-300 w-full feature-description"
+            >
+              <p>
+                With frequent promotions and a large volume of marketing content, managing everything efficiently had become challenging.</br>
+                Through this renewal project, unnecessary and fragmented management systems were removed, and the entire admin workflow was unified, resulting in a faster, simpler, and more efficient ordering process.
+              </p>
+            </div>
+
+            <!-- Mobile Layout: Image after content for Feature 4 -->
+            <div
+              id="feature4-image-mobile"
+              class="aspect-square w-full flex items-center justify-center feature-image overflow-hidden md:hidden"
+            >
+              <img
+                src="src/images/features/pf-6_4-1.png"
+                alt="Admin"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div
+            id="feature4-image"
+            class="aspect-square flex-1 hidden md:flex items-center justify-center feature-image overflow-hidden"
+          >
+            <img
+              src="src/images/features/pf-6_4-1.png"
+              alt="Admin"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Feature 5: -->
+        <div
+          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-left feature-section-mobile md:flex-row flex-col overflow-hidden"
+        >
+          <!-- Desktop Layout: Image first, then content -->
+          <div
+            id="feature5-image"
+            class="aspect-square flex-1 hidden md:flex items-center justify-center feature-image overflow-hidden"
+          >
+            <img
+              src="src/images/features/pf-6_5-1.png"
+              alt="Witty"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full"
+          >
+            <div class="flex flex-col gap-3 items-start justify-start w-full">
+              <!-- <div class="text-sm text-key-lighter uppercase">
+                MARKET EVENT CALENDAR
+              </div> -->
+              <div class="text-4xl font-bold text-white capitalize">
+                Simplify complex function, and make it witty!
+              </div>
+            </div>
+            <div
+              class="text-lg font-normal text-gray-300 w-full feature-description"
+            >
+              <p>We refined complex interfaces into a clean, unified experience that enhances accessibility and strengthens Domino’s playful yet professional brand identity.</p>
+            </div>
+
+            <!-- Mobile Layout: Image after content for Feature 5 -->
+            <div
+              id="feature5-image-mobile"
+              class="aspect-square w-full flex items-center justify-center feature-image overflow-hidden md:hidden"
+            >
+              <img
+                src="src/images/features/pf-6_5-1.png"
+                alt="Witty"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 6: -->
+        <div
+          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-right feature-section-mobile md:flex-row flex-col"
+        >
+          <!-- Desktop Layout: Content first, then image -->
+          <div
+            class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full"
+          >
+            <div class="flex flex-col gap-3 items-start justify-start w-full">
+              <div class="text-sm text-key-lighter uppercase">
+                DOMINO'S PAY
+              </div>
+              <div class="text-4xl font-bold text-white capitalize">
+                Pay by Domino's Pay
+              </div>
+            </div>
+            <div
+              class="text-lg font-normal text-gray-300 w-full feature-description"
+            >
+              <p>
+                Designed with security and ease in mind, Domino’s Pay offers customers a faster, safer, and more seamless checkout within the new order system.
+              </p>
+            </div>
+
+            <!-- Mobile Layout: Image after content for Feature 4 -->
+            <div
+              id="feature6-image-mobile"
+              class="aspect-square w-full flex items-center justify-center feature-image overflow-hidden md:hidden"
+            >
+              <img
+                src="src/images/features/pf-6_6-1.png"
+                alt="Pay"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div
+            id="feature6-image"
+            class="aspect-square flex-1 hidden md:flex items-center justify-center feature-image overflow-hidden"
+          >
+            <img
+              src="src/images/features/pf-6_6-1.png"
+              alt="Pay"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Feature 7: -->
+        <div
+          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-right feature-section-mobile md:flex-row flex-col">
+          <!-- Desktop Layout: Content first, then image -->
+          <div
+            class="flex flex-col gap-6 items-start justify-start feature-content w-full">
+            <div class="flex flex-col gap-3 items-start justify-start w-full">
+              <!-- <div class="text-sm text-key-lighter uppercase">
+                DOMINO'S PAY
+              </div> -->
+              <div class="text-4xl font-bold text-white capitalize">
+                Perfect Mobile Optimization
+              </div>
+            </div>
+            <div
+              class="text-lg font-normal text-gray-300 w-full feature-description">
+              <p>
+                With most users ordering on mobile, we built a hybrid app optimized for both performance and usability, ensuring a consistent experience across all devices.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider w-full"></div>
+
+    <!-- Design Process Section -->
+    <section
+      id="process"
+      class="bg-gray-50 flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10"
+    >
+      <div
+        class="flex flex-col gap-12 items-start justify-start max-w-6xl w-full mx-auto"
+      >
+        <div class="flex flex-col gap-4 items-start justify-start w-full">
+          <div
+            class="bg-gray-200 flex gap-1 items-center justify-center pl-2 pr-3 py-1"
+          >
+            <div class="w-4 h-4">
+              <img
+                src="src/icons/process.svg"
+                alt="Design Process"
+                class="w-full h-full"
+              />
+            </div>
+            <div class="text-sm font-normal text-gray-950 uppercase">
+              Design Process
+            </div>
+          </div>
+          <div class="text-lg">
+            <p>
+              The project followed a structured waterfall process, progressing step by step from research to final delivery.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col gap-10 items-start justify-start w-full process-step"
+        >
+          <!-- Process Step 1 -->
+          <div
+            class="flex flex-col gap-5 items-start justify-center w-full process-step"
+          >
+            <div class="flex gap-3 items-start justify-start w-full">
+              <div class="text-4xl font-normal text-gray-950 w-12">01</div>
+              <div
+                class="flex-1 flex flex-col font-normal items-start justify-start gap-1"
+              >
+                <div
+                  class="flex flex-col justify-center text-lg text-gray-950 w-full"
+                >
+                  <p>Discover the Issues from the Previous Channel</p>
+                </div>
+                <div class="text-sm text-gray-500 w-full">
+                  <p>
+                    Domino’s Pizza has long held a leading position in Korea’s pizza franchise industry.</br>
+                    However, its online ordering system had fallen short of reflecting the brand’s strong reputation and modern standards.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="aspect-video w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                src="src/images/process/pf-6_01.png"
+                alt="Discover"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <!-- Process Step 2 -->
+          <div
+            class="flex flex-col gap-5 items-start justify-center w-full process-step"
+          >
+            <div class="flex gap-3 items-start justify-start w-full">
+              <div class="text-4xl font-normal text-gray-950 w-12">02</div>
+              <div
+                class="flex-1 flex flex-col font-normal items-start justify-start gap-1"
+              >
+                <div
+                  class="flex flex-col justify-center text-lg text-gray-950 w-full"
+                >
+                  <p>Structuring Core Function First</p>
+                </div>
+                <div class="text-sm text-gray-500 w-full">
+                  <p>
+                    The mission was to create a clear and intuitive ordering process, but each product category had its own characteristics and options.</br>
+                    The first step was to organize and categorize products — such as pizzas, side dishes, beverages, and set menus — to make the structure easier to navigate.</br>
+                    From there, we designed optimized order flows for each product group, ensuring a consistent yet flexible experience. Eliminating unnecessary hurdles and barriers was also a key focus throughout the process.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="aspect-video w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                src="src/images/process/pf-6_02.png"
+                alt="Data Research & Expert Collaboration"
+                class="User Flow"
+              />
+            </div>
+          </div>
+
+          <!-- Process Step 3 -->
+          <div
+            class="flex flex-col gap-5 items-start justify-center w-full process-step"
+          >
+            <div class="flex gap-3 items-start justify-start w-full">
+              <div class="text-4xl font-normal text-gray-950 w-12">03</div>
+              <div
+                class="flex-1 flex flex-col font-normal items-start justify-start gap-1"
+              >
+                <div
+                  class="flex flex-col justify-center text-lg text-gray-950 w-full"
+                >
+                  <p>Wireframing</p>
+                </div>
+                <div class="text-sm text-gray-500 w-full">
+                  <p>
+                    Created detailed wireframes defining all key functionalities and design specifications, serving as a guide for the UI design team.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="aspect-video w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                src="src/images/process/pf-6_03.png"
+                alt="Wireframing"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <!-- Process Step 4 -->
+          <div
+            class="flex flex-col gap-5 items-start justify-center w-full process-step"
+          >
+            <div class="flex gap-3 items-start justify-start w-full">
+              <div class="text-4xl font-normal text-gray-950 w-12">04</div>
+              <div
+                class="flex-1 flex flex-col font-normal items-start justify-start gap-1"
+              >
+                <div
+                  class="flex flex-col justify-center text-lg text-gray-950 w-full"
+                >
+                  <p>Design</p>
+                </div>
+                <div class="text-sm text-gray-500 w-full">
+                  <p>
+                    Delivered comprehensive UX documentation to the UI design team and led the subsequent phases, including development coordination, design QA, and overall project management.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="aspect-video w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                src="src/images/process/pf-6_04.png"
+                alt="Design"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider w-full"></div>
+
+    <!-- Project Outcomes Section -->
+    <section
+      id="outcomes2"
+      class="outcome-section flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10">
+      <div class="flex flex-col gap-20 items-start justify-start max-w-6xl w-full mx-auto">
+        <div class="flex flex-col gap-6 items-start justify-start w-full">
+          <div class="flex flex-col gap-4 items-start justify-start w-full">
+            <div
+              class="bg-gray-200 flex gap-1 items-center justify-center pl-2 pr-3 py-1">
+              <div class="w-4 h-4">
+                <img
+                  src="src/icons/achievement.svg"
+                  alt="Project Outcomes"
+                  class="w-full h-full"
+                />
+              </div>
+              <div class="text-sm uppercase">Project Outcomes</div>
+            </div>
+            <div class="flex flex-col gap-1">
+              <p class="text-lg font-semibold text-gray-950 mb-0">2017 Mobile Awards Korea – Grand Prize, Pizza Franchise Category</p>
+              <p class="text-gray-600 mb-0">Hosted by the Ministry of Science, ICT and Future Planning and the Korea Creative Content Agency (KOCCA)</p>
+            </div>
+            <div class="text-lg">
+              <p>
+                The renewed Domino’s Pizza ordering platform successfully transformed both customer and internal experiences.</br>
+                Customers now enjoy a faster, more intuitive ordering flow optimized across mobile and desktop, while administrators benefit from a unified, efficient content management system.
+                The project not only improved usability and reduced operational complexity but also strengthened Domino’s digital brand identity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section
+      class="bg-gray-950 flex flex-col gap-8 items-center justify-start py-10 px-5 md:px-10 w-full"
+    >
+      <div class="text-3xl font-semibold text-white">Ready for more?</div>
+      <div class="flex flex-col gap-3 items-center">
+        <div class="flex gap-5 items-center justify-center">
+          <!-- Secondary btn -->
+          <a
+            href="pf-5.html"
+            class="secondary flex items-center gap-1 px-4 py-2 border border-white text-white hover:border-key-lighter hover:text-key-lighter transition-colors"
+          >
+            <svg
+              class="w-6 h-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M19 12H5M5 12L12 19M5 12L12 5"
+                stroke="currentColor"
+                stroke-width="1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span>Prev Project</span>
+          </a>
+          <!-- Secondary btn -->
+          <a
+            href="pf-7.html"
+            class="secondary flex items-center gap-1 px-4 py-2 border border-white text-white hover:border-key-lighter hover:text-key-lighter transition-colors"
+          >
+            <span>Next Project</span>
+            <svg
+              class="w-6 h-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 12H19M19 12L12 5M19 12L12 19"
+                stroke="currentColor"
+                stroke-width="1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+        <div class="text-sm font-normal text-gray-400">or</div>
+        <!-- Tertiary btn -->
+        <a
+          href="about.html"
+          class="tertiary flex items-center gap-1  text-white hover:text-key-lighter transition-colors">
+          <span>Learn about Me</span>
+          <svg
+            class="w-6 h-6"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M7 17L17 7M17 7H7M17 7V17"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gray-950 flex flex-col md:flex-row md:items-center justify-between py-10 px-5 md:px-10 w-full gap-4 md:gap-0">
+      <div class="flex flex-col gap-1 items-start justify-center">
+        <div class="text-sm text-gray-400">Reach me</div>
+        <div class="flex gap-2 items-center justify-center">
+          <a
+            href="mailto:borim@borim.kim"
+            class="text-sm font-bold text-white cursor-pointer hover:text-key-lighter transition-colors">
+            borim@borim.kim
+          </a>
+          <div class="text-sm text-gray-400">or</div>
+          <a
+            href="https://www.linkedin.com/in/borimkim9302/"
+            class="text-sm font-bold text-white cursor-pointer hover:text-key-lighter transition-colors"
+            target="_blank"
+            rel="noopener noreferrer">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="text-sm text-gray-400">Designed & developed by © Borim Kim.</div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
