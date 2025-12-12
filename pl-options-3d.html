@@ -43,7 +43,7 @@
             background: rgba(0, 0, 0, 0.85);
             padding: 20px;
             border-radius: 12px;
-            min-width: 300px;
+            min-width: 320px;
             backdrop-filter: blur(10px);
             z-index: 100;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
@@ -341,6 +341,14 @@
             gap: 4px;
             width: 100%;
         }
+        .heatmap-select-row {
+            display: flex;
+            gap: 4px;
+            width: 100%;
+        }
+        .heatmap-select-row .heatmap-select-box {
+            flex: 1;
+        }
         .heatmap-select-box {
             border: 1px solid #d0d5dd;
             height: 44px;
@@ -352,7 +360,7 @@
         }
         .heatmap-select-text {
             flex: 1;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 400;
             color: #ffffff;
             line-height: 20px;
@@ -423,16 +431,16 @@
             background: #569a56;
         }
         .heatmap-cell.loss {
-            background: #D85B57;
+            background: #437a43;
         }
         .heatmap-cell.loss-light {
-            background: #cc463f;
+            background: #3b6a3a;
         }
         .heatmap-cell.loss-dark {
-            background: #9f2f28;
+            background: #294c27;
         }
         .heatmap-cell.loss-medium {
-            background: #db4f41;
+            background: #4e8c4d;
         }
         .heatmap-legend {
             display: flex;
@@ -450,7 +458,7 @@
             width: 100%;
         }
         .heatmap-legend-bar.loss {
-            background: linear-gradient(to right, #9f2f28, #D85B57);
+            background: linear-gradient(to right, #294c27, #6CA86D);
         }
         .heatmap-legend-bar.profit {
             background: linear-gradient(to right, #294c27, #6CA86D);
@@ -609,6 +617,24 @@
                             <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
+                        </div>
+                    </div>
+                    <div class="heatmap-select-row">
+                        <div class="heatmap-select-box">
+                            <div class="heatmap-select-text">Max Profit</div>
+                            <div class="heatmap-select-icon">
+                                <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="heatmap-select-box">
+                            <div class="heatmap-select-text">198.5 / 199.0</div>
+                            <div class="heatmap-select-icon">
+                                <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -795,17 +821,10 @@
                 </div>
                 <div class="heatmap-legend">
                     <div class="heatmap-legend-item">
-                        <div class="heatmap-legend-bar loss"></div>
-                        <div class="heatmap-legend-labels">
-                            <span>Min Loss</span>
-                            <span>Max Loss</span>
-                        </div>
-                    </div>
-                    <div class="heatmap-legend-item">
                         <div class="heatmap-legend-bar profit"></div>
                         <div class="heatmap-legend-labels">
-                            <span>Min Profit</span>
-                            <span>Max Profit</span>
+                            <span>Lower</span>
+                            <span>Higher</span>
                         </div>
                     </div>
                 </div>
@@ -1684,45 +1703,7 @@
                         }
                     }
                     
-                    // Call Bid P&L 곡선 (Call 옵션 매도)
-                    if ((currentStrategy === 'all' || currentStrategy === 'calls') && option.callBid !== null) {
-                        const callBidPoints = [];
-                        for (let i = 0; i <= pricePoints; i++) {
-                            const price = minPrice + i * priceStep;
-                            // Call 옵션 매도: P&L = (Premium - (현재 주가 - Strike)) * 100
-                            const intrinsicValue = Math.max(0, price - strike);
-                            const callBidPnL = (option.callBid - intrinsicValue) * contractSize;
-                            const x = priceToX(price);
-                            const y = pnlToY(callBidPnL, pnlMin, pnlMax);
-                            callBidPoints.push(new THREE.Vector3(x, y, timeZ));
-                        }
-                        
-                        for (let i = 0; i < callBidPoints.length - 1; i++) {
-                            const p1 = callBidPoints[i];
-                            const p2 = callBidPoints[i + 1];
-                            const midPrice = minPrice + (i + 0.5) * priceStep;
-                            const midIntrinsic = Math.max(0, midPrice - strike);
-                            const midPnL = (option.callBid - midIntrinsic) * contractSize;
-                            const lineColor = midPnL >= 0 ? profitColor : lossColor;
-                            
-                            // 큐브 범위 내로 클리핑
-                            const clippedSegments = clipLineToCube(p1, p2);
-                            
-                            for (const segment of clippedSegments) {
-                                if (segment.length > 1) {
-                                    const geometry = new THREE.BufferGeometry().setFromPoints(segment);
-                                    const material = new THREE.LineBasicMaterial({ 
-                                        color: lineColor, 
-                                        linewidth: 2,
-                                        opacity: 0.9
-                                    });
-                                    const line = new THREE.Line(geometry, material);
-                                    scene.add(line);
-                                    optionChainLines.push(line);
-                                }
-                            }
-                        }
-                    }
+                    // Call Bid P&L 곡선 (Call 옵션 매도) - 제거됨 (Buy side만 표시)
                     
                     // Put Ask P&L 곡선 (Put 옵션 매수)
                     if ((currentStrategy === 'all' || currentStrategy === 'puts') && option.putAsk !== null) {
@@ -1764,45 +1745,7 @@
                         }
                     }
                     
-                    // Put Bid P&L 곡선 (Put 옵션 매도)
-                    if ((currentStrategy === 'all' || currentStrategy === 'puts') && option.putBid !== null) {
-                        const putBidPoints = [];
-                        for (let i = 0; i <= pricePoints; i++) {
-                            const price = minPrice + i * priceStep;
-                            // Put 옵션 매도: P&L = (Premium - (Strike - 현재 주가)) * 100
-                            const intrinsicValue = Math.max(0, strike - price);
-                            const putBidPnL = (option.putBid - intrinsicValue) * contractSize;
-                            const x = priceToX(price);
-                            const y = pnlToY(putBidPnL, pnlMin, pnlMax);
-                            putBidPoints.push(new THREE.Vector3(x, y, timeZ));
-                        }
-                        
-                        for (let i = 0; i < putBidPoints.length - 1; i++) {
-                            const p1 = putBidPoints[i];
-                            const p2 = putBidPoints[i + 1];
-                            const midPrice = minPrice + (i + 0.5) * priceStep;
-                            const midIntrinsic = Math.max(0, strike - midPrice);
-                            const midPnL = (option.putBid - midIntrinsic) * contractSize;
-                            const lineColor = midPnL >= 0 ? profitColor : lossColor;
-                            
-                            // 큐브 범위 내로 클리핑
-                            const clippedSegments = clipLineToCube(p1, p2);
-                            
-                            for (const segment of clippedSegments) {
-                                if (segment.length > 1) {
-                                    const geometry = new THREE.BufferGeometry().setFromPoints(segment);
-                                    const material = new THREE.LineBasicMaterial({ 
-                                        color: lineColor, 
-                                        linewidth: 2,
-                                        opacity: 0.9
-                                    });
-                                    const line = new THREE.Line(geometry, material);
-                                    scene.add(line);
-                                    optionChainLines.push(line);
-                                }
-                            }
-                        }
-                    }
+                    // Put Bid P&L 곡선 (Put 옵션 매도) - 제거됨 (Buy side만 표시)
                 }
             }
             
@@ -1811,14 +1754,14 @@
             for (const chainData of realOptionChains) {
                 totalStrikes += chainData.chain.length;
             }
-            // Strategy에 따라 예상 라인 수 계산
+            // Strategy에 따라 예상 라인 수 계산 (Buy side만 표시)
             let linesPerStrike = 0;
             if (currentStrategy === 'all') {
-                linesPerStrike = 4; // Call Ask, Call Bid, Put Ask, Put Bid
+                linesPerStrike = 2; // Call Ask, Put Ask (Buy side만)
             } else if (currentStrategy === 'calls') {
-                linesPerStrike = 2; // Call Ask, Call Bid
+                linesPerStrike = 1; // Call Ask (Buy side만)
             } else if (currentStrategy === 'puts') {
-                linesPerStrike = 2; // Put Ask, Put Bid
+                linesPerStrike = 1; // Put Ask (Buy side만)
             }
             console.log('Option chain lines created:', {
                 totalExpirations: realOptionChains.length,
