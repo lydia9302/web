@@ -471,7 +471,6 @@ function getImageContent(featureNumber, imageType) {
         '<img src="src/images/features/pf-2_3-1.png" alt="Novice Mode" class="w-full h-full object-cover">',
       'advanced-mode':
         '<img src="src/images/features/pf-2_3-2.png" alt="Advanced Mode" class="w-full h-full object-cover">',
-
     },
     4: {
       'predefined-screens':
@@ -779,3 +778,15 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 });
+
+// 비밀번호로 잠긴 프로젝트 페이지 접근 제어
+function checkPassword(event) {
+  event.preventDefault();
+  const input = prompt('Enter password');
+  if (input === '9302') {
+    window.location.href = event.currentTarget.href;
+  } else if (input !== null) {
+    alert('Incorrect password.');
+  }
+  return false;
+}
