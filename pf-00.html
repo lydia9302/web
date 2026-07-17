@@ -1,0 +1,1575 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Market Research UX/UI</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./output.css" rel="stylesheet" />
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="src/fav/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="src/fav/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="src/fav/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="src/fav/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="src/fav/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="src/fav/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="src/fav/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="src/fav/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="src/fav/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="src/fav/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="src/fav/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="src/fav/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="src/fav/favicon-16x16.png"
+    />
+    <link rel="manifest" href="src/fav/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="src/fav/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-3M79PS8Y0K"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-3M79PS8Y0K');
+    </script>
+  </head>
+  <body class="font-display bg-white text-gray-950">
+    <!-- Custom Cursor -->
+    <div
+      class="cursor-follower"
+      style="
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        background-color: var(--color-key);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        transition: transform 0.1s ease-out;
+      "
+    ></div>
+    <div
+      class="cursor-main"
+      style="
+        position: fixed;
+        width: 30px;
+        height: 30px;
+        border: 1px solid var(--color-key);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99998;
+        transition:
+          transform 0.2s ease-out,
+          width 0.3s ease-out,
+          height 0.3s ease-out,
+          background-color 0.3s ease-out,
+          border-width 0.3s ease-out;
+      "
+    ></div>
+
+    <!-- Side Navigation -->
+    <div
+      id="side-nav"
+      class="hidden lg:flex"
+      style="
+        position: fixed;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 50;
+        flex-direction: column;
+        gap: 0px;
+        opacity: 0;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      "
+    >
+      <div
+        class="nav-item"
+        style="
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          cursor: pointer;
+          padding: 2px 8px;
+          min-height: 16px;
+          transition: all 0.3s ease-out;
+        "
+        data-section="hero"
+      >
+        <div
+          class="nav-line"
+          style="
+            width: 24px;
+            height: 1px;
+            background-color: #4b5563;
+            transition: all 0.3s ease-out;
+          "
+        ></div>
+        <span
+          class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase"
+          >Intro</span
+        >
+      </div>
+      <div
+        class="nav-item"
+        style="
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          cursor: pointer;
+          padding: 2px 8px;
+          min-height: 16px;
+          transition: all 0.3s ease-out;
+        "
+        data-section="goal"
+      >
+        <div
+          class="nav-line"
+          style="
+            width: 24px;
+            height: 1px;
+            background-color: #4b5563;
+            transition: all 0.3s ease-out;
+          "
+        ></div>
+        <span
+          class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase"
+          >Goal</span
+        >
+      </div>
+
+      <div
+        class="nav-item"
+        style="
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          cursor: pointer;
+          padding: 2px 8px;
+          min-height: 16px;
+          transition: all 0.3s ease-out;
+        "
+        data-section="features"
+      >
+        <div
+          class="nav-line"
+          style="
+            width: 24px;
+            height: 1px;
+            background-color: #4b5563;
+            transition: all 0.3s ease-out;
+          "
+        ></div>
+        <span
+          class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase"
+          >Key Features</span
+        >
+      </div>
+      <div
+        class="nav-item"
+        style="
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          cursor: pointer;
+          padding: 2px 8px;
+          min-height: 16px;
+          transition: all 0.3s ease-out;
+        "
+        data-section="process"
+      >
+        <div
+          class="nav-line"
+          style="
+            width: 24px;
+            height: 1px;
+            background-color: #4b5563;
+            transition: all 0.3s ease-out;
+          "
+        ></div>
+        <span
+          class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase"
+          >Design Process</span
+        >
+      </div>
+      <div
+        class="nav-item"
+        style="
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          cursor: pointer;
+          padding: 2px 8px;
+          min-height: 16px;
+          transition: all 0.3s ease-out;
+        "
+        data-section="challenges"
+      >
+        <div
+          class="nav-line"
+          style="
+            width: 24px;
+            height: 1px;
+            background-color: #4b5563;
+            transition: all 0.3s ease-out;
+          "
+        ></div>
+        <span
+          class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase"
+          >Challenges</span
+        >
+      </div>
+      <div
+        class="nav-item"
+        style="
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          cursor: pointer;
+          padding: 2px 8px;
+          min-height: 16px;
+          transition: all 0.3s ease-out;
+        "
+        data-section="outcomes2"
+      >
+        <div
+          class="nav-line"
+          style="
+            width: 24px;
+            height: 1px;
+            background-color: #4b5563;
+            transition: all 0.3s ease-out;
+          "
+        ></div>
+        <span
+          class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase"
+          >Project Outcomes</span
+        >
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav
+      class="flex items-center justify-between px-5 md:px-10 h-11 bg-white sticky top-0 z-50"
+    >
+      <a
+        href="index.html"
+        class="flex items-center gap-2 h-11 border-b-2 border-transparent box-border"
+      >
+        <div class="w-2.5 h-2.5 bg-key"></div>
+        <div class="text-sm font-medium text-gray-950">BORIM KIM</div>
+      </a>
+      <div class="flex items-center gap-4">
+        <!-- Pro Work -->
+        <a
+          href="index.html"
+          class="flex items-center h-11 cursor-pointer hover:text-key transition-color border-b-2 border-transparent box-border"
+        >
+          <div class="text-sm uppercase font-medium rolling-text">
+            <span>P</span><span>r</span><span>o</span><span> </span
+            ><span>W</span><span>o</span><span>r</span><span>k</span>
+          </div>
+        </a>
+        <!-- Play Lab -->
+        <a
+          href="play.html"
+          class="flex items-center h-11 cursor-pointer hover:text-key transition-color border-b-2 border-transparent box-border"
+        >
+          <div class="text-sm uppercase font-medium rolling-text">
+            <span>P</span><span>l</span><span>a</span><span>y</span
+            ><span> </span><span>L</span><span>a</span><span>b</span>
+          </div>
+        </a>
+        <!-- About -->
+        <a
+          href="about.html"
+          class="flex items-center h-11 cursor-pointer hover:text-key transition-color border-b-2 border-transparent box-border"
+        >
+          <div class="text-sm uppercase font-medium rolling-text">
+            <span>A</span><span>b</span><span>o</span><span>u</span
+            ><span>t</span>
+          </div>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="hero"
+      class="flex flex-col items-center justify-center h-[500px] w-full animate-fade-in px-5 md:px-10 relative"
+      style="
+        --bg-image: url('src/images/banner/pf-00.png');
+        background-image: var(--bg-image);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #000000;
+      "
+    >
+      <div
+        class="flex flex-col gap-9 items-start justify-start max-w-6xl w-full mx-auto relative z-10"
+      >
+        <div
+          class="text-5xl font-bold leading-normal text-white w-full text-left"
+        >
+          <h1 class="mb-0">AI Powered</h1>
+          <h1 class="">Wealth Advisor</h1>
+        </div>
+        <div class="flex flex-col gap-4 items-start justify-start w-full">
+          <div
+            class="flex font-normal gap-3 items-center justify-start text-sm"
+          >
+            <div class="text-gray-400 w-10">Role</div>
+            <div class="text-white flex gap-2">
+              <span>Product Design Lead</span>
+            </div>
+          </div>
+          <div
+            class="flex font-normal gap-3 items-center justify-start text-sm"
+          >
+            <div class="text-gray-400 w-10">Year</div>
+            <div class="text-white">2025 Dec - 2026</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider w-full"></div>
+
+    <!-- Goal Section -->
+    <section
+      id="goal"
+      class="flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10"
+    >
+      <div
+        class="flex flex-col md:flex-row gap-6 md:gap-10 max-w-6xl w-full mx-auto"
+      >
+        <div
+          class="flex flex-col gap-4 items-start justify-start w-full md:w-1/2"
+        >
+          <div
+            class="bg-gray-200 flex gap-1 items-center justify-center pl-2 pr-3 py-1"
+          >
+            <div class="w-4 h-4">
+              <img src="src/icons/goal.svg" alt="Goal" class="w-full h-full" />
+            </div>
+            <div class="text-sm uppercase">Project Goal</div>
+          </div>
+          <div class="text-lg font-normal leading-normal text-gray-950">
+            <p class="mb-1">
+              Design an AI powered wealth planning platform that helps advisors
+              and high net worth clients turn complex financial data into
+              clearer insights, smarter decisions, and more personalized
+              planning.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col gap-4 items-start justify-start w-full md:w-1/2"
+        >
+          <div
+            class="bg-key-lightest text-key-darker flex gap-1 items-center justify-center pl-2 pr-3 py-1"
+          >
+            <div class="w-4 h-4">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-full h-full"
+              >
+                <path
+                  d="M11.25 22.2V20.4693C9.16667 20.2551 7.41284 19.4358 5.9885 18.0115C4.56417 16.5872 3.74492 14.8333 3.53075 12.75H1.8V11.25H3.53075C3.74492 9.16667 4.56417 7.41284 5.9885 5.9885C7.41284 4.56417 9.16667 3.74492 11.25 3.53075V1.8H12.75V3.53075C14.8333 3.74492 16.5872 4.56417 18.0115 5.9885C19.4358 7.41284 20.2551 9.16667 20.4693 11.25H22.2V12.75H20.4693C20.2551 14.8333 19.4358 16.5872 18.0115 18.0115C16.5872 19.4358 14.8333 20.2551 12.75 20.4693V22.2H11.25ZM12 19C13.9333 19 15.5833 18.3167 16.95 16.95C18.3167 15.5833 19 13.9333 19 12C19 10.0667 18.3167 8.41667 16.95 7.05C15.5833 5.68334 13.9333 5 12 5C10.0667 5 8.41667 5.68334 7.05 7.05C5.68334 8.41667 5 10.0667 5 12C5 13.9333 5.68334 15.5833 7.05 16.95C8.41667 18.3167 10.0667 19 12 19ZM12 15.5C11.0375 15.5 10.2136 15.1573 9.52825 14.4718C8.84275 13.7864 8.5 12.9625 8.5 12C8.5 11.0375 8.84275 10.2136 9.52825 9.52825C10.2136 8.84275 11.0375 8.5 12 8.5C12.9625 8.5 13.7864 8.84275 14.4718 9.52825C15.1573 10.2136 15.5 11.0375 15.5 12C15.5 12.9625 15.1573 13.7864 14.4718 14.4718C13.7864 15.1573 12.9625 15.5 12 15.5ZM12 14C12.55 14 13.0208 13.8042 13.4125 13.4125C13.8042 13.0208 14 12.55 14 12C14 11.45 13.8042 10.9792 13.4125 10.5875C13.0208 10.1958 12.55 10 12 10C11.45 10 10.9792 10.1958 10.5875 10.5875C10.1958 10.9792 10 11.45 10 12C10 12.55 10.1958 13.0208 10.5875 13.4125C10.9792 13.8042 11.45 14 12 14Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <div class="text-sm uppercase">Personal Goal</div>
+          </div>
+          <div class="text-lg font-normal leading-normal text-gray-950">
+            <p class="mb-1">
+              Design this product while using AI not just as the subject of
+              design, but as an active collaborator throughout the process.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider w-full"></div>
+
+    <!-- Key Features Section -->
+    <section
+      id="features"
+      class="bg-gray-950 flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10 overflow-hidden"
+    >
+      <div
+        class="flex flex-col gap-12 items-start justify-start max-w-6xl w-full mx-auto"
+      >
+        <div class="flex flex-col gap-4 items-start justify-start w-full">
+          <div
+            class="bg-gray-200 flex gap-1 items-center justify-center pl-2 pr-3 py-1"
+          >
+            <div class="w-4 h-4">
+              <img
+                src="src/icons/feature.svg"
+                alt="Key Features"
+                class="w-full h-full"
+              />
+            </div>
+            <div class="text-sm font-normal text-gray-950 uppercase">
+              Key Features
+            </div>
+          </div>
+          <div class="text-lg font-normal text-white">
+            <p>
+              The platform is available for two distinct types of users.</br>
+              Advisors get analytical depth and control; clients get clarity and narrative. Both views draw from one data model, and these are the modules that connect them.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 1: -->
+        <div
+          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-left feature-section-mobile md:flex-row flex-col overflow-hidden"
+        >
+          <!-- Desktop Layout: Image first, then content -->
+          <div
+            id="feature1-image"
+            class="aspect-square flex-1 hidden md:flex items-center justify-center feature-image overflow-hidden"
+          >
+            <img
+              src="src/images/features/pf-00_1-1.png"
+              alt="Onboarding"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full"
+          >
+            <div class="flex flex-col gap-3 items-start justify-start w-full">
+              <div class="text-sm text-key-lighter uppercase">
+                AI ONBOARDING
+              </div>
+              <div class="text-4xl font-bold text-white capitalize">
+                Unify Financial Data
+              </div>
+            </div>
+            <div
+              class="text-lg font-normal text-gray-300 w-full feature-description"
+            >
+              <p>
+                Clients can chat with AI, upload documents, connect accounts, or manually enter information. AI extracts and structures financial data, reducing onboarding friction while improving data completeness for planning.
+              </p>
+            </div>
+
+            <!-- Mobile Layout: Image after content for Feature 5 -->
+            <div
+              id="feature1-image-mobile"
+              class="aspect-square w-full flex items-center justify-center feature-image overflow-hidden md:hidden"
+            >
+              <img
+                src="src/images/features/pf-00_1-1.png"
+                alt="Onboarding"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 2: -->
+        <div
+          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-right feature-section-mobile md:flex-row flex-col"
+        >
+          <!-- Desktop Layout: Content first, then image -->
+          <div
+            class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full"
+          >
+            <div class="flex flex-col gap-3 items-start justify-start w-full">
+              <div class="text-sm text-key-lighter uppercase">
+                MONEY MAP
+              </div>
+              <div class="text-4xl font-bold text-white capitalize">
+                Visualize Financial Statements
+              </div>
+            </div>
+            <div
+              class="text-lg font-normal text-gray-300 w-full feature-description"
+            >
+              <p>
+                Money Map provides a unified view of a client's assets, liabilities, income, and expenses. It helps advisors and clients quickly identify gaps, risks, and opportunities.
+              </p>
+            </div>
+
+            <!-- Mobile Layout: Image after content for Feature 4 -->
+            <div
+              id="feature2-image-mobile"
+              class="aspect-square w-full flex items-center justify-center feature-image overflow-hidden md:hidden"
+            >
+              <img
+                src="src/images/features/pf-00_2-1.png"
+                alt="Money Map"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div
+            id="feature2-image"
+            class="aspect-square flex-1 hidden md:flex items-center justify-center feature-image overflow-hidden"
+          >
+            <img
+              src="src/images/features/pf-00_2-1.png"
+              alt="Money Map"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Feature 3: -->
+        <div
+          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-left feature-section-mobile md:flex-row flex-col overflow-hidden"
+        >
+          <!-- Desktop Layout: Image first, then content -->
+          <div
+            id="feature3-image"
+            class="aspect-square flex-1 hidden md:flex items-center justify-center feature-image overflow-hidden"
+          >
+            <img
+              src="src/images/features/pf-00_3-1.png"
+              alt="Client Score"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full"
+          >
+            <div class="flex flex-col gap-3 items-start justify-start w-full">
+              <div class="text-sm text-key-lighter uppercase">
+                CLIENT SCORE
+              </div>
+              <div class="text-4xl font-bold text-white capitalize">
+                Quantify Financial Wellness
+              </div>
+            </div>
+            <div
+              class="text-lg font-normal text-gray-300 w-full feature-description"
+            >
+              <p>
+                Client Score translates complex financial indicators into an easy-to-understand score. By benchmarking clients against people with similar lifestyles and financial profiles, it highlights strengths, weaknesses, and areas for improvement.
+              </p>
+            </div>
+
+            <!-- Mobile Layout: Image after content for Feature 5 -->
+            <div
+              id="feature3-image-mobile"
+              class="aspect-square w-full flex items-center justify-center feature-image overflow-hidden md:hidden"
+            >
+              <img
+                src="src/images/features/pf-00_3-1.png"
+                alt="Client Score"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 4: -->
+        <div
+          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-right feature-section-mobile md:flex-row flex-col"
+        >
+          <!-- Desktop Layout: Content first, then image -->
+          <div
+            class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full"
+          >
+            <div class="flex flex-col gap-3 items-start justify-start w-full">
+              <div class="text-sm text-key-lighter uppercase">
+                CLIENT STORY
+              </div>
+              <div class="text-4xl font-bold text-white capitalize">
+                Turn Insights into Action
+              </div>
+            </div>
+            <div
+              class="text-lg font-normal text-gray-300 w-full feature-description"
+            >
+              <p>
+                Client Story transforms financial analysis into personalized narratives and actionable recommendations. Instead of presenting isolated numbers, it helps advisors communicate client goals, risks, and opportunities in a more meaningful and engaging way.
+              </p>
+            </div>
+
+            <!-- Mobile Layout: Image after content for Feature 4 -->
+            <div
+              id="feature4-image-mobile"
+              class="aspect-square w-full flex items-center justify-center feature-image overflow-hidden md:hidden"
+            >
+              <img
+                src="src/images/features/pf-00_4-1.png"
+                alt="Client Story"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div
+            id="feature4-image"
+            class="aspect-square flex-1 hidden md:flex items-center justify-center feature-image overflow-hidden"
+          >
+            <img
+              src="src/images/features/pf-00_4-1.png"
+              alt="Client Story"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Feature 5: -->
+        <div
+          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-left feature-section-mobile md:flex-row flex-col overflow-hidden"
+        >
+          <!-- Desktop Layout: Image first, then content -->
+          <div
+            id="feature5-image"
+            class="aspect-square flex-1 hidden md:flex items-center justify-center feature-image overflow-hidden"
+          >
+            <img
+              src="src/images/features/pf-00_5-1.png"
+              alt="Plans"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full"
+          >
+            <div class="flex flex-col gap-3 items-start justify-start w-full">
+              <div class="text-sm text-key-lighter uppercase">
+                LIFE PLAN & MONEY PLAN
+              </div>
+              <div class="text-4xl font-bold text-white capitalize">
+                Fund the Life, Plan the Money
+              </div>
+            </div>
+            <div
+              class="text-lg font-normal text-gray-300 w-full feature-description"
+            >
+              <p>
+                Clients define life goals, then fund them from real account balances. Capital sleeves show which goals are on track and which are drifting, and AI surfaces strategies to close the gap.
+              </p>
+            </div>
+
+            <!-- Mobile Layout: Image after content for Feature 5 -->
+            <div
+              id="feature5-image-mobile"
+              class="aspect-square w-full flex items-center justify-center feature-image overflow-hidden md:hidden"
+            >
+              <img
+                src="src/images/features/pf-00_5-1.png"
+                alt="Plans"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 6: -->
+        <div
+          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-right feature-section-mobile md:flex-row flex-col"
+        >
+          <!-- Desktop Layout: Content first, then image -->
+          <div
+            class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full"
+          >
+            <div class="flex flex-col gap-3 items-start justify-start w-full">
+              <div class="text-sm text-key-lighter uppercase">
+                AGENT LIBRARY
+              </div>
+              <div class="text-4xl font-bold text-white capitalize">
+                Advisors Choose Their AI
+              </div>
+            </div>
+            <div
+              class="text-lg font-normal text-gray-300 w-full feature-description"
+            >
+              <p>
+                A browsable library of AI agents advisors activate per client: meeting prep, document monitoring, goal drift alerts, coverage gaps. Every agent is opt-in, so advisors decide what the AI watches and what it leaves alone.
+              </p>
+            </div>
+
+            <!-- Mobile Layout: Image after content for Feature 4 -->
+            <div
+              id="feature4-image-mobile"
+              class="aspect-square w-full flex items-center justify-center feature-image overflow-hidden md:hidden"
+            >
+              <img
+                src="src/images/features/pf-00_6-1.png"
+                alt="Agent Library"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div
+            id="feature4-image"
+            class="aspect-square flex-1 hidden md:flex items-center justify-center feature-image overflow-hidden"
+          >
+            <img
+              src="src/images/features/pf-00_6-1.png"
+              alt="Agent Library"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider w-full"></div>
+
+    <!-- Design Process Section -->
+    <section
+      id="process"
+      class="bg-gray-50 flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10"
+    >
+      <div
+        class="flex flex-col gap-12 items-start justify-start max-w-6xl w-full mx-auto"
+      >
+        <div class="flex flex-col gap-4 items-start justify-start w-full">
+          <div
+            class="bg-gray-200 flex gap-1 items-center justify-center pl-2 pr-3 py-1"
+          >
+            <div class="w-4 h-4">
+              <img
+                src="src/icons/process.svg"
+                alt="Design Process"
+                class="w-full h-full"
+              />
+            </div>
+            <div class="text-sm font-normal text-gray-950 uppercase">
+              Design Process
+            </div>
+          </div>
+          <div class="text-3xl">
+            <p>
+              Designing an AI Product with AI
+            </p>
+          </div>
+          <div class="text-lg space-y-2">
+            <p>
+              Human judgment remained central; AI accelerated exploration.
+            </p>
+            <p>
+              I used AI as a design collaborator to accelerate exploration, validate ideas, and iterate faster across the product lifecycle. The biggest advantage was rapid prototyping, which helped test and compare ideas far more quickly than traditional workflows.
+            </p>
+          </div>
+          
+          <div class="flex flex-wrap items-center gap-x-2 gap-y-2 text-lg text-gray-950">
+            <span>Below is</span>
+            <span class="inline-flex items-center gap-1 rounded-full bg-gray-200 pl-2 pr-3 py-1 text-sm uppercase">
+              <img src="src/icons/person.svg" alt="" class="w-4 h-4" />
+              What I Did
+            </span>
+            <span>vs</span>
+            <span class="inline-flex items-center gap-1 rounded-full bg-key-lightest text-key-darker pl-2 pr-3 py-1 text-sm uppercase">
+              <img src="src/icons/ai.svg" alt="" class="w-4 h-4" />
+              What AI Did
+            </span>
+            <span>in my design process.</span>
+          </div>
+
+        </div>
+
+        <div
+          class="flex flex-col gap-10 items-start justify-start w-full process-step"
+        >
+          <!-- Process Step 1 -->
+          <div
+            class="flex flex-col gap-5 items-start justify-center w-full process-step"
+          >
+            <div class="flex gap-3 items-start justify-start w-full">
+              <div class="text-4xl font-normal text-gray-950 w-12">01</div>
+              <div
+                class="flex-1 flex flex-col font-normal items-start justify-start gap-1"
+              >
+                <div
+                  class="flex flex-col justify-center text-xl text-gray-950 w-full"
+                >
+                  <p>Discovery & Alignment</p>
+                </div>
+                <div class="text-sm text-gray-500 w-full">
+                  <p>
+                    Align on problems, opportunities, and product direction.
+                  </p>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-6 py-8 md:gap-10 w-full">
+                  <!-- What I Did -->
+                  <div class="flex gap-3 items-start w-full md:w-1/2">
+                    <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center shrink-0">
+                      <img src="src/icons/person.svg" alt="" class="w-8 h-8" />
+                    </div>
+                    <p class="text-gray-600">
+                      Collaborate with stakeholders, leadership, product owners, and sales to identify business goals and user needs.
+                    </p>
+                  </div>
+
+                  <!-- What AI Did -->
+                  <div class="flex gap-3 items-start w-full md:w-1/2">
+                    <div class="w-12 h-12 rounded-full bg-key-lightest flex items-center justify-center shrink-0">
+                      <img src="src/icons/ai.svg" alt="" class="w-8 h-8" />
+                    </div>
+                    <p class="text-gray-600">
+                      Research benchmarks and competitor patterns to surface insights and best practices. Flesh out the feature definition.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            
+
+            <!-- <div
+              class="aspect-video w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                src="src/images/process/pf-3_01.png"
+                alt="Discover"
+                class="w-full h-full object-cover"
+              />
+            </div> -->
+          </div>
+
+          <!-- Process Step 2 -->
+          <div
+            class="flex flex-col gap-5 items-start justify-center w-full process-step"
+          >
+            <div class="flex gap-3 items-start justify-start w-full">
+              <div class="text-4xl font-normal text-gray-950 w-12">02</div>
+              <div
+                class="flex-1 flex flex-col font-normal items-start justify-start gap-1"
+              >
+                <div
+                  class="flex flex-col justify-center text-xl text-gray-950 w-full"
+                >
+                  <p>Rapid Ideation with Prototyping</p>
+                </div>
+                <div class="text-sm text-gray-500 w-full">
+                  <p>
+                    Turn ideas into testable prototypes with the biggest productivity gain from AI.
+                  </p>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-6 py-8 md:gap-10 w-full">
+                  <!-- What I Did -->
+                  <div class="flex gap-3 items-start w-full md:w-1/2">
+                    <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center shrink-0">
+                      <img src="src/icons/person.svg" alt="" class="w-8 h-8" />
+                    </div>
+                    <p class="text-gray-600">
+                      Define MVP scope, key flows, and success criteria to guide exploration based on business requirements.
+                    </p>
+                  </div>
+
+                  <!-- What AI Did -->
+                  <div class="flex gap-3 items-start w-full md:w-1/2">
+                    <div class="w-12 h-12 rounded-full bg-key-lightest flex items-center justify-center shrink-0">
+                      <img src="src/icons/ai.svg" alt="" class="w-8 h-8" />
+                    </div>
+                    <p class="text-gray-600">
+                      Generate interactive prototypes quickly, compare multiple directions, and validate ideas.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            
+
+            <!-- <div
+              class="aspect-video w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                src="src/images/process/pf-3_01.png"
+                alt="Discover"
+                class="w-full h-full object-cover"
+              />
+            </div> -->
+          </div>
+
+          <!-- Process Step 3 -->
+          <div
+            class="flex flex-col gap-5 items-start justify-center w-full process-step"
+          >
+            <div class="flex gap-3 items-start justify-start w-full">
+              <div class="text-4xl font-normal text-gray-950 w-12">03</div>
+              <div
+                class="flex-1 flex flex-col font-normal items-start justify-start gap-1"
+              >
+                <div
+                  class="flex flex-col justify-center text-xl text-gray-950 w-full"
+                >
+                  <p>Deep Feature Exploration</p>
+                </div>
+                <div class="text-sm text-gray-500 w-full">
+                  <p>
+                    Design complex modules and workflows at scale.
+                  </p>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-6 py-8 md:gap-10 w-full">
+                  <!-- What I Did -->
+                  <div class="flex gap-3 items-start w-full md:w-1/2">
+                    <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center shrink-0">
+                      <img src="src/icons/person.svg" alt="" class="w-8 h-8" />
+                    </div>
+                    <p class="text-gray-600">
+                      Make product decisions, define experience principles, and refine workflows for final design assets.
+                    </p>
+                  </div>
+
+                  <!-- What AI Did -->
+                  <div class="flex gap-3 items-start w-full md:w-1/2">
+                    <div class="w-12 h-12 rounded-full bg-key-lightest flex items-center justify-center shrink-0">
+                      <img src="src/icons/ai.svg" alt="" class="w-8 h-8" />
+                    </div>
+                    <p class="text-gray-600">
+                      Explore feature logic, module flows, and edge cases to stress test scenarios and expand solution possibilities.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            
+
+            <!-- <div
+              class="aspect-video w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                src="src/images/process/pf-3_01.png"
+                alt="Discover"
+                class="w-full h-full object-cover"
+              />
+            </div> -->
+          </div>
+
+          <!-- Process Step 4 -->
+          <div
+            class="flex flex-col gap-5 items-start justify-center w-full process-step"
+          >
+            <div class="flex gap-3 items-start justify-start w-full">
+              <div class="text-4xl font-normal text-gray-950 w-12">04</div>
+              <div
+                class="flex-1 flex flex-col font-normal items-start justify-start gap-1"
+              >
+                <div
+                  class="flex flex-col justify-center text-xl text-gray-950 w-full"
+                >
+                  <p>Visual & Content Iteration</p>
+                </div>
+                <div class="text-sm text-gray-500 w-full">
+                  <p>
+                    Accelerate design variations and UX writing.
+                  </p>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-6 py-8 md:gap-10 w-full">
+                  <!-- What I Did -->
+                  <div class="flex gap-3 items-start w-full md:w-1/2">
+                    <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center shrink-0">
+                      <img src="src/icons/person.svg" alt="" class="w-8 h-8" />
+                    </div>
+                    <p class="text-gray-600">
+                      Curate visual direction, prioritize options, and ensure consistency across the product.
+                    </p>
+                  </div>
+
+                  <!-- What AI Did -->
+                  <div class="flex gap-3 items-start w-full md:w-1/2">
+                    <div class="w-12 h-12 rounded-full bg-key-lightest flex items-center justify-center shrink-0">
+                      <img src="src/icons/ai.svg" alt="" class="w-8 h-8" />
+                    </div>
+                    <p class="text-gray-600">
+                      Generate layout variations, visual concepts, feature naming, and microcopy to accelerate iteration.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            
+
+            <!-- <div
+              class="aspect-video w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                src="src/images/process/pf-3_01.png"
+                alt="Discover"
+                class="w-full h-full object-cover"
+              />
+            </div> -->
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider w-full"></div>
+
+    <!-- Challenges Section -->
+    <section
+      id="challenges"
+      class="flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10"
+    >
+      <div
+        class="flex flex-col gap-12 items-start justify-start max-w-6xl w-full mx-auto"
+      >
+        <div class="flex flex-col gap-4 items-start justify-start w-full">
+          <div
+            class="bg-gray-200 flex gap-1 items-center justify-center pl-2 pr-3 py-1"
+          >
+            <div class="w-4 h-4">
+              <img
+                src="src/icons/challenges.svg"
+                alt="Challenges"
+                class="w-full h-full"
+              />
+            </div>
+            <div class="text-sm font-normal text-gray-950 uppercase">
+              Challenges
+            </div>
+          </div>
+          <div class="text-lg font-normal text-gray-950">
+            <p>
+              Three core challenges shaped this product. Here's how I resolved each.
+            </p>
+          </div>
+        </div>
+
+        <!-- Desktop Layout -->
+        <div
+          class="hidden md:flex flex-col gap-8 items-start justify-start w-full"
+        >
+          <!-- Challenges Row -->
+          <div class="flex gap-6 items-start justify-start w-full">
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-base font-semibold text-key-darker capitalize">
+                Black Box Recommendations from AI
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  Advisors are accountable for every client outcome. AI output they cannot verify is output they will not use.
+                </p>
+              </div>
+            </div>
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-base font-semibold text-key-darker capitalize">
+                Automation vs. Advisor Control
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  Automate too much and the advisor becomes a rubber stamp. Automate too little and the AI is not worth adopting.
+                </p>
+              </div>
+            </div>
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-base font-semibold text-key-darker capitalize">
+                Two Audiences, One Data Set
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  Advisors need depth and control. Clients need clarity and confidence. The same financial data has to serve both.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Solutions Row -->
+          <div class="flex gap-6 items-start justify-start w-full">
+            <div class="flex-1 challenge-solution">
+              <div class="solution-container">
+                <div class="solution-dots"></div>
+                <div class="solution-text">Solved via</div>
+              </div>
+            </div>
+            <div class="flex-1 challenge-solution">
+              <div class="solution-container">
+                <div class="solution-dots"></div>
+                <div class="solution-text">Solved via</div>
+              </div>
+            </div>
+            <div class="flex-1 challenge-solution">
+              <div class="solution-container">
+                <div class="solution-dots"></div>
+                <div class="solution-text">Solved via</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Solutions Content Row -->
+          <div class="flex gap-6 items-start justify-start w-full">
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-base font-semibold text-gray-950 capitalize">
+                Show the Reasoning
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  Every recommendation surfaces the inputs behind it, so advisors can trace, verify, and defend the logic to clients.
+                </p>
+              </div>
+            </div>
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-base font-semibold text-gray-950 capitalize">
+                AI Proposes, Advisor Decides
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  AI drafts the analysis and the narrative. The advisor edits and approves before anything reaches the client.
+                </p>
+              </div>
+            </div>
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-base font-semibold text-gray-950 capitalize">
+                One Engine, Two Views
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  Shared data models render differently by user types: analytical density for advisors, narrative simplicity for clients.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Carousel -->
+        <div class="md:hidden w-full relative">
+          <!-- Left Arrow -->
+          <button
+            id="carousel-prev"
+            class="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 backdrop-blur-sm p-2 border border-gray-300 hover:bg-white hover:border-gray-950 transition-all duration-200"
+          >
+            <svg
+              class="w-6 h-6 text-gray-950"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              ></path>
+            </svg>
+          </button>
+
+          <!-- Right Arrow -->
+          <button
+            id="carousel-next"
+            class="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 backdrop-blur-sm p-2 border border-gray-300 hover:bg-white hover:border-gray-950 transition-all duration-200"
+          >
+            <svg
+              class="w-6 h-6 text-gray-950"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+          </button>
+
+          <div id="challenges-carousel" class="overflow-hidden w-full">
+            <div
+              class="flex transition-transform duration-300 ease-out challenges-carousel-track"
+            >
+              <!-- Slide 1 -->
+              <div class="min-w-full flex flex-col gap-8">
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div
+                    class="text-base font-semibold text-key-darker capitalize"
+                  >
+                    Black Box Recommendations from AI
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      Advisors are accountable for every client outcome. AI output they cannot verify is output they will not use.
+                    </p>
+                  </div>
+                </div>
+                <div class="challenge-solution">
+                  <div class="solution-container">
+                    <div class="solution-dots"></div>
+                    <div class="solution-text">Solved via</div>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div class="text-base font-semibold text-gray-950 capitalize">
+                    Show the Reasoning
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      Every recommendation surfaces the inputs behind it, so advisors can trace, verify, and defend the logic to clients.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="min-w-full flex flex-col gap-8">
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div
+                    class="text-base font-semibold text-key-darker capitalize"
+                  >
+                    Automation vs. Advisor Control
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      Automate too much and the advisor becomes a rubber stamp. Automate too little and the AI is not worth adopting.
+                    </p>
+                  </div>
+                </div>
+                <div class="challenge-solution">
+                  <div class="solution-container">
+                    <div class="solution-dots"></div>
+                    <div class="solution-text">Solved via</div>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div class="text-base font-semibold text-gray-950 capitalize">
+                    AI Proposes, Advisor Decides
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      AI drafts the analysis and the narrative. The advisor edits and approves before anything reaches the client.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="min-w-full flex flex-col gap-8">
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div
+                    class="text-base font-semibold text-key-darker capitalize"
+                  >
+                    Two Audiences, One Data Set
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      Advisors need depth and control. Clients need clarity and confidence. The same financial data has to serve both.
+                    </p>
+                  </div>
+                </div>
+                <div class="challenge-solution">
+                  <div class="solution-container">
+                    <div class="solution-dots"></div>
+                    <div class="solution-text">Solved via</div>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div class="text-base font-semibold text-gray-950 capitalize">
+                    One Engine, Two Views
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      Shared data models render differently by user types: analytical density for advisors, narrative simplicity for clients.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Dots -->
+          <div class="flex justify-center gap-2 mt-8">
+            <button
+              class="carousel-dot w-2 h-2 rounded-full bg-key transition-all duration-300"
+              data-slide="0"
+            ></button>
+            <button
+              class="carousel-dot w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"
+              data-slide="1"
+            ></button>
+            <button
+              class="carousel-dot w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"
+              data-slide="2"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider w-full"></div>
+
+    <!-- Scope & Status Section -->
+    <section
+      id="outcomes2"
+      class="outcome-section bg-gray-50 flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10"
+    >
+      <div
+        class="flex flex-col gap-20 items-start justify-start max-w-6xl w-full mx-auto"
+      >
+        <div class="flex flex-col gap-6 items-start justify-start w-full">
+          <div class="flex flex-col gap-4 items-start justify-start w-full">
+            <div
+              class="bg-gray-200 flex gap-1 items-center justify-center pl-2 pr-3 py-1"
+            >
+              <div class="w-4 h-4">
+                <img
+                  src="src/icons/scope.svg"
+                  alt="Project Outcomes"
+                  class="w-full h-full"
+                />
+              </div>
+              <div class="text-sm uppercase">Scope & Status</div>
+            </div>
+            <div class="text-lg">
+              <p>
+                Led design for the full platform across advisor and client portals, from AI-driven modules to the core product experience. 
+                </br>The platform is in active development.
+              </p>
+            </div>
+          </div>
+          <!-- <div
+            class="flex md:gap-6 gap-4 items-start justify-start w-full flex-wrap">
+            <div
+              class="flex-1 flex flex-col gap-2 items-start justify-start min-w-0"
+            >
+              <div class="flex flex-col gap-2 items-start justify-start w-full">
+                <div class="flex items-end">
+                  <div
+                    class="outcome-number text-4xl font-bold"
+                    data-target="78"
+                  >
+                    0
+                  </div>
+                  <div class="text-2xl font-bold">%</div>
+                </div>
+                <div class>of all options page views</div>
+              </div>
+              <div class="text-xs text-gray-500">148.8K views in Q1, 2024</div>
+            </div>
+            <div
+              class="flex-1 flex flex-col gap-2 items-start justify-start min-w-0"
+            >
+              <div class="flex flex-col gap-2 items-start justify-start w-full">
+                <div class="flex items-end">
+                  <div
+                    class="outcome-number text-4xl font-bold"
+                    data-target="21"
+                  >
+                    0
+                  </div>
+                  <div class="text-2xl font-bold">%</div>
+                </div>
+                <div>increase in MLO trade completes</div>
+              </div>
+              <div class="text-xs text-gray-500">
+                Post-rollout of new multi-leg option features
+              </div>
+            </div>
+            <div
+              class="flex-1 flex flex-col gap-2 items-start justify-start min-w-0"
+            >
+              <div class="flex flex-col gap-2 items-start justify-start w-full">
+                <div class="flex items-end">
+                  <div class="text-4xl font-bold">All-Time High</div>
+                </div>
+                <div>in Jan 2024 engagement</div>
+              </div>
+              <div class="text-xs text-gray-500">Highest since Oct 2022</div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section
+      class="bg-gray-950 flex flex-col gap-8 items-center justify-start py-10 px-5 md:px-10 w-full"
+    >
+      <div class="text-3xl font-semibold text-white">Ready for more?</div>
+      <div class="flex flex-col gap-3 items-center">
+        <div class="flex gap-5 items-center justify-center">
+          <!-- Secondary btn -->
+          <a
+            href="pf-2.html"
+            class="secondary flex items-center gap-1 px-4 py-2 border border-white text-white hover:border-key-lighter hover:text-key-lighter transition-colors"
+          >
+            <svg
+              class="w-6 h-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19 12H5M5 12L12 19M5 12L12 5"
+                stroke="currentColor"
+                stroke-width="1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span>Prev Project</span>
+          </a>
+          <!-- Secondary btn -->
+          <a
+            href="pf-4.html"
+            class="secondary flex items-center gap-1 px-4 py-2 border border-white text-white hover:border-key-lighter hover:text-key-lighter transition-colors"
+          >
+            <span>Next Project</span>
+            <svg
+              class="w-6 h-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 12H19M19 12L12 5M19 12L12 19"
+                stroke="currentColor"
+                stroke-width="1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+        <div class="text-sm font-normal text-gray-400">or</div>
+        <!-- Tertiary btn -->
+        <a
+          href="about.html"
+          class="tertiary flex items-center gap-1 text-white hover:text-key-lighter transition-colors"
+        >
+          <span>Learn about Me</span>
+          <svg
+            class="w-6 h-6"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7 17L17 7M17 7H7M17 7V17"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gray-950 flex flex-col md:flex-row md:items-center justify-between py-10 px-5 md:px-10 w-full gap-4 md:gap-0"
+    >
+      <div class="flex flex-col gap-1 items-start justify-center">
+        <div class="text-sm text-gray-400">Reach me</div>
+        <div class="flex gap-2 items-center justify-center">
+          <a
+            href="mailto:borim@borim.kim"
+            class="text-sm font-bold text-white cursor-pointer hover:text-key-lighter transition-colors"
+          >
+            borim@borim.kim
+          </a>
+          <div class="text-sm text-gray-400">or</div>
+          <a
+            href="https://www.linkedin.com/in/borimkim9302/"
+            class="text-sm font-bold text-white cursor-pointer hover:text-key-lighter transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="text-sm text-gray-400">
+        Designed & developed by © Borim Kim.
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
