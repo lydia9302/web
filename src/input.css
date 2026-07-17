@@ -115,7 +115,7 @@
     left: 50%;
     transform: translate(-50%, -50%) perspective(1000px) rotateX(-6deg);
     transform-style: preserve-3d;
-    animation: autoRun 20s linear infinite;
+    animation: autoRun 100s linear infinite;
     z-index: 2;
   }
   /* 슬라이더2 크기를 부모에 맞게 조정 */

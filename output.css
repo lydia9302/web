@@ -517,13 +517,6 @@
       margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
     }
   }
-  .space-y-3 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
   .gap-x-2 {
     column-gap: calc(var(--spacing) * 2);
   }
@@ -621,9 +614,6 @@
   .bg-key {
     background-color: var(--color-key);
   }
-  .bg-key-lighter {
-    background-color: var(--color-key-lighter);
-  }
   .bg-key-lightest {
     background-color: var(--color-key-lightest);
   }
@@ -680,9 +670,6 @@
   }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
-  }
-  .py-4 {
-    padding-block: calc(var(--spacing) * 4);
   }
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
@@ -1050,11 +1037,6 @@
       height: 500px;
     }
   }
-  .md\:w-0\.5 {
-    @media (width >= 48rem) {
-      width: calc(var(--spacing) * 0.5);
-    }
-  }
   .md\:w-1\/2 {
     @media (width >= 48rem) {
       width: calc(1/2 * 100%);
@@ -1240,7 +1222,7 @@
     left: 50%;
     transform: translate(-50%, -50%) perspective(1000px) rotateX(-6deg);
     transform-style: preserve-3d;
-    animation: autoRun 20s linear infinite;
+    animation: autoRun 100s linear infinite;
     z-index: 2;
   }
   .appbanner .slider2 {
