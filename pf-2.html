@@ -163,8 +163,9 @@
           padding: 2px 8px;
           min-height: 16px;
           transition: all 0.3s ease-out;
+          order: 1;
         "
-        data-section="hero"
+        data-section="intro"
       >
         <div
           class="nav-line"
@@ -190,6 +191,7 @@
           padding: 2px 8px;
           min-height: 16px;
           transition: all 0.3s ease-out;
+          order: 2;
         "
         data-section="goal"
       >
@@ -204,7 +206,7 @@
         ></div>
         <span
           class="nav-label text-gray-600 text-xs font-normal whitespace-nowrap opacity-0 -translate-x-2.5 transition-all duration-300 ease-out uppercase"
-          >Goal</span
+          >Goal & Approach</span
         >
       </div>
       <div
@@ -217,6 +219,7 @@
           padding: 2px 8px;
           min-height: 16px;
           transition: all 0.3s ease-out;
+          order: 4;
         "
         data-section="outcomes"
       >
@@ -244,6 +247,7 @@
           padding: 2px 8px;
           min-height: 16px;
           transition: all 0.3s ease-out;
+          order: 5;
         "
         data-section="features"
       >
@@ -271,6 +275,7 @@
           padding: 2px 8px;
           min-height: 16px;
           transition: all 0.3s ease-out;
+          order: 6;
         "
         data-section="process"
       >
@@ -298,6 +303,7 @@
           padding: 2px 8px;
           min-height: 16px;
           transition: all 0.3s ease-out;
+          order: 3;
         "
         data-section="challenges"
       >
@@ -400,7 +406,7 @@
               <span>Bank of Montreal</span>
             </div>
           </div>
-          <div
+          <!-- <div
             class="flex font-normal gap-3 items-center justify-start text-sm"
           >
             <div class="text-gray-600 w-10">Role</div>
@@ -408,7 +414,7 @@
               <span>UX/UI Design</span> <span>|</span>
               <span>User Test</span>
             </div>
-          </div>
+          </div> -->
           <div
             class="flex font-normal gap-3 items-center justify-start text-sm"
           >
@@ -425,7 +431,7 @@
     <!-- Goal Section -->
     <section
       id="goal"
-      class="flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10"
+      class="flex flex-col gap-6 items-center justify-center pt-20 pb-20 w-full px-5 md:px-10"
     >
       <div
         class="flex flex-col gap-4 items-start justify-start max-w-6xl w-full mx-auto"
@@ -448,12 +454,417 @@
           </p>
         </div>
       </div>
+
+      <!-- Goal -> Approach connector -->
+      <div class="w-12 h-12">
+        <img
+          src="src/icons/arrow-down-large.svg"
+          alt=""
+          class="w-full h-full"
+        />
+      </div>
+
+      <!-- Approach -->
+      <div
+        class="flex flex-col gap-4 items-start justify-start max-w-6xl w-full mx-auto"
+      >
+        <div
+          class="bg-gray-200 flex gap-1 items-center justify-center pl-2 pr-3 py-1"
+        >
+          <div class="w-4 h-4">
+            <img
+              src="src/icons/ideaSpark.svg"
+              alt="Approach"
+              class="w-full h-full"
+            />
+          </div>
+          <div class="text-sm uppercase">Approach</div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-6 w-full">
+          <div class="flex flex-col gap-2 items-start w-full md:w-1/2">
+            <p class="text-xl font-semibold text-key-darker">
+              Research-Led Domain Design
+            </p>
+            <p class="text-lg text-gray-950">
+              Started from how options traders actually research and decide,
+              translating complex financial concepts into an interface that
+              lowers the barrier to entry.
+            </p>
+          </div>
+          <div class="flex flex-col gap-2 items-start w-full md:w-1/2">
+            <p class="text-xl font-semibold text-key-darker">
+              Designed for a Skill Spectrum
+            </p>
+            <p class="text-lg text-gray-950">
+              Built one experience that adapts to both novice and advanced
+              traders, scaling depth and guidance to match each user's fluency.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- My Role / Collaboration With -->
+      <div
+        class="flex flex-col md:flex-row gap-6 items-start max-w-6xl w-full mx-auto bg-gray-100 border-l-4 border-key px-6 py-4"
+      >
+        <div class="flex flex-col gap-4 items-start w-full md:w-1/2">
+          <p class="text-lg uppercase text-gray-950">My Role</p>
+          <ul class="list-[square] ml-6 text-base text-gray-950">
+            <li>End-to-End UX & UI Design</li>
+            <li>User Test</li>
+            <li>Research Analysis</li>
+            <li>Product Strategy</li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-4 items-start w-full md:w-1/2">
+          <p class="text-lg uppercase text-gray-950">Collaboration With</p>
+          <ul class="list-[square] ml-6 text-base text-gray-950">
+            <li>Financial Domain Experts</li>
+            <li>Product Managers</li>
+            <li>Engineers</li>
+            <li>Research Team</li>
+          </ul>
+        </div>
+      </div>
     </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider w-full"></div>
+
+    <!-- Challenges Section -->
+    <section
+      id="challenges"
+      class="bg-gray-50 flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10"
+    >
+      <div
+        class="flex flex-col gap-12 items-start justify-start max-w-6xl w-full mx-auto"
+      >
+        <div class="flex flex-col gap-4 items-start justify-start w-full">
+          <div
+            class="bg-gray-200 flex gap-1 items-center justify-center pl-2 pr-3 py-1"
+          >
+            <div class="w-4 h-4">
+              <img
+                src="src/icons/challenges.svg"
+                alt="Challenges"
+                class="w-full h-full"
+              />
+            </div>
+            <div class="text-sm font-normal text-gray-950 uppercase">
+              Challenges
+            </div>
+          </div>
+          <div class="text-lg font-normal text-gray-950">
+            <p>
+              Three challenges defined this project. Here's how I approached
+              each.
+            </p>
+          </div>
+        </div>
+
+        <!-- Desktop Layout -->
+        <div
+          class="hidden md:flex flex-col gap-8 items-start justify-start w-full"
+        >
+          <!-- Challenges Row -->
+          <div class="flex gap-6 items-start justify-start w-full">
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-lg font-semibold text-key-darker capitalize">
+                Complex Subject Matter
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  Options trading is one of the most complex areas in finance —
+                  filled with terminology, calculations, and strategy logic
+                  that’s hard to intuitively grasp for both designers and users.
+                  Designing tools for this domain required deep subject
+                  understanding and financial literacy.
+                </p>
+              </div>
+            </div>
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-lg font-semibold text-key-darker capitalize">
+                Diverse User Behaviors
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  Options traders range from conservative income seekers to
+                  advanced strategists — making it difficult to streamline a
+                  one-size-fits-all experience without firsthand insight into
+                  how real users behave on the platform.
+                </p>
+              </div>
+            </div>
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-lg font-semibold text-key-darker capitalize">
+                Stringent Accessibility Requirements
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  The client had high accessibility standards, both in terms of
+                  compliance (WCAG) and in-house criteria. Meeting them required
+                  more than just visual tweaks — it involved structural design
+                  decisions and dev-side alignment.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Solutions Row -->
+          <div class="flex gap-6 items-start justify-start w-full">
+            <div class="flex-1 challenge-solution">
+              <div class="solution-container">
+                <div class="solution-dots"></div>
+                <div class="solution-text">Solved via</div>
+              </div>
+            </div>
+            <div class="flex-1 challenge-solution">
+              <div class="solution-container">
+                <div class="solution-dots"></div>
+                <div class="solution-text">Solved via</div>
+              </div>
+            </div>
+            <div class="flex-1 challenge-solution">
+              <div class="solution-container">
+                <div class="solution-dots"></div>
+                <div class="solution-text">Solved via</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Solutions Content Row -->
+          <div class="flex gap-6 items-start justify-start w-full">
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-lg font-semibold text-gray-950 capitalize">
+                Learn to Design, Design to Learn
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  There’s no shortcut to building clarity in a complex space. I
+                  immersed myself in options fundamentals through expert
+                  sessions, internal tutorials, and research materials —
+                  enabling me to make informed design decisions grounded in
+                  domain logic.
+                </p>
+              </div>
+            </div>
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-lg font-semibold text-gray-950 capitalize">
+                Research-Driven Flow
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  We conducted user testing with existing platform users to
+                  uncover specific goals, frustrations, and patterns. Based on
+                  those insights, we refined the flow iteratively — balancing
+                  flexibility and guidance across user types.
+                </p>
+              </div>
+            </div>
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-lg font-semibold text-gray-950 capitalize">
+                Accessibility, by Design
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  We collaborated directly with the client’s accessibility
+                  specialist through multiple review rounds. Each iteration
+                  focused on clarity, keyboard navigation, screen reader
+                  support, and interaction patterns — ensuring both functional
+                  and visual accessibility were fully addressed.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Carousel -->
+        <div class="md:hidden w-full relative">
+          <!-- Left Arrow -->
+          <button
+            id="carousel-prev"
+            class="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 backdrop-blur-sm p-2 border border-gray-300 hover:bg-white hover:border-gray-950 transition-all duration-200"
+          >
+            <svg
+              class="w-6 h-6 text-gray-950"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              ></path>
+            </svg>
+          </button>
+
+          <!-- Right Arrow -->
+          <button
+            id="carousel-next"
+            class="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 backdrop-blur-sm p-2 border border-gray-300 hover:bg-white hover:border-gray-950 transition-all duration-200"
+          >
+            <svg
+              class="w-6 h-6 text-gray-950"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+          </button>
+
+          <div id="challenges-carousel" class="overflow-hidden w-full">
+            <div
+              class="flex transition-transform duration-300 ease-out challenges-carousel-track"
+            >
+              <!-- Slide 1 -->
+              <div class="min-w-full flex flex-col gap-8">
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div class="text-lg font-semibold text-key-darker capitalize">
+                    Complex Subject Matter
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      Options trading is one of the most complex areas in
+                      finance — filled with terminology, calculations, and
+                      strategy logic that’s hard to intuitively grasp for both
+                      designers and users. Designing tools for this domain
+                      required deep subject understanding and financial
+                      literacy.
+                    </p>
+                  </div>
+                </div>
+                <div class="challenge-solution">
+                  <div class="solution-container">
+                    <div class="solution-dots"></div>
+                    <div class="solution-text">Solved via</div>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div class="text-lg font-semibold text-gray-950 capitalize">
+                    Learn to Design, Design to Learn
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      There’s no shortcut to building clarity in a complex
+                      space. I immersed myself in options fundamentals through
+                      expert sessions, internal tutorials, and research
+                      materials — enabling me to make informed design decisions
+                      grounded in domain logic.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="min-w-full flex flex-col gap-8">
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div class="text-lg font-semibold text-key-darker capitalize">
+                    Diverse User Behaviors
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      Options traders range from conservative income seekers to
+                      advanced strategists — making it difficult to streamline a
+                      one-size-fits-all experience without firsthand insight
+                      into how real users behave on the platform.
+                    </p>
+                  </div>
+                </div>
+                <div class="challenge-solution">
+                  <div class="solution-container">
+                    <div class="solution-dots"></div>
+                    <div class="solution-text">Solved via</div>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div class="text-lg font-semibold text-gray-950 capitalize">
+                    Research-Driven Flow
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      We conducted user testing with existing platform users to
+                      uncover specific goals, frustrations, and patterns. Based
+                      on those insights, we refined the flow iteratively —
+                      balancing flexibility and guidance across user types.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="min-w-full flex flex-col gap-8">
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div class="text-lg font-semibold text-key-darker capitalize">
+                    Stringent Accessibility Requirements
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      The client had high accessibility standards, both in terms
+                      of compliance (WCAG) and in-house criteria. Meeting them
+                      required more than just visual tweaks — it involved
+                      structural design decisions and dev-side alignment.
+                    </p>
+                  </div>
+                </div>
+                <div class="challenge-solution">
+                  <div class="solution-container">
+                    <div class="solution-dots"></div>
+                    <div class="solution-text">Solved via</div>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div class="text-lg font-semibold text-gray-950 capitalize">
+                    Accessibility, by Design
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      We collaborated directly with the client’s accessibility
+                      specialist through multiple review rounds. Each iteration
+                      focused on clarity, keyboard navigation, screen reader
+                      support, and interaction patterns — ensuring both
+                      functional and visual accessibility were fully addressed.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Dots -->
+          <div class="flex justify-center gap-2 mt-8">
+            <button
+              class="carousel-dot w-2 h-2 rounded-full bg-key transition-all duration-300"
+              data-slide="0"
+            ></button>
+            <button
+              class="carousel-dot w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"
+              data-slide="1"
+            ></button>
+            <button
+              class="carousel-dot w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"
+              data-slide="2"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider w-full"></div>
 
     <!-- Project Outcomes Section -->
     <section
       id="outcomes"
-      class="outcome-section flex flex-col gap-6 items-center justify-center pb-20 w-full px-5 md:px-10"
+      class="outcome-section flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10"
     >
       <div
         class="flex flex-col gap-20 items-start justify-start max-w-6xl w-full mx-auto"
@@ -1365,341 +1776,6 @@
                 class="w-full h-full object-cover"
               />
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section Divider -->
-    <div class="section-divider w-full"></div>
-
-    <!-- Challenges Section -->
-    <section
-      id="challenges"
-      class="flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10"
-    >
-      <div
-        class="flex flex-col gap-12 items-start justify-start max-w-6xl w-full mx-auto"
-      >
-        <div class="flex flex-col gap-4 items-start justify-start w-full">
-          <div
-            class="bg-gray-200 flex gap-1 items-center justify-center pl-2 pr-3 py-1"
-          >
-            <div class="w-4 h-4">
-              <img
-                src="src/icons/challenges.svg"
-                alt="Challenges"
-                class="w-full h-full"
-              />
-            </div>
-            <div class="text-sm font-normal text-gray-950 uppercase">
-              Challenges
-            </div>
-          </div>
-          <div class="text-lg font-normal text-gray-950">
-            <p>
-              Every challenge was an opportunity to scale — here's how I
-              approached it.
-            </p>
-          </div>
-        </div>
-
-        <!-- Desktop Layout -->
-        <div
-          class="hidden md:flex flex-col gap-8 items-start justify-start w-full"
-        >
-          <!-- Challenges Row -->
-          <div class="flex gap-6 items-start justify-start w-full">
-            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
-              <div class="text-base font-semibold text-key-darker capitalize">
-                Complex Subject Matter
-              </div>
-              <div class="text-sm text-gray-500">
-                <p>
-                  Options trading is one of the most complex areas in finance —
-                  filled with terminology, calculations, and strategy logic
-                  that’s hard to intuitively grasp for both designers and users.
-                  Designing tools for this domain required deep subject
-                  understanding and financial literacy.
-                </p>
-              </div>
-            </div>
-            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
-              <div class="text-base font-semibold text-key-darker capitalize">
-                Diverse User Behaviors
-              </div>
-              <div class="text-sm text-gray-500">
-                <p>
-                  Options traders range from conservative income seekers to
-                  advanced strategists — making it difficult to streamline a
-                  one-size-fits-all experience without firsthand insight into
-                  how real users behave on the platform.
-                </p>
-              </div>
-            </div>
-            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
-              <div class="text-base font-semibold text-key-darker capitalize">
-                Stringent Accessibility Requirements
-              </div>
-              <div class="text-sm text-gray-500">
-                <p>
-                  The client had high accessibility standards, both in terms of
-                  compliance (WCAG) and in-house criteria. Meeting them required
-                  more than just visual tweaks — it involved structural design
-                  decisions and dev-side alignment.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Solutions Row -->
-          <div class="flex gap-6 items-start justify-start w-full">
-            <div class="flex-1 challenge-solution">
-              <div class="solution-container">
-                <div class="solution-dots"></div>
-                <div class="solution-text">Solved via</div>
-              </div>
-            </div>
-            <div class="flex-1 challenge-solution">
-              <div class="solution-container">
-                <div class="solution-dots"></div>
-                <div class="solution-text">Solved via</div>
-              </div>
-            </div>
-            <div class="flex-1 challenge-solution">
-              <div class="solution-container">
-                <div class="solution-dots"></div>
-                <div class="solution-text">Solved via</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Solutions Content Row -->
-          <div class="flex gap-6 items-start justify-start w-full">
-            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
-              <div class="text-base font-semibold text-gray-950 capitalize">
-                Learn to Design, Design to Learn
-              </div>
-              <div class="text-sm text-gray-500">
-                <p>
-                  There’s no shortcut to building clarity in a complex space. I
-                  immersed myself in options fundamentals through expert
-                  sessions, internal tutorials, and research materials —
-                  enabling me to make informed design decisions grounded in
-                  domain logic.
-                </p>
-              </div>
-            </div>
-            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
-              <div class="text-base font-semibold text-gray-950 capitalize">
-                Research-Driven Flow
-              </div>
-              <div class="text-sm text-gray-500">
-                <p>
-                  We conducted user testing with existing platform users to
-                  uncover specific goals, frustrations, and patterns. Based on
-                  those insights, we refined the flow iteratively — balancing
-                  flexibility and guidance across user types.
-                </p>
-              </div>
-            </div>
-            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
-              <div class="text-base font-semibold text-gray-950 capitalize">
-                Accessibility, by Design
-              </div>
-              <div class="text-sm text-gray-500">
-                <p>
-                  We collaborated directly with the client’s accessibility
-                  specialist through multiple review rounds. Each iteration
-                  focused on clarity, keyboard navigation, screen reader
-                  support, and interaction patterns — ensuring both functional
-                  and visual accessibility were fully addressed.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobile Carousel -->
-        <div class="md:hidden w-full relative">
-          <!-- Left Arrow -->
-          <button
-            id="carousel-prev"
-            class="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 backdrop-blur-sm p-2 border border-gray-300 hover:bg-white hover:border-gray-950 transition-all duration-200"
-          >
-            <svg
-              class="w-6 h-6 text-gray-950"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 19l-7-7 7-7"
-              ></path>
-            </svg>
-          </button>
-
-          <!-- Right Arrow -->
-          <button
-            id="carousel-next"
-            class="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 backdrop-blur-sm p-2 border border-gray-300 hover:bg-white hover:border-gray-950 transition-all duration-200"
-          >
-            <svg
-              class="w-6 h-6 text-gray-950"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"
-              ></path>
-            </svg>
-          </button>
-
-          <div id="challenges-carousel" class="overflow-hidden w-full">
-            <div
-              class="flex transition-transform duration-300 ease-out challenges-carousel-track"
-            >
-              <!-- Slide 1 -->
-              <div class="min-w-full flex flex-col gap-8">
-                <div class="flex flex-col gap-2 items-start justify-start">
-                  <div
-                    class="text-base font-semibold text-key-darker capitalize"
-                  >
-                    Complex Subject Matter
-                  </div>
-                  <div class="text-sm text-gray-500">
-                    <p>
-                      Options trading is one of the most complex areas in
-                      finance — filled with terminology, calculations, and
-                      strategy logic that’s hard to intuitively grasp for both
-                      designers and users. Designing tools for this domain
-                      required deep subject understanding and financial
-                      literacy.
-                    </p>
-                  </div>
-                </div>
-                <div class="challenge-solution">
-                  <div class="solution-container">
-                    <div class="solution-dots"></div>
-                    <div class="solution-text">Solved via</div>
-                  </div>
-                </div>
-                <div class="flex flex-col gap-2 items-start justify-start">
-                  <div class="text-base font-semibold text-gray-950 capitalize">
-                    Learn to Design, Design to Learn
-                  </div>
-                  <div class="text-sm text-gray-500">
-                    <p>
-                      There’s no shortcut to building clarity in a complex
-                      space. I immersed myself in options fundamentals through
-                      expert sessions, internal tutorials, and research
-                      materials — enabling me to make informed design decisions
-                      grounded in domain logic.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slide 2 -->
-              <div class="min-w-full flex flex-col gap-8">
-                <div class="flex flex-col gap-2 items-start justify-start">
-                  <div
-                    class="text-base font-semibold text-key-darker capitalize"
-                  >
-                    Diverse User Behaviors
-                  </div>
-                  <div class="text-sm text-gray-500">
-                    <p>
-                      Options traders range from conservative income seekers to
-                      advanced strategists — making it difficult to streamline a
-                      one-size-fits-all experience without firsthand insight
-                      into how real users behave on the platform.
-                    </p>
-                  </div>
-                </div>
-                <div class="challenge-solution">
-                  <div class="solution-container">
-                    <div class="solution-dots"></div>
-                    <div class="solution-text">Solved via</div>
-                  </div>
-                </div>
-                <div class="flex flex-col gap-2 items-start justify-start">
-                  <div class="text-base font-semibold text-gray-950 capitalize">
-                    Research-Driven Flow
-                  </div>
-                  <div class="text-sm text-gray-500">
-                    <p>
-                      We conducted user testing with existing platform users to
-                      uncover specific goals, frustrations, and patterns. Based
-                      on those insights, we refined the flow iteratively —
-                      balancing flexibility and guidance across user types.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slide 3 -->
-              <div class="min-w-full flex flex-col gap-8">
-                <div class="flex flex-col gap-2 items-start justify-start">
-                  <div
-                    class="text-base font-semibold text-key-darker capitalize"
-                  >
-                    Stringent Accessibility Requirements
-                  </div>
-                  <div class="text-sm text-gray-500">
-                    <p>
-                      The client had high accessibility standards, both in terms
-                      of compliance (WCAG) and in-house criteria. Meeting them
-                      required more than just visual tweaks — it involved
-                      structural design decisions and dev-side alignment.
-                    </p>
-                  </div>
-                </div>
-                <div class="challenge-solution">
-                  <div class="solution-container">
-                    <div class="solution-dots"></div>
-                    <div class="solution-text">Solved via</div>
-                  </div>
-                </div>
-                <div class="flex flex-col gap-2 items-start justify-start">
-                  <div class="text-base font-semibold text-gray-950 capitalize">
-                    Accessibility, by Design
-                  </div>
-                  <div class="text-sm text-gray-500">
-                    <p>
-                      We collaborated directly with the client’s accessibility
-                      specialist through multiple review rounds. Each iteration
-                      focused on clarity, keyboard navigation, screen reader
-                      support, and interaction patterns — ensuring both
-                      functional and visual accessibility were fully addressed.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Carousel Dots -->
-          <div class="flex justify-center gap-2 mt-8">
-            <button
-              class="carousel-dot w-2 h-2 rounded-full bg-key transition-all duration-300"
-              data-slide="0"
-            ></button>
-            <button
-              class="carousel-dot w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"
-              data-slide="1"
-            ></button>
-            <button
-              class="carousel-dot w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"
-              data-slide="2"
-            ></button>
           </div>
         </div>
       </div>
