@@ -164,8 +164,9 @@
           padding: 2px 8px;
           min-height: 16px;
           transition: all 0.3s ease-out;
+          order: 1;
         "
-        data-section="hero"
+        data-section="intro"
       >
         <div
           class="nav-line"
@@ -191,6 +192,7 @@
           padding: 2px 8px;
           min-height: 16px;
           transition: all 0.3s ease-out;
+          order: 2;
         "
         data-section="goal"
       >
@@ -208,7 +210,6 @@
           >Goal</span
         >
       </div>
-
       <div
         class="nav-item"
         style="
@@ -219,6 +220,7 @@
           padding: 2px 8px;
           min-height: 16px;
           transition: all 0.3s ease-out;
+          order: 4;
         "
         data-section="features"
       >
@@ -236,6 +238,7 @@
           >Key Features</span
         >
       </div>
+      
       <div
         class="nav-item"
         style="
@@ -246,6 +249,7 @@
           padding: 2px 8px;
           min-height: 16px;
           transition: all 0.3s ease-out;
+          order: 5;
         "
         data-section="process"
       >
@@ -273,6 +277,7 @@
           padding: 2px 8px;
           min-height: 16px;
           transition: all 0.3s ease-out;
+          order: 3;
         "
         data-section="challenges"
       >
@@ -300,6 +305,7 @@
           padding: 2px 8px;
           min-height: 16px;
           transition: all 0.3s ease-out;
+          order: 6;
         "
         data-section="outcomes2"
       >
@@ -317,6 +323,8 @@
           >Scope & Status</span
         >
       </div>
+
+
     </div>
 
     <!-- Navigation -->
@@ -387,14 +395,14 @@
           <h1 class="">Wealth Advisor</h1>
         </div>
         <div class="flex flex-col gap-4 items-start justify-start w-full">
-          <div
+          <!-- <div
             class="flex font-normal gap-3 items-center justify-start text-sm"
           >
             <div class="text-gray-400 w-10">Role</div>
             <div class="text-white flex gap-2">
               <span>Product Design Lead</span>
             </div>
-          </div>
+          </div> -->
           <div
             class="flex font-normal gap-3 items-center justify-start text-sm"
           >
@@ -429,10 +437,7 @@
           </div>
           <div class="text-lg font-normal leading-normal text-gray-950">
             <p class="mb-1">
-              Design an AI powered wealth planning platform that helps advisors
-              and high net worth clients turn complex financial data into
-              clearer insights, smarter decisions, and more personalized
-              planning.
+              Design an AI powered wealth planning platform that helps advisors and high net worth clients turn complex financial data into clearer insights, smarter decisions, and more personalized planning.
             </p>
           </div>
         </div>
@@ -462,10 +467,33 @@
           </div>
           <div class="text-lg font-normal leading-normal text-gray-950">
             <p class="mb-1">
-              Design this product while using AI not just as the subject of
-              design, but as an active collaborator throughout the process.
+              Design this product while using AI not just as the subject of design, but as an active collaborator throughout the process.
             </p>
           </div>
+        </div>
+      </div>
+      <!-- My Role / Collaboration With -->
+      <div
+        class="flex flex-col md:flex-row gap-6 items-start max-w-6xl w-full mx-auto bg-gray-100 border-l-4 border-key px-6 py-4"
+      >
+        <div class="flex flex-col gap-4 items-start w-full md:w-1/2">
+          <p class="text-lg uppercase text-gray-950">My Role</p>
+          <ul class="list-[square] ml-6 text-base text-gray-950">
+            <li>Lead Product Design</li>
+            <li>End-to-End UX & UI Design</li>
+            <li>Product Strategy</li>
+            <li>AI-Assisted Design Workflow</li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-4 items-start w-full md:w-1/2">
+          <p class="text-lg uppercase text-gray-950">Collaboration With</p>
+          <ul class="list-[square] ml-6 text-base text-gray-950">
+            <li>Financial Domain Experts</li>
+            <li>Product Managers</li>
+            <li>Engineers</li>
+            <li>Executive Leadership</li>
+            <li>Sales</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -473,13 +501,301 @@
     <!-- Section Divider -->
     <div class="section-divider w-full"></div>
 
+    <!-- Challenges Section -->
+    <section
+      id="challenges"
+      class="bg-gray-50 flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10"
+    >
+      <div
+        class="flex flex-col gap-12 items-start justify-start max-w-6xl w-full mx-auto"
+      >
+        <div class="flex flex-col gap-4 items-start justify-start w-full">
+          <div
+            class="bg-gray-200 flex gap-1 items-center justify-center pl-2 pr-3 py-1"
+          >
+            <div class="w-4 h-4">
+              <img
+                src="src/icons/challenges.svg"
+                alt="Challenges"
+                class="w-full h-full"
+              />
+            </div>
+            <div class="text-sm font-normal text-gray-950 uppercase">
+              Challenges
+            </div>
+          </div>
+          <div class="text-lg font-normal text-gray-950">
+            <p>
+              Three core challenges shaped this AI product. Here's how I resolved each.
+            </p>
+          </div>
+        </div>
+
+        <!-- Desktop Layout -->
+        <div
+          class="hidden md:flex flex-col gap-8 items-start justify-start w-full"
+        >
+          <!-- Challenges Row -->
+          <div class="flex gap-6 items-start justify-start w-full">
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-lg font-semibold text-key-darker capitalize">
+                Black Box Recommendations from AI
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  Advisors are accountable for every client outcome. AI output they cannot verify is output they will not use.
+                </p>
+              </div>
+            </div>
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-lg font-semibold text-key-darker capitalize">
+                Automation vs. Advisor Control
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  Automate too much and the advisor becomes a rubber stamp. Automate too little and the AI is not worth adopting.
+                </p>
+              </div>
+            </div>
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-lg font-semibold text-key-darker capitalize">
+                Two Audiences, One Data Set
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  Advisors need depth and control. Clients need clarity and confidence. The same financial data has to serve both.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Solutions Row -->
+          <div class="flex gap-6 items-start justify-start w-full">
+            <div class="flex-1 challenge-solution">
+              <div class="solution-container">
+                <div class="solution-dots"></div>
+                <div class="solution-text">Solved via</div>
+              </div>
+            </div>
+            <div class="flex-1 challenge-solution">
+              <div class="solution-container">
+                <div class="solution-dots"></div>
+                <div class="solution-text">Solved via</div>
+              </div>
+            </div>
+            <div class="flex-1 challenge-solution">
+              <div class="solution-container">
+                <div class="solution-dots"></div>
+                <div class="solution-text">Solved via</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Solutions Content Row -->
+          <div class="flex gap-6 items-start justify-start w-full">
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-lg font-semibold text-gray-950 capitalize">
+                Show the Reasoning
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  Every recommendation surfaces the inputs behind it, so advisors can trace, verify, and defend the logic to clients.
+                </p>
+              </div>
+            </div>
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-lg font-semibold text-gray-950 capitalize">
+                AI Proposes, Advisor Decides
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  AI drafts the analysis and the narrative. The advisor edits and approves before anything reaches the client.
+                </p>
+              </div>
+            </div>
+            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
+              <div class="text-lg font-semibold text-gray-950 capitalize">
+                One Engine, Two Views
+              </div>
+              <div class="text-sm text-gray-500">
+                <p>
+                  Shared data models render differently by user types: analytical density for advisors, narrative simplicity for clients.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Carousel -->
+        <div class="md:hidden w-full relative">
+          <!-- Left Arrow -->
+          <button
+            id="carousel-prev"
+            class="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 backdrop-blur-sm p-2 border border-gray-300 hover:bg-white hover:border-gray-950 transition-all duration-200"
+          >
+            <svg
+              class="w-6 h-6 text-gray-950"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              ></path>
+            </svg>
+          </button>
+
+          <!-- Right Arrow -->
+          <button
+            id="carousel-next"
+            class="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 backdrop-blur-sm p-2 border border-gray-300 hover:bg-white hover:border-gray-950 transition-all duration-200"
+          >
+            <svg
+              class="w-6 h-6 text-gray-950"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+          </button>
+
+          <div id="challenges-carousel" class="overflow-hidden w-full">
+            <div
+              class="flex transition-transform duration-300 ease-out challenges-carousel-track"
+            >
+              <!-- Slide 1 -->
+              <div class="min-w-full flex flex-col gap-8">
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div
+                    class="text-lg font-semibold text-key-darker capitalize"
+                  >
+                    Black Box Recommendations from AI
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      Advisors are accountable for every client outcome. AI output they cannot verify is output they will not use.
+                    </p>
+                  </div>
+                </div>
+                <div class="challenge-solution">
+                  <div class="solution-container">
+                    <div class="solution-dots"></div>
+                    <div class="solution-text">Solved via</div>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div class="text-lg font-semibold text-gray-950 capitalize">
+                    Show the Reasoning
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      Every recommendation surfaces the inputs behind it, so advisors can trace, verify, and defend the logic to clients.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="min-w-full flex flex-col gap-8">
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div
+                    class="text-lg font-semibold text-key-darker capitalize"
+                  >
+                    Automation vs. Advisor Control
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      Automate too much and the advisor becomes a rubber stamp. Automate too little and the AI is not worth adopting.
+                    </p>
+                  </div>
+                </div>
+                <div class="challenge-solution">
+                  <div class="solution-container">
+                    <div class="solution-dots"></div>
+                    <div class="solution-text">Solved via</div>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div class="text-lg font-semibold text-gray-950 capitalize">
+                    AI Proposes, Advisor Decides
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      AI drafts the analysis and the narrative. The advisor edits and approves before anything reaches the client.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="min-w-full flex flex-col gap-8">
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div
+                    class="text-lg font-semibold text-key-darker capitalize"
+                  >
+                    Two Audiences, One Data Set
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      Advisors need depth and control. Clients need clarity and confidence. The same financial data has to serve both.
+                    </p>
+                  </div>
+                </div>
+                <div class="challenge-solution">
+                  <div class="solution-container">
+                    <div class="solution-dots"></div>
+                    <div class="solution-text">Solved via</div>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-2 items-start justify-start">
+                  <div class="text-lg font-semibold text-gray-950 capitalize">
+                    One Engine, Two Views
+                  </div>
+                  <div class="text-sm text-gray-500">
+                    <p>
+                      Shared data models render differently by user types: analytical density for advisors, narrative simplicity for clients.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Dots -->
+          <div class="flex justify-center gap-2 mt-8">
+            <button
+              class="carousel-dot w-2 h-2 rounded-full bg-key transition-all duration-300"
+              data-slide="0"
+            ></button>
+            <button
+              class="carousel-dot w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"
+              data-slide="1"
+            ></button>
+            <button
+              class="carousel-dot w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"
+              data-slide="2"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Key Features Section -->
     <section
       id="features"
       class="bg-gray-950 flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10 overflow-hidden"
     >
       <div
-        class="flex flex-col gap-12 items-start justify-start max-w-6xl w-full mx-auto"
+        class="flex flex-col gap-16 items-start justify-start max-w-6xl w-full mx-auto"
       >
         <div class="flex flex-col gap-4 items-start justify-start w-full">
           <div
@@ -497,301 +813,181 @@
             </div>
           </div>
           <div class="text-lg font-normal text-white">
+            <p class="mb-1">Four product questions, four answers.</p>
             <p>
-              The platform is available for two distinct types of users.</br>
-              Advisors get analytical depth and control; clients get clarity and narrative. Both views draw from one data model, and these are the modules that connect them.
+              Building an intelligent advisor meant answering four things: where the AI gets its data, how it reads a client's health, how clients get in without friction, and how it points to what comes next.
             </p>
           </div>
         </div>
 
-        <!-- Feature 1: -->
-        <div
-          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-left feature-section-mobile md:flex-row flex-col overflow-hidden"
-        >
-          <!-- Desktop Layout: Image first, then content -->
-          <div
-            id="feature1-image"
-            class="aspect-square flex-1 hidden md:flex items-center justify-center feature-image overflow-hidden"
-          >
-            <img
-              src="src/images/features/pf-00_1-1.png"
-              alt="Onboarding"
-              class="w-full h-full object-cover"
-            />
-          </div>
-          <div
-            class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full"
-          >
-            <div class="flex flex-col gap-3 items-start justify-start w-full">
-              <div class="text-sm text-key-lighter uppercase">
-                AI ONBOARDING
-              </div>
-              <div class="text-4xl font-bold text-white capitalize">
-                Unify Financial Data
-              </div>
-            </div>
-            <div
-              class="text-lg font-normal text-gray-300 w-full feature-description"
-            >
-              <p>
-                Clients can chat with AI, upload documents, connect accounts, or manually enter information. AI extracts and structures financial data, reducing onboarding friction while improving data completeness for planning.
+        <!-- Q1: Data Foundation -->
+        <div class="flex flex-col gap-8 items-start justify-center w-full">
+          <div class="flex flex-col gap-4 items-start justify-start w-full">
+            <div class="flex flex-col gap-3 items-start justify-center w-full">
+              <p class="text-xl text-key-lighter">
+                Q. Where does the AI get its data?
+              </p>
+              <p class="text-4xl font-bold text-white">
+                The Foundation Every AI Decision Reads From
               </p>
             </div>
-
-            <!-- Mobile Layout: Image after content for Feature 5 -->
-            <div
-              id="feature1-image-mobile"
-              class="aspect-square w-full flex items-center justify-center feature-image overflow-hidden md:hidden"
-            >
-              <img
-                src="src/images/features/pf-00_1-1.png"
-                alt="Onboarding"
-                class="w-full h-full object-cover"
-              />
-            </div>
+            <p class="text-lg font-normal text-white w-full">
+              Bulk-upload documents and the AI extracts and structures them
+              into a single financial statement, verified with human review.
+              It gives advisors and clients one unified view of assets,
+              liabilities, income, and expenses to quickly spot gaps, risks,
+              and opportunities.
+            </p>
           </div>
-        </div>
-
-        <!-- Feature 2: -->
-        <div
-          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-right feature-section-mobile md:flex-row flex-col"
-        >
-          <!-- Desktop Layout: Content first, then image -->
-          <div
-            class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full"
-          >
-            <div class="flex flex-col gap-3 items-start justify-start w-full">
-              <div class="text-sm text-key-lighter uppercase">
-                MONEY MAP
-              </div>
-              <div class="text-4xl font-bold text-white capitalize">
-                Visualize Financial Statements
-              </div>
-            </div>
-            <div
-              class="text-lg font-normal text-gray-300 w-full feature-description"
-            >
-              <p>
-                Money Map provides a unified view of a client's assets, liabilities, income, and expenses. It helps advisors and clients quickly identify gaps, risks, and opportunities.
-              </p>
-            </div>
-
-            <!-- Mobile Layout: Image after content for Feature 4 -->
-            <div
-              id="feature2-image-mobile"
-              class="aspect-square w-full flex items-center justify-center feature-image overflow-hidden md:hidden"
-            >
-              <img
-                src="src/images/features/pf-00_2-1.png"
-                alt="Money Map"
-                class="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-          <div
-            id="feature2-image"
-            class="aspect-square flex-1 hidden md:flex items-center justify-center feature-image overflow-hidden"
-          >
+          <div class="w-full overflow-hidden">
             <img
-              src="src/images/features/pf-00_2-1.png"
-              alt="Money Map"
-              class="w-full h-full object-cover"
+              src="src/images/features/pf-00_new_1-1.png"
+              alt="The Foundation Every AI Decision Reads From"
+              class="w-full h-auto object-cover"
             />
           </div>
         </div>
 
-        <!-- Feature 3: -->
-        <div
-          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-left feature-section-mobile md:flex-row flex-col overflow-hidden"
-        >
-          <!-- Desktop Layout: Image first, then content -->
-          <div
-            id="feature3-image"
-            class="aspect-square flex-1 hidden md:flex items-center justify-center feature-image overflow-hidden"
-          >
+        <!-- Q2: Client Score + Client Story -->
+        <div class="flex flex-col gap-8 items-start justify-center w-full">
+          <div class="flex flex-col gap-4 items-start justify-start w-full">
+            <div class="flex flex-col gap-3 items-start justify-center w-full">
+              <p class="text-xl text-key-lighter">
+                Q. How do we read a client's financial health?
+              </p>
+              <p class="text-4xl font-bold text-white">A Score to Measure It</p>
+            </div>
+            <p class="text-lg font-normal text-white w-full">
+              Client Score turns complex financial indicators into one
+              easy-to-understand number. The AI builds a profile from each
+              client's data, benchmarks them against people with similar
+              lifestyles and financial profiles ("people like me"), and reads
+              the result as a score and a risk matrix.
+            </p>
+          </div>
+          <div class="w-full overflow-hidden">
             <img
-              src="src/images/features/pf-00_3-1.png"
-              alt="Client Score"
-              class="w-full h-full object-cover"
+              src="src/images/features/pf-00_new_2-1.png"
+              alt="A Score to Measure It"
+              class="w-full h-auto object-cover"
             />
           </div>
-          <div
-            class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full"
-          >
-            <div class="flex flex-col gap-3 items-start justify-start w-full">
-              <div class="text-sm text-key-lighter uppercase">
-                CLIENT SCORE
-              </div>
-              <div class="text-4xl font-bold text-white capitalize">
-                Quantify Financial Wellness
-              </div>
-            </div>
-            <div
-              class="text-lg font-normal text-gray-300 w-full feature-description"
-            >
-              <p>
-                Client Score translates complex financial indicators into an easy-to-understand score. By benchmarking clients against people with similar lifestyles and financial profiles, it highlights strengths, weaknesses, and areas for improvement.
-              </p>
-            </div>
-
-            <!-- Mobile Layout: Image after content for Feature 5 -->
-            <div
-              id="feature3-image-mobile"
-              class="aspect-square w-full flex items-center justify-center feature-image overflow-hidden md:hidden"
-            >
-              <img
-                src="src/images/features/pf-00_3-1.png"
-                alt="Client Score"
-                class="w-full h-full object-cover"
-              />
-            </div>
+          <div class="flex flex-col gap-4 items-start justify-start w-full">
+            <p class="text-4xl font-bold text-white">A Story to Explain It</p>
+            <p class="text-lg font-normal text-white w-full">
+              Client Story turns that analysis into a personalized narrative.
+              Instead of isolated numbers, it explains goals, risks, and
+              opportunities in language that makes the full picture clear,
+              whether it's read by a client or discussed with an advisor.
+            </p>
           </div>
-        </div>
-
-        <!-- Feature 4: -->
-        <div
-          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-right feature-section-mobile md:flex-row flex-col"
-        >
-          <!-- Desktop Layout: Content first, then image -->
-          <div
-            class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full"
-          >
-            <div class="flex flex-col gap-3 items-start justify-start w-full">
-              <div class="text-sm text-key-lighter uppercase">
-                CLIENT STORY
-              </div>
-              <div class="text-4xl font-bold text-white capitalize">
-                Turn Insights into Action
-              </div>
-            </div>
-            <div
-              class="text-lg font-normal text-gray-300 w-full feature-description"
-            >
-              <p>
-                Client Story transforms financial analysis into personalized narratives and actionable recommendations. Instead of presenting isolated numbers, it helps advisors communicate client goals, risks, and opportunities in a more meaningful and engaging way.
-              </p>
-            </div>
-
-            <!-- Mobile Layout: Image after content for Feature 4 -->
-            <div
-              id="feature4-image-mobile"
-              class="aspect-square w-full flex items-center justify-center feature-image overflow-hidden md:hidden"
-            >
-              <img
-                src="src/images/features/pf-00_4-1.png"
-                alt="Client Story"
-                class="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-          <div
-            id="feature4-image"
-            class="aspect-square flex-1 hidden md:flex items-center justify-center feature-image overflow-hidden"
-          >
+          <div class="w-full overflow-hidden">
             <img
-              src="src/images/features/pf-00_4-1.png"
-              alt="Client Story"
-              class="w-full h-full object-cover"
+              src="src/images/features/pf-00_new_2-2.png"
+              alt="A Story to Explain It"
+              class="w-full h-auto object-cover"
             />
           </div>
         </div>
 
-        <!-- Feature 5: -->
-        <div
-          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-left feature-section-mobile md:flex-row flex-col overflow-hidden"
-        >
-          <!-- Desktop Layout: Image first, then content -->
-          <div
-            id="feature5-image"
-            class="aspect-square flex-1 hidden md:flex items-center justify-center feature-image overflow-hidden"
-          >
+        <!-- Q3: Onboarding -->
+        <div class="flex flex-col gap-8 items-start justify-center w-full">
+          <div class="flex flex-col gap-4 items-start justify-start w-full">
+            <div class="flex flex-col gap-3 items-start justify-center w-full">
+              <p class="text-xl text-key-lighter">
+                Q. How do clients get in without friction?
+              </p>
+              <p class="text-4xl font-bold text-white">
+                Onboarding That Meets Clients Where They Are
+              </p>
+            </div>
+            <p class="text-lg font-normal text-white w-full">
+              Clients enter through whatever fits: chat with the AI,
+              bulk-upload documents, connect accounts, or enter data
+              manually. The AI extracts and structures whichever path they
+              choose, cutting onboarding friction while improving data
+              completeness for planning.
+            </p>
+          </div>
+          <div class="w-full overflow-hidden">
             <img
-              src="src/images/features/pf-00_5-1.png"
-              alt="Plans"
-              class="w-full h-full object-cover"
+              src="src/images/features/pf-00_new_3-1.png"
+              alt="Onboarding That Meets Clients Where They Are"
+              class="w-full h-auto object-cover"
             />
           </div>
-          <div
-            class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full"
-          >
-            <div class="flex flex-col gap-3 items-start justify-start w-full">
-              <div class="text-sm text-key-lighter uppercase">
-                LIFE PLAN & MONEY PLAN
-              </div>
-              <div class="text-4xl font-bold text-white capitalize">
+        </div>
+
+        <!-- Q4: Life Plan + Money Plan -->
+        <div class="flex flex-col gap-8 items-start justify-center w-full">
+          <div class="flex flex-col gap-4 items-start justify-start w-full">
+            <div class="flex flex-col gap-3 items-start justify-center w-full">
+              <p class="text-xl text-key-lighter">Q. What comes next?</p>
+              <p class="text-4xl font-bold text-white">
                 Fund the Life, Plan the Money
-              </div>
-            </div>
-            <div
-              class="text-lg font-normal text-gray-300 w-full feature-description"
-            >
-              <p>
-                Clients define life goals, then fund them from real account balances. Capital sleeves show which goals are on track and which are drifting, and AI surfaces strategies to close the gap.
               </p>
             </div>
-
-            <!-- Mobile Layout: Image after content for Feature 5 -->
-            <div
-              id="feature5-image-mobile"
-              class="aspect-square w-full flex items-center justify-center feature-image overflow-hidden md:hidden"
-            >
-              <img
-                src="src/images/features/pf-00_5-1.png"
-                alt="Plans"
-                class="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-
-        <!-- Feature 6: -->
-        <div
-          class="flex md:gap-12 gap-6 items-center justify-start w-full animate-slide-in-right feature-section-mobile md:flex-row flex-col"
-        >
-          <!-- Desktop Layout: Content first, then image -->
-          <div
-            class="flex-1 md:flex-1 flex flex-col gap-6 items-start justify-start feature-content w-full"
-          >
-            <div class="flex flex-col gap-3 items-start justify-start w-full">
-              <div class="text-sm text-key-lighter uppercase">
-                AGENT LIBRARY
-              </div>
-              <div class="text-4xl font-bold text-white capitalize">
-                Advisors Choose Their AI
-              </div>
-            </div>
-            <div
-              class="text-lg font-normal text-gray-300 w-full feature-description"
-            >
+            <div class="text-lg font-normal text-white w-full space-y-1">
               <p>
-                A browsable library of AI agents advisors activate per client: meeting prep, document monitoring, goal drift alerts, coverage gaps. Every agent is opt-in, so advisors decide what the AI watches and what it leaves alone.
+                Clients define life goals, then fund them from real account
+                balances and future cashflow.
+              </p>
+              <p>
+                Grounded in each client's current position, the AI helps set
+                realistic targets and shows why, with the reasoning and a
+                simulation behind every number. The hard math runs on the AI;
+                the advisor validates.
               </p>
             </div>
-
-            <!-- Mobile Layout: Image after content for Feature 4 -->
-            <div
-              id="feature4-image-mobile"
-              class="aspect-square w-full flex items-center justify-center feature-image overflow-hidden md:hidden"
-            >
-              <img
-                src="src/images/features/pf-00_6-1.png"
-                alt="Agent Library"
-                class="w-full h-full object-cover"
-              />
-            </div>
           </div>
-          <div
-            id="feature4-image"
-            class="aspect-square flex-1 hidden md:flex items-center justify-center feature-image overflow-hidden"
-          >
+          <div class="w-full overflow-hidden">
             <img
-              src="src/images/features/pf-00_6-1.png"
-              alt="Agent Library"
-              class="w-full h-full object-cover"
+              src="src/images/features/pf-00_new_4-1.png"
+              alt="Fund the Life, Plan the Money"
+              class="w-full h-auto object-cover"
+            />
+          </div>
+          <div class="flex flex-col gap-4 items-start justify-start w-full">
+            <p class="text-lg font-normal text-white w-full">
+              The Money Plan tracks which goals are on track and which are
+              drifting, and AI surfaces strategies to close the gap.
+            </p>
+          </div>
+          <div class="w-full overflow-hidden">
+            <img
+              src="src/images/features/pf-00_new_4-2.png"
+              alt="The Money Plan"
+              class="w-full h-auto object-cover"
             />
           </div>
         </div>
 
+        <!-- Q5: Agent Library -->
+        <div class="flex flex-col gap-8 items-start justify-center w-full">
+          <div class="flex flex-col gap-4 items-start justify-start w-full">
+            <div class="flex flex-col gap-3 items-start justify-center w-full">
+              <p class="text-xl text-key-lighter">
+                Plus: advisor control (Agent Library)
+              </p>
+              <p class="text-4xl font-bold text-white">
+                Advisors Choose Their AI
+              </p>
+            </div>
+            <p class="text-lg font-normal text-white w-full">
+              A browsable library of AI agents advisors activate per client:
+              meeting prep, document monitoring, goal drift alerts, coverage
+              gaps. Every agent is opt-in, so advisors decide what the AI
+              watches and what it leaves alone.
+            </p>
+          </div>
+          <div class="w-full overflow-hidden">
+            <img
+              src="src/images/features/pf-00_new_5-1.png"
+              alt="Advisors Choose Their AI"
+              class="w-full h-auto object-cover"
+            />
+          </div>
+        </div>
 
       </div>
     </section>
@@ -802,7 +998,7 @@
     <!-- Design Process Section -->
     <section
       id="process"
-      class="bg-gray-50 flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10"
+      class="flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10"
     >
       <div
         class="flex flex-col gap-12 items-start justify-start max-w-6xl w-full mx-auto"
@@ -1087,297 +1283,6 @@
             </div> -->
           </div>
 
-        </div>
-      </div>
-    </section>
-
-    <!-- Section Divider -->
-    <div class="section-divider w-full"></div>
-
-    <!-- Challenges Section -->
-    <section
-      id="challenges"
-      class="flex flex-col gap-6 items-center justify-center py-20 w-full px-5 md:px-10"
-    >
-      <div
-        class="flex flex-col gap-12 items-start justify-start max-w-6xl w-full mx-auto"
-      >
-        <div class="flex flex-col gap-4 items-start justify-start w-full">
-          <div
-            class="bg-gray-200 flex gap-1 items-center justify-center pl-2 pr-3 py-1"
-          >
-            <div class="w-4 h-4">
-              <img
-                src="src/icons/challenges.svg"
-                alt="Challenges"
-                class="w-full h-full"
-              />
-            </div>
-            <div class="text-sm font-normal text-gray-950 uppercase">
-              Challenges
-            </div>
-          </div>
-          <div class="text-lg font-normal text-gray-950">
-            <p>
-              Three core challenges shaped this product. Here's how I resolved each.
-            </p>
-          </div>
-        </div>
-
-        <!-- Desktop Layout -->
-        <div
-          class="hidden md:flex flex-col gap-8 items-start justify-start w-full"
-        >
-          <!-- Challenges Row -->
-          <div class="flex gap-6 items-start justify-start w-full">
-            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
-              <div class="text-base font-semibold text-key-darker capitalize">
-                Black Box Recommendations from AI
-              </div>
-              <div class="text-sm text-gray-500">
-                <p>
-                  Advisors are accountable for every client outcome. AI output they cannot verify is output they will not use.
-                </p>
-              </div>
-            </div>
-            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
-              <div class="text-base font-semibold text-key-darker capitalize">
-                Automation vs. Advisor Control
-              </div>
-              <div class="text-sm text-gray-500">
-                <p>
-                  Automate too much and the advisor becomes a rubber stamp. Automate too little and the AI is not worth adopting.
-                </p>
-              </div>
-            </div>
-            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
-              <div class="text-base font-semibold text-key-darker capitalize">
-                Two Audiences, One Data Set
-              </div>
-              <div class="text-sm text-gray-500">
-                <p>
-                  Advisors need depth and control. Clients need clarity and confidence. The same financial data has to serve both.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Solutions Row -->
-          <div class="flex gap-6 items-start justify-start w-full">
-            <div class="flex-1 challenge-solution">
-              <div class="solution-container">
-                <div class="solution-dots"></div>
-                <div class="solution-text">Solved via</div>
-              </div>
-            </div>
-            <div class="flex-1 challenge-solution">
-              <div class="solution-container">
-                <div class="solution-dots"></div>
-                <div class="solution-text">Solved via</div>
-              </div>
-            </div>
-            <div class="flex-1 challenge-solution">
-              <div class="solution-container">
-                <div class="solution-dots"></div>
-                <div class="solution-text">Solved via</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Solutions Content Row -->
-          <div class="flex gap-6 items-start justify-start w-full">
-            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
-              <div class="text-base font-semibold text-gray-950 capitalize">
-                Show the Reasoning
-              </div>
-              <div class="text-sm text-gray-500">
-                <p>
-                  Every recommendation surfaces the inputs behind it, so advisors can trace, verify, and defend the logic to clients.
-                </p>
-              </div>
-            </div>
-            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
-              <div class="text-base font-semibold text-gray-950 capitalize">
-                AI Proposes, Advisor Decides
-              </div>
-              <div class="text-sm text-gray-500">
-                <p>
-                  AI drafts the analysis and the narrative. The advisor edits and approves before anything reaches the client.
-                </p>
-              </div>
-            </div>
-            <div class="flex-1 flex flex-col gap-2 items-start justify-start">
-              <div class="text-base font-semibold text-gray-950 capitalize">
-                One Engine, Two Views
-              </div>
-              <div class="text-sm text-gray-500">
-                <p>
-                  Shared data models render differently by user types: analytical density for advisors, narrative simplicity for clients.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobile Carousel -->
-        <div class="md:hidden w-full relative">
-          <!-- Left Arrow -->
-          <button
-            id="carousel-prev"
-            class="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 backdrop-blur-sm p-2 border border-gray-300 hover:bg-white hover:border-gray-950 transition-all duration-200"
-          >
-            <svg
-              class="w-6 h-6 text-gray-950"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 19l-7-7 7-7"
-              ></path>
-            </svg>
-          </button>
-
-          <!-- Right Arrow -->
-          <button
-            id="carousel-next"
-            class="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 backdrop-blur-sm p-2 border border-gray-300 hover:bg-white hover:border-gray-950 transition-all duration-200"
-          >
-            <svg
-              class="w-6 h-6 text-gray-950"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"
-              ></path>
-            </svg>
-          </button>
-
-          <div id="challenges-carousel" class="overflow-hidden w-full">
-            <div
-              class="flex transition-transform duration-300 ease-out challenges-carousel-track"
-            >
-              <!-- Slide 1 -->
-              <div class="min-w-full flex flex-col gap-8">
-                <div class="flex flex-col gap-2 items-start justify-start">
-                  <div
-                    class="text-base font-semibold text-key-darker capitalize"
-                  >
-                    Black Box Recommendations from AI
-                  </div>
-                  <div class="text-sm text-gray-500">
-                    <p>
-                      Advisors are accountable for every client outcome. AI output they cannot verify is output they will not use.
-                    </p>
-                  </div>
-                </div>
-                <div class="challenge-solution">
-                  <div class="solution-container">
-                    <div class="solution-dots"></div>
-                    <div class="solution-text">Solved via</div>
-                  </div>
-                </div>
-                <div class="flex flex-col gap-2 items-start justify-start">
-                  <div class="text-base font-semibold text-gray-950 capitalize">
-                    Show the Reasoning
-                  </div>
-                  <div class="text-sm text-gray-500">
-                    <p>
-                      Every recommendation surfaces the inputs behind it, so advisors can trace, verify, and defend the logic to clients.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slide 2 -->
-              <div class="min-w-full flex flex-col gap-8">
-                <div class="flex flex-col gap-2 items-start justify-start">
-                  <div
-                    class="text-base font-semibold text-key-darker capitalize"
-                  >
-                    Automation vs. Advisor Control
-                  </div>
-                  <div class="text-sm text-gray-500">
-                    <p>
-                      Automate too much and the advisor becomes a rubber stamp. Automate too little and the AI is not worth adopting.
-                    </p>
-                  </div>
-                </div>
-                <div class="challenge-solution">
-                  <div class="solution-container">
-                    <div class="solution-dots"></div>
-                    <div class="solution-text">Solved via</div>
-                  </div>
-                </div>
-                <div class="flex flex-col gap-2 items-start justify-start">
-                  <div class="text-base font-semibold text-gray-950 capitalize">
-                    AI Proposes, Advisor Decides
-                  </div>
-                  <div class="text-sm text-gray-500">
-                    <p>
-                      AI drafts the analysis and the narrative. The advisor edits and approves before anything reaches the client.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slide 3 -->
-              <div class="min-w-full flex flex-col gap-8">
-                <div class="flex flex-col gap-2 items-start justify-start">
-                  <div
-                    class="text-base font-semibold text-key-darker capitalize"
-                  >
-                    Two Audiences, One Data Set
-                  </div>
-                  <div class="text-sm text-gray-500">
-                    <p>
-                      Advisors need depth and control. Clients need clarity and confidence. The same financial data has to serve both.
-                    </p>
-                  </div>
-                </div>
-                <div class="challenge-solution">
-                  <div class="solution-container">
-                    <div class="solution-dots"></div>
-                    <div class="solution-text">Solved via</div>
-                  </div>
-                </div>
-                <div class="flex flex-col gap-2 items-start justify-start">
-                  <div class="text-base font-semibold text-gray-950 capitalize">
-                    One Engine, Two Views
-                  </div>
-                  <div class="text-sm text-gray-500">
-                    <p>
-                      Shared data models render differently by user types: analytical density for advisors, narrative simplicity for clients.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Carousel Dots -->
-          <div class="flex justify-center gap-2 mt-8">
-            <button
-              class="carousel-dot w-2 h-2 rounded-full bg-key transition-all duration-300"
-              data-slide="0"
-            ></button>
-            <button
-              class="carousel-dot w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"
-              data-slide="1"
-            ></button>
-            <button
-              class="carousel-dot w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"
-              data-slide="2"
-            ></button>
-          </div>
         </div>
       </div>
     </section>
